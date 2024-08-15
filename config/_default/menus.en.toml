@@ -9,21 +9,18 @@
 # By default the menu is ordered alphabetically. This can be
 # overridden by providing a weight value. The menu will then be
 # ordered by weight from lowest to highest.
-
-#[[main]]
-#  name = "Blog"
-#  pageRef = "posts"
-#  weight = 10
-
-#[[main]]
-#  name = "Parent"
-#  weight = 20
-
-#[[main]]
-#  name = "example sub-menu 1"
-#  parent = "Parent"
-#  pageRef = "posts"
-#  weight = 20
+[[main]]
+  name = "Blog"
+  pageRef = "posts"
+  weight = 10
+[[main]]
+  name = "Parent"
+  weight = 20
+[[main]]
+  name = "example sub-menu 1"
+  parent = "Parent"
+  pageRef = "posts"
+  weight = 20
 
 #[[main]]
 #  name = "example sub-menu 2"
