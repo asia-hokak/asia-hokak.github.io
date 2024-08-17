@@ -1,9 +1,15 @@
 # -- Markup --
 # These settings are required for the theme to function.
+[markup]
+  [markup.markdown]
+    parser = "goldmark"  # 或 "blackfriday"
+    table = true
+    math = true
 
 [goldmark]
 [goldmark.renderer]
-  unsafe = true
+  unsafe = false
+  withHardWraps = true
 
 [highlight]
   noClasses = false

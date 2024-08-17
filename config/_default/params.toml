@@ -1,24 +1,24 @@
 colorScheme = "blowfish"
-defaultAppearance = "light"
-autoSwitchAppearance = true
+defaultAppearance = "dark"
+autoSwitchAppearance = false
 enableSearch = true
 enableCodeCopy = false
 replyByEmail = false
 disableImageOptimization = false
 disableTextInHeader = false
 backgroundImageWidth = 1200
-defaultBackgroundImage = "img/background.png"
-defaultFeaturedImage = "img/article.png"
+defaultBackgroundImage = "img/background.svg"
+defaultFeaturedImage = "img/traffic.svg"
 giteaDefaultServer = "https://git.fsfe.org"
 forgejoDefaultServer = "https://v8.next.forgejo.org"
 [header]
-    layout = "basic"
+    layout = "fixed"
 
 [footer]
     showMenu = true
     showCopyright = true
     showThemeAttribution = true
-    showAppearanceSwitcher = true
+    showAppearanceSwitcher = false
     showScrollToTop = true
 
 [homepage]
@@ -32,7 +32,6 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
     layoutBackgroundBlur = true
 
 [article]
-    defaultBackgroundImage = "img/background.png"
     showDate = false
     showViews = false
     showLikes = false
@@ -40,9 +39,9 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
     showDateUpdated = false
     showAuthor = false
     showHero = true
-    heroStyle = "background"
+    heroStyle = "article"
     layoutBackgroundBlur = true
-    showBreadcrumbs = true
+    showBreadcrumbs = false
     showDraftLabel = true
     showEdit = true
     editAppendPath = true
@@ -62,19 +61,18 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
 
 [list]
     showHero = true
-
     heroStyle = "background"
     layoutBackgroundBlur = true
     layoutBackgroundHeaderSpace = true
-    showBreadcrumbs = false
+    showBreadcrumbs = true
     showSummary = false
     showViews = false
     showLikes = false
-    showTableOfContents = 3
-    showCards = false
+    showTableOfContents = true
+    showCards = true
     orderByWeight = false
     groupByYear = false
-    cardView = false
+    cardView = true
     cardViewScreenWidth = false
     constrainItemsWidth = false
 

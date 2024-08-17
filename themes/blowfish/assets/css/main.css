@@ -10,7 +10,9 @@ body a,
 body button {
   @apply transition-colors;
 }
-
+p {
+    white-space: pre-wrap;
+  }
 /* Scale SVG icons to text size */
 .icon svg {
   @apply h-[1em] w-[1em];

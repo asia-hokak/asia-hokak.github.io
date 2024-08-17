@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://192.168.0.7:1313/posts/first_post/</loc>
+    <loc>http://192.168.0.7:1313/writeups/ais3-pre-exam/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -19,6 +19,11 @@
   </url>
   <url>
     <loc>http://192.168.0.7:1313/posts/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://192.168.0.7:1313/writeups/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

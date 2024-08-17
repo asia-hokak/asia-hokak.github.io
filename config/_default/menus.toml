@@ -1,0 +1,68 @@
+[[main]]
+    name = "About"
+    pageRef = "about"
+    weight = 1
+
+[[main]]
+    name = "Posts"
+    pageRef = "posts"
+    weight = 2
+
+[[main]]
+    name = "Writeups"
+    pageRef = "writeups"
+    weight = 3
+
+[[main]]
+    name = "Notes"
+    weight = 4
+
+[[main]]
+    name = "web"
+    parent = "Notes"
+    pageRef = "web"
+    weight = 4
+
+[[main]]
+    name = "crypto"
+    parent = "Notes"
+    pageRef = "crypto"
+    weight = 5
+
+[[main]]
+    name = "reverse"
+    parent = "Notes"
+    pageRef = "reverse"
+    weight = 6
+
+[[main]]
+    name = "pwn"
+    parent = "Notes"
+    pageRef = "pwn"
+    weight = 7
+
+[[main]]
+    name = "misc"
+    parent = "Notes"
+    pageRef = "misc"
+    weight = 8
+
+[[main]]
+    name = "algo"
+    parent = "Notes"
+    pageRef = "algo"
+    weight = 9
+
+[[main]]
+    name = "tools"
+    parent = "Notes"
+    pageRef = "tools"
+    weight = 10
+
+[[main]]
+    name = "others"
+    parent = "Notes"
+    pageRef = "others"
+    weight = 11
+
+   
