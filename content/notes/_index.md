@@ -1,3 +1,3 @@
 ---
-title: "Web"
+title: "Notes"
 ---
