@@ -7,7 +7,7 @@ replyByEmail = false
 disableImageOptimization = false
 disableTextInHeader = false
 backgroundImageWidth = 1200
-defaultBackgroundImage = "img/background.svg"
+defaultBackgroundImage = "img/article.png"
 defaultFeaturedImage = "img/traffic.svg"
 giteaDefaultServer = "https://git.fsfe.org"
 forgejoDefaultServer = "https://v8.next.forgejo.org"
@@ -77,26 +77,26 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
     constrainItemsWidth = false
 
 [sitemap]
-excludedKinds = [ "taxonomy", "term" ]
+    excludedKinds = [ "taxonomy", "term" ]
 
 [taxonomy]
-showTermCount = true
-showHero = false
-showBreadcrumbs = false
-showViews = false
-showLikes = false
-showTableOfContents = false
-cardView = false
+    showTermCount = true
+    showHero = false
+    showBreadcrumbs = false
+    showViews = false
+    showLikes = false
+    showTableOfContents = false
+    cardView = false
 
 [term]
-showHero = false
-showBreadcrumbs = false
-showViews = false
-showLikes = false
-showTableOfContents = true
-groupByYear = false
-cardView = false
-cardViewScreenWidth = false
+    showHero = false
+    showBreadcrumbs = false
+    showViews = false
+    showLikes = false
+    showTableOfContents = true
+    groupByYear = false
+    cardView = false
+    cardViewScreenWidth = false
 
 [firebase]
 

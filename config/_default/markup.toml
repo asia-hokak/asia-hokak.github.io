@@ -2,7 +2,7 @@
 # These settings are required for the theme to function.
 [markup]
   [markup.markdown]
-    parser = "goldmark"  # 或 "blackfriday"
+    parser = "goldmark" 
     table = true
     math = true
 

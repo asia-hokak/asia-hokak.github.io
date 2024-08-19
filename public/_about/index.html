@@ -15,7 +15,7 @@
   
   
   
-  <link rel="canonical" href="http://192.168.139.1:1313/_about/" />
+  <link rel="canonical" href="http://localhost:1313/_about/" />
   
   
   
@@ -61,7 +61,7 @@
   
   
   
-  <meta property="og:url" content="http://192.168.139.1:1313/_about/">
+  <meta property="og:url" content="http://localhost:1313/_about/">
   <meta property="og:site_name" content="hokak&#39;s note">
   <meta property="og:title" content="hi">
   <meta property="og:description" content="This page was built using the Blowfish theme for Hugo.">
@@ -84,7 +84,7 @@
     "description": "This page was built using the Blowfish theme for Hugo.",
     
     "inLanguage": "en",
-    "url" : "http:\/\/192.168.139.1:1313\/_about\/",
+    "url" : "http:\/\/localhost:1313\/_about\/",
     "author" : {
       "@type": "Person",
       "name": "hokak"
@@ -607,40 +607,56 @@
   
 
 
-  
-   
-  
- 
-
-
-
-
-<div id="hero" class="h-[150px] md:h-[200px]"></div>
-
 
 
     
-    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/img/background.svg);">
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
     
 
 
-    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
-    </div>
-    <div
-        class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
-    </div>
-</div>
 
-<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+
 <script>
-    window.addEventListener('scroll', function (e) {
-        var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-        var background_blur = document.getElementById('background-blur');
-        background_blur.style.opacity = (scroll / 300)
-    });
-</script>
+    var svgPaths = [
+        
+            "img\/background\/1.svg",
+        
+            "img\/background\/2.svg",
+        
+            "img\/background\/3.svg",
+        
+            "img\/background\/4.svg",
+        
+            "img\/background\/5.svg",
+        
+            "img\/background\/6.svg",
+        
+    ];
 
+    function changeBackground() {
+        var randomIndex = Math.floor(Math.random() * svgPaths.length);
+        var randomImagePath = svgPaths[randomIndex];
+        document.getElementById('background-container').style.backgroundImage = "url(/" + randomImagePath + ")";
+    }
+
+    window.onload = function() {
+        changeBackground();
+    };
+</script>
   
   
 
@@ -883,7 +899,7 @@
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
-  data-url="http://192.168.139.1:1313/"
+  data-url="http://localhost:1313/"
   style="z-index:500"
 >
   <div

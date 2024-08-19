@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Algo on hokak&#39;s note</title>
-    <link>http://192.168.139.1:1313/notes/algo/</link>
+    <link>http://localhost:1313/notes/algo/</link>
     <description>Recent content in Algo on hokak&#39;s note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 hokak</copyright>
-    <atom:link href="http://192.168.139.1:1313/notes/algo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/notes/algo/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

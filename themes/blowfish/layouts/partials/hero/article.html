@@ -10,13 +10,12 @@
 {{ $featured = resources.GetRemote $url }}
 {{ end }}
 
-{{ with .Site.Params.defaultBackgroundImage }}
-  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-   {{ $featured = resources.GetRemote . }}
-  {{ else }}
-   {{ $featured = resources.Get . }}
-  {{ end }}
- {{ end }}
+{{ $backgroundDir := "img/background/" }}
+{{ $svgPaths := slice }}
+{{ range seq 1 5 }}
+    {{ $fileName := printf "img/background/%d.svg" . }}
+    {{ $svgPaths = $svgPaths | append $fileName }}
+{{ end }}
 
 {{ $isParentList := eq (.Scratch.Get "scope") "list"  }}
 {{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or 
@@ -33,15 +32,17 @@
 <div id="hero" class="h-[150px] md:h-[200px]"></div>
 {{ end }}
 
+
 {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
     {{ with . }}
-    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url({{ .RelPermalink }});">
+    <div id = 'background-container' class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    style="background-image:url();">
+    
     {{ end }}
 {{ else }}
     {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url({{ .RelPermalink }});">
+    <div id = 'background-container' class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    style="background-image:url();">
     {{ end }}
 {{ end }}
 
@@ -62,3 +63,21 @@
 </script>
 {{ end }}
 {{- end -}}
+
+<script>
+    var svgPaths = [
+        {{ range $svgPaths }}
+            "{{ . }}",
+        {{ end }}
+    ];
+
+    function changeBackground() {
+        var randomIndex = Math.floor(Math.random() * svgPaths.length);
+        var randomImagePath = svgPaths[randomIndex];
+        document.getElementById('background-container').style.backgroundImage = "url(/" + randomImagePath + ")";
+    }
+
+    window.onload = function() {
+        changeBackground();
+    };
+</script>
