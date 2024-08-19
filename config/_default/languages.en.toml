@@ -21,9 +21,10 @@ title = "hokak's Notes"
     bio = "need more sleep"
     links = [
         { github = "https://github.com/asia-hokak" },
+        { email = "hokak65535@gmail.com"},
         { instagram = "https://www.instagram.com/hokak_/" },
         { facebook = "https://www.facebook.com/asiahokak/"},
         { steam = "https://steamcommunity.com/id/CreeperSH/"}
-        { email = "hokak65535@gmail.com"}
+        
 
     ]
