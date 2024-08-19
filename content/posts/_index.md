@@ -1,3 +1,3 @@
 +++
-title= "POST"
+title= "Posts"
 +++
