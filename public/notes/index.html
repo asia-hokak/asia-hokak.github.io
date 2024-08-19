@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Notes &middot; hokak&#39;s note</title>
-  <meta name="title" content="Notes &middot; hokak&#39;s note" />
+  <title>Notes &middot; hokak&#39;s Notes</title>
+  <meta name="title" content="Notes &middot; hokak&#39;s Notes" />
   
   
   
@@ -17,7 +17,7 @@
   
   <link rel="canonical" href="http://localhost:1313/notes/" />
   
-  <link rel="alternate" type="application/rss+xml" href="/notes/index.xml" title="hokak's note" />
+  <link rel="alternate" type="application/rss+xml" href="/notes/index.xml" title="hokak's Notes" />
   
   
   
@@ -32,8 +32,8 @@
     integrity="sha512-5Lk6MSg61WSqwaO/ZNHYOJU3mUH3ta856eGcaH&#43;0vyqd9VyE&#43;sYxtZkDNkzj8PzFDeDdPMmUmUviTZ9/&#43;H73lQ==" />
   
   
-  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
-    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  <script type="text/javascript" src="/js/appearance.min.c9658ec94486565aff073b0f09a4111942679211c19430908a6707077da499e04b9bd040a9632aa673ce252f68e4470a661d46b19168671122846ad0a1e5c38c.js"
+    integrity="sha512-yWWOyUSGVlr/BzsPCaQRGUJnkhHBlDCQimcHB32kmeBLm9BAqWMqpnPOJS9o5EcKZh1GsZFoZxEihGrQoeXDjA=="></script>
   
   
   
@@ -43,8 +43,11 @@
   
   
   
-  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.6ece09b43917cb66380f5ee610feb0c6d1b73798d171ccd7d73ac38dd7b4a5326ef0ac3f9a557ff5cc67c7d9e484f4ddd1f3f23301f277206665da75c58261e9.js"
-    integrity="sha512-bs4JtDkXy2Y4D17mEP6wxtG3N5jRcczX1zrDjde0pTJu8Kw/mlV/9cxnx9nkhPTd0fPyMwHydyBmZdp1xYJh6Q==" data-copy="" data-copied=""></script>
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.8b56b0fd46524eaecbfe33f576b8ba2cd2a122521a89f8229a95be0b635a7ac8e774eb1d8b8b93b32bbd677c3deb734aeea62917443f124d5bf5478859767380.js"
+    integrity="sha512-i1aw/UZSTq7L/jP1dri6LNKhIlIaifgimpW&#43;C2NaesjndOsdi4uTsyu9Z3w963NK7qYpF0Q/Ek1b9UeIWXZzgA==" data-copy="" data-copied=""></script>
   
   
   
@@ -64,7 +67,7 @@
   
   
   <meta property="og:url" content="http://localhost:1313/notes/">
-  <meta property="og:site_name" content="hokak&#39;s note">
+  <meta property="og:site_name" content="hokak&#39;s Notes">
   <meta property="og:title" content="Notes">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="website">
@@ -151,11 +154,11 @@
     
     <div>
         <a href="/" class="flex">
-            <span class="sr-only">hokak&rsquo;s note</span>
+            <span class="sr-only">hokak&rsquo;s Notes</span>
 
             
             <img src="/img/sitelogo.png" width="592" height="592"
-                class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="hokak&#39;s note" />
+                class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="hokak&#39;s Notes" />
             
 
         </a>
@@ -165,7 +168,7 @@
         <nav class="flex space-x-3">
 
             
-            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">hokak&rsquo;s note</a>
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">hokak&rsquo;s Notes</a>
             
 
         </nav>
@@ -174,7 +177,7 @@
             
             
             
-  <a href=""  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/about/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
     <p class="text-base font-medium" title="">
         About
@@ -389,7 +392,7 @@
 
                     
   <li class="mt-1">
-    <a href=""  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/about/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-bg font-bg" title="">
             About
@@ -554,6 +557,16 @@
 
 
 
+<script>
+    (function () {
+        var $mainmenu = $('.main-menu');
+        var path = window.location.pathname;
+        $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+            $(e).children('p').addClass('active');
+        });
+    })();
+</script>
+
 
   </div>
 </div>
@@ -588,8 +601,8 @@
 
 
     
-    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/img/article_hu2530822275079645927.png);">
+    <div class="fixed inset-x-0 top-0 h-[1000px] single_hero_background nozoom"
+    style="background-image:url(/img/article.png);">
     
 
 

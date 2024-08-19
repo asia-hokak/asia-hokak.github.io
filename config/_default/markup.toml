@@ -8,7 +8,7 @@
 
 [goldmark]
 [goldmark.renderer]
-  unsafe = false
+  unsafe = true
   withHardWraps = true
 
 [highlight]

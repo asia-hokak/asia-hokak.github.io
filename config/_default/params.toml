@@ -2,15 +2,19 @@ colorScheme = "blowfish"
 defaultAppearance = "dark"
 autoSwitchAppearance = false
 enableSearch = true
-enableCodeCopy = false
+enableCodeCopy = true
 replyByEmail = false
 disableImageOptimization = false
 disableTextInHeader = false
-backgroundImageWidth = 1200
+backgroundImageWidth = 1920
 defaultBackgroundImage = "img/article.png"
 defaultFeaturedImage = "img/traffic.svg"
 giteaDefaultServer = "https://git.fsfe.org"
 forgejoDefaultServer = "https://v8.next.forgejo.org"
+highlightCurrentMenuArea = true
+smartTOC = true
+smartTOCHideUnfocusedChildren = false
+
 [header]
     layout = "fixed"
 
@@ -24,10 +28,10 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
 [homepage]
     layout = "homepage"
     showRecent = true
-    showRecentItems = 5
+    showRecentItems = 6
     showMoreLink = false
-    showMoreLinkDest = "/posts"
-    cardView = false
+    showMoreLinkDest = "/writeups"
+    cardView = true
     cardViewScreenWidth = false
     layoutBackgroundBlur = true
 
@@ -37,7 +41,7 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
     showLikes = false
     showDateOnlyInArticle = false
     showDateUpdated = false
-    showAuthor = false
+    showAuthor = true
     showHero = true
     heroStyle = "article"
     layoutBackgroundBlur = true
@@ -58,6 +62,7 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
     showWordCount = false
     showSummary = true
     showZenMode = false
+
 
 [list]
     showHero = true

@@ -1,7 +1,7 @@
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "hokak's note"
+title = "hokak's Notes"
 
 [params]
     displayName = "EN"
@@ -9,15 +9,15 @@ title = "hokak's note"
     rtl = false
     dateFormat = "2 January 2006"
     logo = "img/sitelogo.png"
-    # secondaryLogo = "img/secondary-logo.png"
+    secondaryLogo = "img/sitelogo.png"
     # description = "My awesome website"
     # copyright = "Copy, _right?_ :thinking_face:"
 
 [author]
     name = "hokak"
     image = "img/author.gif"
-    imageQuality = 96
-    headline = "but nothing here"
+    imageQuality = 100
+    headline = ""
     bio = "need more sleep"
     links = [
         { github = "https://github.com/asia-hokak" },
