@@ -18,17 +18,18 @@ params.backgroundImageWidth: 1500
 ## How to find me
 
 我比較不常使用instagram和line:(  
-有事可以在dc找到我，id:`hokak_`，加好友之前稍微自我介紹一下就ok了
-比較正式的事可以找我email
+有事可以在dc找到我，id:`hokak_`，加好友之前稍微自我介紹一下就ok了  
+比較正式的事可以找我email(頭像下方)
 
 ## Blog
 
 ~~建立blog的契機是因為懶得自我介紹~~  
 建立blog的契機是因為最近學的東西越來越深  
 於是我決定架一個blog來放筆記，順便練練markdown  
-比賽的時候copy自己的起來比較快
+比賽的時候copy自己的起來比較快  
 網站架構是用Hugo & Blowfish  
 以後會不停的修改網站的外觀，(雖然我不是學網頁設計的，但我有強迫症)  
+也會把hackmd的東西搬過來  
 喔對，背景都是來自[蒼之彼方四重奏](https://store.steampowered.com/app/1044620/_/)，蠻推這遊戲的
 
 ## Experiences
