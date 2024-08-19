@@ -12,7 +12,7 @@
 
 {{ $backgroundDir := "img/background/" }}
 {{ $svgPaths := slice }}
-{{ range seq 1 5 }}
+{{ range seq 1 4 }}
     {{ $fileName := printf "img/background/%d.svg" . }}
     {{ $svgPaths = $svgPaths | append $fileName }}
 {{ end }}
