@@ -1,6 +1,7 @@
 module.exports = {
   content: [
     "./layouts/**/*.html",
+    "./layouts/single.html",
     "./content/**/*.{html,md}",
     "./themes/blowfish/layouts/**/*.html",
     "./themes/blowfish/content/**/*.{html,md}",

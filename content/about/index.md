@@ -11,9 +11,8 @@ params.backgroundImageWidth: 1500
 我在社群上比較常用的名字是 __Dr.dog__，目前高二  
 常打ctf，主要玩reverse和pwn，crypto也有練過一陣子  
 以前是打競程的，不過也沒有碰很深  
-最近也會想嘗試去開發一些東西  
-平時喜歡玩ARPG(尤其類魂)  
-傳過好幾次火，但我還沒開封收藏庫的艾爾登法環  
+本職是諧咖兼宅男，夢想是work from home  
+我平常三點睡，如果你有在教室看到我在睡覺的話那我通常爆肝了  
 
 ## How to find me
 
@@ -24,8 +23,7 @@ params.backgroundImageWidth: 1500
 ## Blog
 
 ~~建立blog的契機是因為懶得自我介紹~~  
-建立blog的契機是因為最近學的東西越來越深  
-於是我決定架一個blog來放筆記，順便練練markdown  
+痾我需要一個blog來放筆記  
 比賽的時候copy自己的起來比較快  
 網站架構是用Hugo & Blowfish  
 以後會不停的修改網站的外觀，(雖然我不是學網頁設計的，但我有強迫症)  
