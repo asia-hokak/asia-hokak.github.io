@@ -8,11 +8,11 @@ params.backgroundImageWidth: 1500
 
 ## whoami
 
-我在社群上比較常用的名字是 __Dr.dog__，目前高二  
+我在社群上比較用的名字是 __Dr.dog__，目前高二  
 常打ctf，主要玩reverse和pwn，crypto也有練過一陣子  
 以前是打競程的，不過也沒有碰很深  
 本職是諧咖兼宅男，夢想是work from home  
-我平常三點睡，如果你有在教室看到我在睡覺的話那我通常爆肝了  
+我平常三點睡，麻煩各位體諒一下我的肝;3    
 
 ## How to find me
 
