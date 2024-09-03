@@ -12,7 +12,8 @@ params.backgroundImageWidth: 1500
 常打ctf，主要玩reverse和pwn，crypto也有練過一陣子  
 以前是打競程的，不過也沒有碰很深  
 本職是諧咖兼宅男，夢想是work from home  
-我平常三點睡，麻煩各位體諒一下我的肝;3   
+平常三點睡，麻煩各位體諒一下我的肝;3   
+~~睡死了就別叫了~~
 
 ## How to find me
 
