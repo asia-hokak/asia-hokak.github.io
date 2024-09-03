@@ -1,6 +1,5 @@
 ---
-title:File Upload Vulnerability
-
+title: File Upload Vulnerability
 ---
 
 文件上傳漏洞是指用戶上傳可能會造成危害的檔案(~~廢話~~  
@@ -10,9 +9,11 @@ title:File Upload Vulnerability
 ### 檔案路徑
 
 傳統的網站會把檔案的request，1:1的映射到自己的檔案路徑，如：  
+
 ```
 GET /files/avatars/profile.png HTTP/1.1
 ```  
+
 `profile.png` 的絕對位置可能為`/var/www/html/files/avatars/profile.png`  
 
 ### 回傳的檔案內容

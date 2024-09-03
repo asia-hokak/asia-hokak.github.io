@@ -63,7 +63,7 @@ smartTOCHideUnfocusedChildren = false
     showAuthorsBadges = true
     showWordCount = false
     showSummary = true
-    showZenMode = false
+    showZenMode = true
 
 
 [list]
