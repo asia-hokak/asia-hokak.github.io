@@ -18,5 +18,15 @@
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/writeups/ais3-pre-exam/featured.png" />
     </item>
     
+    <item>
+      <title>CSAW&#39;24 CTF Writeup</title>
+      <link>http://localhost:1313/writeups/csaw-2024/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/writeups/csaw-2024/</guid>
+      <description>intro #ranking #總排名193/1184|TOP 16%</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/writeups/csaw-2024/featured.png" />
+    </item>
+    
   </channel>
 </rss>

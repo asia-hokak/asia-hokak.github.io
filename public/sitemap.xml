@@ -23,6 +23,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:1313/writeups/csaw-2024/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/notes/web/file-upload-vulnerbility/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
