@@ -100,7 +100,7 @@ open('flag.png', 'wb').write(base64.b64decode(flag))
 flag.png:  
 ![image](https://hackmd.io/_uploads/HyNbGs2h0.png)
 
-## The Triple Illusion
+### The Triple Illusion
 
 ![image](https://hackmd.io/_uploads/By6dzohnC.png)
 plaintext:
@@ -110,6 +110,7 @@ key:
 ![image](https://hackmd.io/_uploads/HJngBj3n0.png)
 
 solve:
+
 ```python
 plaintext = "csawctf{heres_anew_key_decrypt_the_secretto_reveal_flag}"
 key = [0,0,0,0,0,0,0,0,15,23,23,4,7,0,22,1,23,28,0,18,10,12,0,7,23,2,17,18,21,16,0,0,0,0,0,28,7,16,17,16,6,17,11,0,1,0,21,23,4,24,0,0,0,0,0,0]
@@ -117,18 +118,20 @@ key = [0,0,0,0,0,0,0,0,15,23,23,4,7,0,22,1,23,28,0,18,10,12,0,7,23,2,17,18,21,16
 for (ch, ch2) in zip(plaintext, key):
     print(chr((ord(ch)^ch2)),end="")
 ```
+
 解是用xor，可以從`plaintext`的字元分布和`key`得知這兩者的關係  
 另外這題其實有三張圖片，有一張藏了vigenere cipher  
 但沒有用到解出來的資訊
 
 ## Web
 
+### Playing on the Backcourts
+
 ![image](https://hackmd.io/_uploads/BkEgyn2hR.png)  
 題目的app.py有eval()，利用他開啟`leaderboard.txt`(題目要求
 )  
 payload:`open(leaderboard_path, 'r').read()`  
 ==注:賽後題目連結掛了，沒實際截圖==
-
 
 ## Crypto
 
@@ -192,6 +195,7 @@ n1和n2有公因數，直接分解
 但utf8可以用  
 
 解題過程:  
+
 1. 程式中輸入所有可視字元，因為我們知道flag只可能用ascii可視字元組成
 2. 用python read output作為對照表
 
@@ -212,6 +216,7 @@ print(flag)
 ![image](https://hackmd.io/_uploads/rke3Q33n0.png)
 一個壞掉的bash，沒有`ls`和`cat`，所以要自己手刻一個:  
 `ls`:
+
 ```bash
 for f in *; do
         echo "File -> $f";
@@ -219,6 +224,7 @@ for f in *; do
 ```
 
 `ls -a`:
+
 ```bash
 for f in *; do
         echo "File -> $f";
@@ -228,6 +234,7 @@ for f in *; do
 [reference](https://blog.longwin.com.tw/2020/10/bash-shell-script-path-directory-file-name-2020/)
 
 `cat filename`:
+
 ```bash
 echo $(<filename)
 ```
@@ -235,9 +242,11 @@ echo $(<filename)
 然後在`~/`  
 執行剛剛手刻的`ls -a`，可以看到`.flag`  
 再執行
+
 ```bash
 echo $(<.flag)
 ```
+
 就可以得到flag了，||這什麼怪題||
 
 ### Mini Golfing
@@ -248,6 +257,7 @@ echo $(<.flag)
 可以利用`printf`找到`main`的位置，然後算offset  
 
 solve:
+
 ```python
 from pwn import * 
 
