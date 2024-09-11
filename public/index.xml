@@ -35,7 +35,7 @@
       
       <guid>http://localhost:1313/notes/crypto/classical-cipher/</guid>
       <description>Intro #因為不想一直通靈所以打算做一篇古典密碼的筆記</description>
-      
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/notes/crypto/classical-cipher/featured.png" />
     </item>
     
     <item>

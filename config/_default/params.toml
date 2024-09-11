@@ -14,6 +14,7 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
 highlightCurrentMenuArea = true
 smartTOC = true
 smartTOCHideUnfocusedChildren = false
+math = true
 
 
 
