@@ -18,6 +18,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:1313/notes/crypto/classical-cipher/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/notes/crypto/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
