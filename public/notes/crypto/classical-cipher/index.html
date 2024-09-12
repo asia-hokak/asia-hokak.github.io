@@ -104,7 +104,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "469"
+    "wordCount": "901"
   }]
   </script>
 
@@ -656,6 +656,9 @@
 
 
 
+
+
+
 <div id="hero" class="h-[150px] md:h-[200px]"></div>
 
 
@@ -663,7 +666,8 @@
 
     
     <div id = 'background-container' class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url();">
+    style="background-image:url(' /img/background/3.svg ');">
+    
     
 
 
@@ -682,29 +686,7 @@
         background_blur.style.opacity = (scroll / 300)
     });
 </script>
-<script>
-    var svgPaths = [
-        
-            "img\/background\/1.svg",
-        
-            "img\/background\/2.svg",
-        
-            "img\/background\/3.svg",
-        
-            "img\/background\/4.svg",
-        
-    ];
 
-    function changeBackground() {
-        var randomIndex = Math.floor(Math.random() * svgPaths.length);
-        var randomImagePath = svgPaths[randomIndex];
-        document.getElementById('background-container').style.backgroundImage = "url(/" + randomImagePath + ")";
-    }
-
-    window.onload = function() {
-        changeBackground();
-    };
-</script>
   
   
 
@@ -754,7 +736,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <span title="Reading time">3 mins</span><span class="px-2 text-primary-500">&middot;</span>
+  <span title="Reading time">5 mins</span><span class="px-2 text-primary-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.63c8a202661f4a2063fdc2706685d668e8ea3da613da2224e9da527e5876e4f53dcac39ab60732626fb4151feae5d430d0cf44731e5d3c726522fcc1519c1547.js" integrity="sha512-Y8iiAmYfSiBj/cJwZoXWaOjqPaYT2iIk6dpSflh25PU9ysOatgcyYm&#43;0FR/q5dQw0M9Ecx5dPHJlIvzBUZwVRw=="></script>
@@ -995,13 +977,54 @@
     <li><a href="#intro">Intro</a></li>
     <li><a href="#substitution-cipher替換式密碼">Substitution Cipher(替換式密碼)</a>
       <ul>
-        <li><a href="#casear-cipher凱薩密碼">Casear Cipher(凱薩密碼)</a></li>
-        <li><a href="#vigenère-cipher維吉尼亞密碼">Vigenère Cipher(維吉尼亞密碼)</a></li>
-        <li><a href="#simple-substitution-cipher簡易替換密碼">Simple Substitution Cipher(簡易替換密碼)</a></li>
-        <li><a href="#affine-cipher仿射加密">Affine Cipher(仿射加密)</a></li>
+        <li><a href="#casear-cipher凱薩密碼">Casear Cipher(凱薩密碼)</a>
+          <ul>
+            <li><a href="#加密">加密</a></li>
+            <li><a href="#解密">解密</a></li>
+            <li><a href="#實作">實作</a></li>
+          </ul>
+        </li>
+        <li><a href="#vigenère-cipher維吉尼亞密碼">Vigenère Cipher(維吉尼亞密碼)</a>
+          <ul>
+            <li><a href="#加密-1">加密</a></li>
+            <li><a href="#解密-1">解密</a></li>
+            <li><a href="#實作-1">實作</a></li>
+          </ul>
+        </li>
+        <li><a href="#simple-substitution-cipher簡易替換密碼">Simple Substitution Cipher(簡易替換密碼)</a>
+          <ul>
+            <li><a href="#加密-2">加密</a></li>
+            <li><a href="#解密-2">解密</a></li>
+            <li><a href="#實作-2">實作</a></li>
+          </ul>
+        </li>
+        <li><a href="#affine-cipher仿射密碼">Affine Cipher(仿射密碼)</a>
+          <ul>
+            <li><a href="#加密-3">加密</a></li>
+            <li><a href="#解密-3">解密</a></li>
+            <li><a href="#實作-3">實作</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#transposition-cipher替換式加密">Transposition Cipher(替換式加密)</a></li>
+    <li><a href="#transposition-cipher替換式加密">Transposition Cipher(替換式加密)</a>
+      <ul>
+        <li><a href="#scytale-cipher密碼棒">Scytale Cipher(密碼棒)</a>
+          <ul>
+            <li><a href="#加密-4">加密</a></li>
+            <li><a href="#解密-4">解密</a></li>
+            <li><a href="#實作-4">實作</a></li>
+          </ul>
+        </li>
+        <li><a href="#railfence-cipher">Railfence Cipher</a>
+          <ul>
+            <li><a href="#加密-5">加密</a></li>
+            <li><a href="#解密-5">解密</a></li>
+            <li><a href="#實作-5">實作</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1018,13 +1041,54 @@
     <li><a href="#intro">Intro</a></li>
     <li><a href="#substitution-cipher替換式密碼">Substitution Cipher(替換式密碼)</a>
       <ul>
-        <li><a href="#casear-cipher凱薩密碼">Casear Cipher(凱薩密碼)</a></li>
-        <li><a href="#vigenère-cipher維吉尼亞密碼">Vigenère Cipher(維吉尼亞密碼)</a></li>
-        <li><a href="#simple-substitution-cipher簡易替換密碼">Simple Substitution Cipher(簡易替換密碼)</a></li>
-        <li><a href="#affine-cipher仿射加密">Affine Cipher(仿射加密)</a></li>
+        <li><a href="#casear-cipher凱薩密碼">Casear Cipher(凱薩密碼)</a>
+          <ul>
+            <li><a href="#加密">加密</a></li>
+            <li><a href="#解密">解密</a></li>
+            <li><a href="#實作">實作</a></li>
+          </ul>
+        </li>
+        <li><a href="#vigenère-cipher維吉尼亞密碼">Vigenère Cipher(維吉尼亞密碼)</a>
+          <ul>
+            <li><a href="#加密-1">加密</a></li>
+            <li><a href="#解密-1">解密</a></li>
+            <li><a href="#實作-1">實作</a></li>
+          </ul>
+        </li>
+        <li><a href="#simple-substitution-cipher簡易替換密碼">Simple Substitution Cipher(簡易替換密碼)</a>
+          <ul>
+            <li><a href="#加密-2">加密</a></li>
+            <li><a href="#解密-2">解密</a></li>
+            <li><a href="#實作-2">實作</a></li>
+          </ul>
+        </li>
+        <li><a href="#affine-cipher仿射密碼">Affine Cipher(仿射密碼)</a>
+          <ul>
+            <li><a href="#加密-3">加密</a></li>
+            <li><a href="#解密-3">解密</a></li>
+            <li><a href="#實作-3">實作</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#transposition-cipher替換式加密">Transposition Cipher(替換式加密)</a></li>
+    <li><a href="#transposition-cipher替換式加密">Transposition Cipher(替換式加密)</a>
+      <ul>
+        <li><a href="#scytale-cipher密碼棒">Scytale Cipher(密碼棒)</a>
+          <ul>
+            <li><a href="#加密-4">加密</a></li>
+            <li><a href="#解密-4">解密</a></li>
+            <li><a href="#實作-4">實作</a></li>
+          </ul>
+        </li>
+        <li><a href="#railfence-cipher">Railfence Cipher</a>
+          <ul>
+            <li><a href="#加密-5">加密</a></li>
+            <li><a href="#解密-5">解密</a></li>
+            <li><a href="#實作-5">實作</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1154,11 +1218,69 @@
     <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/SyUMlq63C.png" alt="image" />
     
   </figure>
-<br>
-會把每個字母同時位移<br>
+</p>
+
+
+<h4 class="relative group">加密 
+    <div id="%E5%8A%A0%E5%AF%86" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%8A%A0%E5%AF%86" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>會把每個字母同時位移<br>
 比如說若<code>KEY = 1</code><br>
 <code>ABCDE</code> -&gt; <code>BCDEF</code></p>
-<p>script:</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>明文</td>
+<td>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG</td>
+</tr>
+<tr>
+<td>密鑰</td>
+<td>13</td>
+</tr>
+<tr>
+<td>密文</td>
+<td>GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4 class="relative group">解密 
+    <div id="%E8%A7%A3%E5%AF%86" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E5%AF%86" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>反過來做就好了</p>
+
+
+<h4 class="relative group">實作 
+    <div id="%E5%AF%A6%E4%BD%9C" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%AF%A6%E4%BD%9C" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">alphabet</span> <span class="o">=</span> <span class="s1">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">plaintext</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">str</span><span class="p">:</span>
@@ -1202,68 +1324,92 @@
     
   </figure>
 
-明文和金鑰都是字串，金鑰是循環的<br>
-把金鑰的單個字元當作<code>offset</code>，<code>A</code>=0,<code>B</code>=1,<code>C</code>=2,etc.</p>
-<p>plaintext = <code>HELLO</code><br>
-key = <code>ABCD</code><br>
-cipher = <code>HFNOO</code></p>
+明文和都是字串，密鑰是循環的</p>
+
+
+<h4 class="relative group">加密 
+    <div id="%E5%8A%A0%E5%AF%86-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%8A%A0%E5%AF%86-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>把密鑰的單個字元當作<code>offset</code>，<code>A</code>=0,<code>B</code>=1,<code>C</code>=2,etc.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">plaintext</th>
-<th style="text-align:center">key</th>
-<th style="text-align:center">cipher</th>
+<th>項目</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">H</td>
-<td style="text-align:center">A</td>
-<td style="text-align:center">H</td>
+<td>明文</td>
+<td>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG</td>
 </tr>
 <tr>
-<td style="text-align:center">E</td>
-<td style="text-align:center">B</td>
-<td style="text-align:center">F</td>
+<td>密鑰</td>
+<td>ABCD</td>
 </tr>
 <tr>
-<td style="text-align:center">L</td>
-<td style="text-align:center">C</td>
-<td style="text-align:center">N</td>
-</tr>
-<tr>
-<td style="text-align:center">L</td>
-<td style="text-align:center">D</td>
-<td style="text-align:center">O</td>
-</tr>
-<tr>
-<td style="text-align:center">O</td>
-<td style="text-align:center">A</td>
-<td style="text-align:center">O</td>
+<td>密文</td>
+<td>TIG TUJEN BSQZN GQA JVOSS PXHR UJH LBBB DPI</td>
 </tr>
 </tbody>
 </table>
-<p>script:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">cycle</span>
-</span></span><span class="line"><span class="cl"><span class="n">alphabet</span> <span class="o">=</span> <span class="s1">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
+
+
+<h4 class="relative group">解密 
+    <div id="%E8%A7%A3%E5%AF%86-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E5%AF%86-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>反過來做就好了</p>
+
+
+<h4 class="relative group">實作 
+    <div id="%E5%AF%A6%E4%BD%9C-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%AF%A6%E4%BD%9C-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">alphabet</span> <span class="o">=</span> <span class="s1">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">plaintext</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">str</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">cipher</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">ch</span><span class="p">,</span> <span class="n">ch2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">plaintext</span><span class="p">,</span> <span class="n">cycle</span><span class="p">(</span><span class="n">key</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">key_pos</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">plaintext</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ch2</span> <span class="o">=</span> <span class="n">key</span><span class="p">[</span><span class="n">key_pos</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">ch</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">in</span> <span class="n">alphabet</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">            <span class="n">pos</span> <span class="o">=</span> <span class="n">alphabet</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">ch</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl">            <span class="n">offset</span> <span class="o">=</span> <span class="n">alphabet</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">ch2</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl">            <span class="n">ch</span> <span class="o">=</span> <span class="n">alphabet</span><span class="p">[(</span><span class="n">pos</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="n">key_pos</span> <span class="o">+=</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">        <span class="n">cipher</span> <span class="o">+=</span> <span class="n">ch</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">cipher</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">cipher</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">str</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">plaintext</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">ch</span><span class="p">,</span> <span class="n">ch2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cipher</span><span class="p">,</span> <span class="n">cycle</span><span class="p">(</span><span class="n">key</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">key_pos</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">cipher</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ch2</span> <span class="o">=</span> <span class="n">key</span><span class="p">[</span><span class="n">key_pos</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">ch</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">in</span> <span class="n">alphabet</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">            <span class="n">pos</span> <span class="o">=</span> <span class="n">alphabet</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">ch</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl">            <span class="n">offset</span> <span class="o">=</span> <span class="n">alphabet</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">ch2</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl">            <span class="n">ch</span> <span class="o">=</span> <span class="n">alphabet</span><span class="p">[(</span><span class="n">pos</span> <span class="o">-</span> <span class="n">offset</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="n">key_pos</span> <span class="o">+=</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">        <span class="n">plaintext</span> <span class="o">+=</span> <span class="n">ch</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">plaintext</span>
 </span></span><span class="line"><span class="cl">
@@ -1293,6 +1439,66 @@ cipher = <code>HFNOO</code></p>
 又稱Monoalphabetic Cipher(單表加密)<br>
 用一張改變順序後的字母表，並以該字母表書寫<br>
 即可稱為簡易替換密碼，像是凱薩加密、仿射加密都算</p>
+
+
+<h4 class="relative group">加密 
+    <div id="%E5%8A%A0%E5%AF%86-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%8A%A0%E5%AF%86-2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>把明文的每個字母替換成對照表對應的字母</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>明文</td>
+<td>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG</td>
+</tr>
+<tr>
+<td>密鑰</td>
+<td>GHAWQYKIJBXSTUVFOPCDRNMEZL</td>
+</tr>
+<tr>
+<td>密文</td>
+<td>DIQ ORJAX HPVMU YVE BRTFC VNQP DIQ SGLZ WVK</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4 class="relative group">解密 
+    <div id="%E8%A7%A3%E5%AF%86-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E5%AF%86-2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>反過來做就好了</p>
+
+
+<h4 class="relative group">實作 
+    <div id="%E5%AF%A6%E4%BD%9C-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%AF%A6%E4%BD%9C-2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">alphabet</span> <span class="o">=</span> <span class="s1">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
@@ -1322,13 +1528,13 @@ cipher = <code>HFNOO</code></p>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
 </span></span></code></pre></div>
 
-<h3 class="relative group">Affine Cipher(仿射加密) 
-    <div id="affine-cipher%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86" class="anchor"></div>
+<h3 class="relative group">Affine Cipher(仿射密碼) 
+    <div id="affine-cipher%E4%BB%BF%E5%B0%84%E5%AF%86%E7%A2%BC" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#affine-cipher%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#affine-cipher%E4%BB%BF%E5%B0%84%E5%AF%86%E7%A2%BC" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -1338,19 +1544,79 @@ cipher = <code>HFNOO</code></p>
     
   </figure>
 </p>
-<p>加密:</p>
+
+
+<h4 class="relative group">加密 
+    <div id="%E5%8A%A0%E5%AF%86-3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%8A%A0%E5%AF%86-3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
 <p>$$ a,m互質 $$
 $$ E(x)=ax+b{\pmod {m}} $$</p>
-<p>解密:</p>
-<p>$$ D(x)=a^{-1}(x-b){\pmod {m}}$$
-$$ a^{-1} 為a對m之模倒數，\text{python中可以使用pow(a,-1,m)計算} $$</p>
-<p>證明$E(x)$為單射函數:</p>
-<p>$$ E(x_1) = E(x_2) $$
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>明文</td>
+<td>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG</td>
+</tr>
+<tr>
+<td>密鑰</td>
+<td><code>a</code>=15, <code>b</code>=3</td>
+</tr>
+<tr>
+<td>密文</td>
+<td>CEL JRTHX SYFVQ AFK IRBUN FGLY CEL MDOZ WFP</td>
+</tr>
+</tbody>
+</table>
+<p>證明加密的可行性: $E(x)$為單射函數
+$$ E(x_1) = E(x_2) $$
 $$ ax_1+b \equiv ax_2+b{\pmod {m}} $$
 $$ ax_1 \equiv ax_2{\pmod {m}} $$
 $$ x_1 \equiv x_2{\pmod {m}} $$
 $$ x_1 = x_2(不超過字母表範圍) $$</p>
-<p>script:</p>
+
+
+<h4 class="relative group">解密 
+    <div id="%E8%A7%A3%E5%AF%86-3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E5%AF%86-3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>$$ D(x)=a^{-1}(x-b){\pmod {m}}$$
+$$ a^{-1} 為a對m之模倒數，\text{python中可以使用pow(a,-1,m)計算} $$</p>
+<p>解密原理:
+$$ D(x)=a^{-1}(E(x)-b){\pmod {m}}$$
+$$ D(x)=a^{-1}(ax+b-b){\pmod {m}}$$
+$$ D(x)=a^{-1}a^{1}x{\pmod {m}}$$
+$$ D(x)=x{\pmod {m}}$$</p>
+
+
+<h4 class="relative group">實作 
+    <div id="%E5%AF%A6%E4%BD%9C-3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%AF%A6%E4%BD%9C-3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">alphabet</span> <span class="o">=</span> <span class="s1">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">plaintext</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">str</span><span class="p">:</span>
@@ -1391,6 +1657,235 @@ $$ x_1 = x_2(不超過字母表範圍) $$</p>
 </h2>
 <p>字母不變，依某個順序替換每個字母的位置</p>
 
+
+<h3 class="relative group">Scytale Cipher(密碼棒) 
+    <div id="scytale-cipher%E5%AF%86%E7%A2%BC%E6%A3%92" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#scytale-cipher%E5%AF%86%E7%A2%BC%E6%A3%92" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/HJadE8gaC.png" alt="image" />
+    
+  </figure>
+</p>
+
+
+<h4 class="relative group">加密 
+    <div id="%E5%8A%A0%E5%AF%86-4" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%8A%A0%E5%AF%86-4" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>把字條綁在指定寬度的木棒上，並橫著書寫文字</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>明文</td>
+<td>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG</td>
+</tr>
+<tr>
+<td>密鑰</td>
+<td>5</td>
+</tr>
+<tr>
+<td>密文</td>
+<td>TUB J  LDHIRFUOTAOECOOMVHZG KWXPEEY Q N SR</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4 class="relative group">解密 
+    <div id="%E8%A7%A3%E5%AF%86-4" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E5%AF%86-4" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>把紙條綁在指定寬度的木棒上，橫著閱讀文字</p>
+
+
+<h4 class="relative group">實作 
+    <div id="%E5%AF%A6%E4%BD%9C-4" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%AF%A6%E4%BD%9C-4" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<pre tabindex="0"><code class="language-python=" data-lang="python=">def encrypt(plaintext, key):
+    plaintext += &#39; &#39; * (-len(plaintext) % key)
+    cipher = [&#39;&#39;] * key
+    for i, ch in enumerate(plaintext):
+        cipher[i % key] += ch
+    return &#39;&#39;.join(cipher)
+
+def decrypt(cipher, key):
+    cipher += &#39; &#39; * (-len(cipher) % key)
+    row = len(cipher) // key
+    plaintext = [&#39;&#39;] * row
+    for i, ch in enumerate(cipher):
+        plaintext[i % row] += ch
+    return &#39;&#39;.join(plaintext)
+
+if __name__ == &#39;__main__&#39;:
+    cipher = encrypt(&#39;THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG&#39;, 5)
+    plaintext = decrypt(cipher, 5)
+    print(cipher.encode())
+    print(plaintext)
+</code></pre>
+
+<h3 class="relative group">Railfence Cipher 
+    <div id="railfence-cipher" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#railfence-cipher" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+
+<h4 class="relative group">加密 
+    <div id="%E5%8A%A0%E5%AF%86-5" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%8A%A0%E5%AF%86-5" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/SkTg_UeT0.png" alt="image" />
+    
+  </figure>
+</p>
+<p>如上圖，把文字依這種格式排列<br>
+並橫著書寫文字</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>明文</td>
+<td>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG</td>
+</tr>
+<tr>
+<td>密鑰</td>
+<td>5</td>
+</tr>
+<tr>
+<td>密文</td>
+<td>TKFSHDHC  OP TE OEIBNXMO  YG URW UVRLZQOJEA</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4 class="relative group">解密 
+    <div id="%E8%A7%A3%E5%AF%86-5" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E5%AF%86-5" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>推算回書寫的格式，並依照上圖順序閱讀</p>
+
+
+<h4 class="relative group">實作 
+    <div id="%E5%AF%A6%E4%BD%9C-5" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%AF%A6%E4%BD%9C-5" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<pre tabindex="0"><code class="language-python=" data-lang="python=">def encrypt(plaintext:str, key:int)-&gt;str:
+    rails = [&#39;&#39;] * key
+    rail = 0
+    dir = 1
+
+    for char in plaintext:
+        rails[rail] += char
+        if rail == 0:
+            dir = 1
+        elif rail == key - 1:
+            dir = -1
+        rail += dir
+
+    return &#39;&#39;.join(rails)
+
+def decrypt(ciphertext:str, key:int):
+    rails = [[] for _ in range(key)]
+    rail_len = [0] * key
+    rail = 0
+    dir = 1
+
+    for i in range(len(ciphertext)):
+        rail_len[rail] += 1
+        if rail == 0:
+            dir = 1
+        elif rail == key - 1:
+            dir = -1
+        rail += dir
+
+    idx = 0
+    for i in range(key):
+        rails[i] = list(ciphertext[idx:idx + rail_len[i]])
+        idx += rail_len[i]
+
+    decrypted_text = []
+    rail = 0
+    dir = 1
+    for i in range(len(ciphertext)):
+        decrypted_text.append(rails[rail].pop(0))
+        if rail == 0:
+            dir = 1
+        elif rail == key - 1:
+            dir = -1
+        rail += dir
+
+    return &#39;&#39;.join(decrypted_text)
+
+if __name__ == &#39;__main__&#39;:
+    cipher = encrypt(&#39;THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG&#39;, 5)
+    plaintext = decrypt(cipher, 5)
+    print(cipher)
+    print(plaintext)
+</code></pre>
           
           
           

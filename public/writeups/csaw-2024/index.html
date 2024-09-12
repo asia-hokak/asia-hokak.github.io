@@ -169,6 +169,16 @@
   <link rel="stylesheet" href="/css/main.css">
 
 </head>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+
 <body
   class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
   <div id="the-top" class="absolute flex self-center">
@@ -646,6 +656,9 @@
 
 
 
+
+
+
 <div id="hero" class="h-[150px] md:h-[200px]"></div>
 
 
@@ -653,7 +666,8 @@
 
     
     <div id = 'background-container' class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url();">
+    style="background-image:url(' /img/background/4.svg ');">
+    
     
 
 
@@ -672,29 +686,7 @@
         background_blur.style.opacity = (scroll / 300)
     });
 </script>
-<script>
-    var svgPaths = [
-        
-            "img\/background\/1.svg",
-        
-            "img\/background\/2.svg",
-        
-            "img\/background\/3.svg",
-        
-            "img\/background\/4.svg",
-        
-    ];
 
-    function changeBackground() {
-        var randomIndex = Math.floor(Math.random() * svgPaths.length);
-        var randomImagePath = svgPaths[randomIndex];
-        document.getElementById('background-container').style.backgroundImage = "url(/" + randomImagePath + ")";
-    }
-
-    window.onload = function() {
-        changeBackground();
-    };
-</script>
   
   
 
@@ -1993,7 +1985,7 @@ aaaaaaaaaaaaaaaaa3的sum=1603 -&gt; fd是0<br>
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <span title="Reading time">3 mins</span>
+  <span title="Reading time">5 mins</span>
   
 
   
@@ -2225,5 +2217,6 @@ aaaaaaaaaaaaaaaaa3的sum=1603 -&gt; fd是0<br>
 
   </div>
 </body>
+
 
 </html>
