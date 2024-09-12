@@ -18,49 +18,49 @@
     weight = 4
 
 [[main]]
-    name = "web"
+    name = "Web"
     parent = "Notes"
     pageRef = "web"
     weight = 4
 
 [[main]]
-    name = "crypto"
+    name = "Crypto"
     parent = "Notes"
     pageRef = "crypto"
     weight = 5
 
 [[main]]
-    name = "reverse"
+    name = "Reverse"
     parent = "Notes"
     pageRef = "reverse"
     weight = 6
 
 [[main]]
-    name = "pwn"
+    name = "Pwn"
     parent = "Notes"
     pageRef = "pwn"
     weight = 7
 
 [[main]]
-    name = "misc"
+    name = "Misc"
     parent = "Notes"
     pageRef = "misc"
     weight = 8
 
 [[main]]
-    name = "algo"
+    name = "Algo"
     parent = "Notes"
     pageRef = "algo"
     weight = 9
 
 [[main]]
-    name = "tools"
+    name = "Tools"
     parent = "Notes"
     pageRef = "tools"
     weight = 10
 
 [[main]]
-    name = "others"
+    name = "Others"
     parent = "Notes"
     pageRef = "others"
     weight = 11

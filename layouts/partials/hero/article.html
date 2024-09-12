@@ -10,15 +10,9 @@
 {{ $featured = resources.GetRemote $url }}
 {{ end }}
 
-{{ $backgroundDir := "img/background/" }}
-{{ $svgPaths := slice }}
-{{ range seq 1 4 }}
-    {{ $fileName := printf "img/background/%d.svg" . }}
-    {{ $svgPaths = $svgPaths | append $fileName }}
-{{ end }}
 
-{{ $randomSvgPath := index (shuffle $svgPaths) 0 }}
-{{ $featured := resources.Get $randomSvgPath }}
+
+{{ $featured := resources.Get "img/background.png" }}
 
 {{ $isParentList := eq (.Scratch.Get "scope") "list"  }}
 {{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or 
