@@ -2,18 +2,22 @@
 title: Classical Cipher
 ---
 
-## Intro
+Intro
+---
 
 >因為不想一直通靈所以打算做一篇古典密碼的筆記  
 
 古典密碼通常會使用替換式或移項式的加密方式  
 容易被頻率分析或暴力搜索破解  
 
-## Substitution Cipher(替換式密碼)
+Substitution Cipher(替換式密碼)
+---
 
 字母位置不變，但透過以一個字母到兩個字母為一組，進行加密  
 
 ### Casear Cipher(凱薩密碼)
+
+---
 
 ![image](https://hackmd.io/_uploads/SyUMlq63C.png)  
 
@@ -67,7 +71,9 @@ if __name__ == '__main__':
 
 ### Vigenère Cipher(維吉尼亞密碼)
 
-![image](https://hackmd.io/_uploads/ByBlqia20.png)
+---
+
+![image](https://hackmd.io/_uploads/ByBlqia20.png)  
 明文和都是字串，密鑰是循環的  
 
 #### 加密
@@ -138,7 +144,9 @@ if __name__ == '__main__':
 
 ### Simple Substitution Cipher(簡易替換密碼)
 
-![image](https://hackmd.io/_uploads/HyQ9pgC2R.png)
+---
+
+![image](https://hackmd.io/_uploads/HyQ9pgC2R.png)  
 又稱Monoalphabetic Cipher(單表加密)  
 用一張改變順序後的字母表，並以該字母表書寫  
 即可稱為簡易替換密碼，像是凱薩加密、仿射加密都算  
@@ -189,6 +197,8 @@ if __name__ == '__main__':
 ```
 
 ### Affine Cipher(仿射密碼)
+
+---
 
 ![image](https://hackmd.io/_uploads/HJ-aLkAhR.png)  
 
@@ -257,29 +267,30 @@ if __name__ == '__main__':
 
 ### Playfair Cipher
 
+---
 
 #### 加密
 
-**密鑰產生**  
+*密鑰產生*  
 1. 選取一個英文字作密鑰
 2. 除去重覆出現的字母
 3. 將密鑰的字母逐個逐個加入5×5的矩陣內，剩下的空間將未加入的英文字母依a-z的順序加入（將Q去除，或將I和J視作同一字）  
 
-假設密鑰為`PLAYFAIR EXAMPLE`
-![image](https://hackmd.io/_uploads/BJt5btl60.png)
+假設密鑰為`PLAYFAIR EXAMPLE`  
+![image](https://hackmd.io/_uploads/BJt5btl60.png)  
 
-**預處理** 
+*預處理*  
 將每兩個字母分成一組，若是同組字母一樣，在兩字母之間插入`X`或`Q`，重新分組，若剩下一個字，在尾端補上`X`
 
 `Hide the gold in the tree stump` ->`HI DE TH EG OL DI NT HE TR EX ES TU MP`  
 
-**加密**  
+*加密*  
 找出組中兩個字母的位置  
-1. 字母不同行不同列，取對角的字元
+1. 字母不同行不同列，取對角的字元  
 ![image](https://hackmd.io/_uploads/SklZHtgTR.png)
-2. 字母同行，取兩字母右方之字元
+2. 字母同行，取兩字母右方之字元  
 ![image](https://hackmd.io/_uploads/B1jrBteaR.png)
-3. 字母同列，取兩字母下方之字元
+3. 字母同列，取兩字母下方之字元  
 ![image](https://hackmd.io/_uploads/B15FrYeaC.png)
 
 |項目|值|
@@ -390,13 +401,16 @@ if __name__ == '__main__':
 
 ```
 
-## Transposition Cipher(替換式加密)
+Transposition Cipher(替換式加密)
+---
 
 字母不變，依某個順序替換每個字母的位置
 
 ### Scytale Cipher(密碼棒)
 
-![image](https://hackmd.io/_uploads/HJadE8gaC.png)
+---
+
+![image](https://hackmd.io/_uploads/HJadE8gaC.png)  
 
 #### 加密
 
@@ -440,9 +454,11 @@ if __name__ == '__main__':
 
 ### Railfence Cipher
 
+---
+
 #### 加密
 
-![image](https://hackmd.io/_uploads/SkTg_UeT0.png)
+![image](https://hackmd.io/_uploads/SkTg_UeT0.png)  
 
 如上圖，把文字依這種格式排列  
 並橫著書寫文字
@@ -516,7 +532,9 @@ if __name__ == '__main__':
 
 ### Route Cipher
 
-![image](https://hackmd.io/_uploads/HymU_tlp0.png)
+---
+
+![image](https://hackmd.io/_uploads/HymU_tlp0.png)  
 
 
 #### 加密

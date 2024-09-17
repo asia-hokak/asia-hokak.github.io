@@ -177,9 +177,7 @@
       inlineMath: [['\\(', '\\)'], ['$', '$']]   
     }
   };
-</script>
-
-<body
+</script><body
   class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
   <div id="the-top" class="absolute flex self-center">
     <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
@@ -1222,6 +1220,7 @@
     </span>        
     
 </h3>
+<hr>
 <p>
   <figure>
     <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/SyUMlq63C.png" alt="image" />
@@ -1327,12 +1326,13 @@
     </span>        
     
 </h3>
+<hr>
 <p>
   <figure>
     <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/ByBlqia20.png" alt="image" />
     
   </figure>
-
+<br>
 明文和都是字串，密鑰是循環的</p>
 
 
@@ -1452,12 +1452,13 @@ ${\kappa _{r}}$:字母表中這種情況出現的概率（英文中為1/26=0.038
     </span>        
     
 </h3>
+<hr>
 <p>
   <figure>
     <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/HyQ9pgC2R.png" alt="image" />
     
   </figure>
-
+<br>
 又稱Monoalphabetic Cipher(單表加密)<br>
 用一張改變順序後的字母表，並以該字母表書寫<br>
 即可稱為簡易替換密碼，像是凱薩加密、仿射加密都算</p>
@@ -1559,6 +1560,7 @@ ${\kappa _{r}}$:字母表中這種情況出現的概率（英文中為1/26=0.038
     </span>        
     
 </h3>
+<hr>
 <p>
   <figure>
     <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/HJ-aLkAhR.png" alt="image" />
@@ -1677,6 +1679,7 @@ $$ D(x)=x{\pmod {m}}$$</p>
     </span>        
     
 </h3>
+<hr>
 
 
 <h4 class="relative group">加密 
@@ -1689,40 +1692,40 @@ $$ D(x)=x{\pmod {m}}$$</p>
     </span>        
     
 </h4>
-<p><strong>密鑰產生</strong></p>
+<p><em>密鑰產生</em></p>
 <ol>
 <li>選取一個英文字作密鑰</li>
 <li>除去重覆出現的字母</li>
 <li>將密鑰的字母逐個逐個加入5×5的矩陣內，剩下的空間將未加入的英文字母依a-z的順序加入（將Q去除，或將I和J視作同一字）</li>
 </ol>
-<p>假設密鑰為<code>PLAYFAIR EXAMPLE</code>
+<p>假設密鑰為<code>PLAYFAIR EXAMPLE</code><br>
 
   <figure>
     <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/BJt5btl60.png" alt="image" />
     
   </figure>
 </p>
-<p><strong>預處理</strong>
+<p><em>預處理</em><br>
 將每兩個字母分成一組，若是同組字母一樣，在兩字母之間插入<code>X</code>或<code>Q</code>，重新分組，若剩下一個字，在尾端補上<code>X</code></p>
 <p><code>Hide the gold in the tree stump</code> -&gt;<code>HI DE TH EG OL DI NT HE TR EX ES TU MP</code></p>
-<p><strong>加密</strong><br>
+<p><em>加密</em><br>
 找出組中兩個字母的位置</p>
 <ol>
-<li>字母不同行不同列，取對角的字元
+<li>字母不同行不同列，取對角的字元<br>
 
   <figure>
     <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/SklZHtgTR.png" alt="image" />
     
   </figure>
 </li>
-<li>字母同行，取兩字母右方之字元
+<li>字母同行，取兩字母右方之字元<br>
 
   <figure>
     <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/B1jrBteaR.png" alt="image" />
     
   </figure>
 </li>
-<li>字母同列，取兩字母下方之字元
+<li>字母同列，取兩字母下方之字元<br>
 
   <figure>
     <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/B15FrYeaC.png" alt="image" />
@@ -1893,6 +1896,7 @@ $$ D(x)=x{\pmod {m}}$$</p>
     </span>        
     
 </h3>
+<hr>
 <p>
   <figure>
     <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/HJadE8gaC.png" alt="image" />
@@ -1991,6 +1995,7 @@ $$ D(x)=x{\pmod {m}}$$</p>
     </span>        
     
 </h3>
+<hr>
 
 
 <h4 class="relative group">加密 
@@ -2122,6 +2127,7 @@ $$ D(x)=x{\pmod {m}}$$</p>
     </span>        
     
 </h3>
+<hr>
 <p>
   <figure>
     <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/HymU_tlp0.png" alt="image" />
