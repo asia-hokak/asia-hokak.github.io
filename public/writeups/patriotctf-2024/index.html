@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>CSAW&#39;24 CTF Writeup &middot; hokak&#39;s Notes</title>
-  <meta name="title" content="CSAW&#39;24 CTF Writeup &middot; hokak&#39;s Notes" />
+  <title>PatriotCTF 2024 &middot; hokak&#39;s Notes</title>
+  <meta name="title" content="PatriotCTF 2024 &middot; hokak&#39;s Notes" />
   
   
   
   
   
-  <link rel="canonical" href="http://localhost:1313/writeups/csaw-2024/" />
+  <link rel="canonical" href="http://localhost:1313/writeups/patriotctf-2024/" />
   
   
   
@@ -64,20 +64,20 @@
   
   
   
-  <meta property="og:url" content="http://localhost:1313/writeups/csaw-2024/">
+  <meta property="og:url" content="http://localhost:1313/writeups/patriotctf-2024/">
   <meta property="og:site_name" content="hokak&#39;s Notes">
-  <meta property="og:title" content="CSAW&#39;24 CTF Writeup">
-  <meta property="og:description" content="intro #ranking #總排名193/1184|TOP 16%">
+  <meta property="og:title" content="PatriotCTF 2024">
+  <meta property="og:description" content="Intro #ranking #團隊總排名33/1360|TOP 2%">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="writeups">
-    <meta property="og:image" content="http://localhost:1313/writeups/csaw-2024/featured.png">
+    <meta property="og:image" content="http://localhost:1313/writeups/patriotctf-2024/featured.png">
 
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:1313/writeups/csaw-2024/featured.png">
-  <meta name="twitter:title" content="CSAW&#39;24 CTF Writeup">
-  <meta name="twitter:description" content="intro #ranking #總排名193/1184|TOP 16%">
+  <meta name="twitter:image" content="http://localhost:1313/writeups/patriotctf-2024/featured.png">
+  <meta name="twitter:title" content="PatriotCTF 2024">
+  <meta name="twitter:description" content="Intro #ranking #團隊總排名33/1360|TOP 2%">
 
   
   <script type="application/ld+json">
@@ -85,12 +85,12 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Writeups",
-    "name": "CSAW\u002724 CTF Writeup",
-    "headline": "CSAW\u002724 CTF Writeup",
+    "name": "PatriotCTF 2024",
+    "headline": "PatriotCTF 2024",
     
-    "abstract": "intro #\rranking #\r總排名193\/1184|TOP 16%",
+    "abstract": "Intro #\rranking #\r團隊總排名33\/1360|TOP 2%",
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:1313\/writeups\/csaw-2024\/",
+    "url" : "http:\/\/localhost:1313\/writeups\/patriotctf-2024\/",
     "author" : {
       "@type": "Person",
       "name": "hokak"
@@ -104,7 +104,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "418"
+    "wordCount": "568"
   }]
   </script>
 
@@ -675,7 +675,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      CSAW'24 CTF Writeup
+      PatriotCTF 2024
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -718,7 +718,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <span title="Reading time">2 mins</span><span class="px-2 text-primary-500">&middot;</span>
+  <span title="Reading time">3 mins</span><span class="px-2 text-primary-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.63c8a202661f4a2063fdc2706685d668e8ea3da613da2224e9da527e5876e4f53dcac39ab60732626fb4151feae5d430d0cf44731e5d3c726522fcc1519c1547.js" integrity="sha512-Y8iiAmYfSiBj/cJwZoXWaOjqPaYT2iIk6dpSflh25PU9ysOatgcyYm&#43;0FR/q5dQw0M9Ecx5dPHJlIvzBUZwVRw=="></script>
@@ -956,53 +956,54 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#intro">intro</a>
+    <li><a href="#intro">Intro</a>
       <ul>
         <li><a href="#ranking">ranking</a></li>
-        <li><a href="#solves">solves</a></li>
-      </ul>
-    </li>
-    <li><a href="#intro-1">INTRO</a>
-      <ul>
-        <li><a href="#flag">flag</a></li>
-        <li><a href="#osiris-trivia">OSIRIS Trivia</a></li>
-      </ul>
-    </li>
-    <li><a href="#osint">OSINT</a>
-      <ul>
-        <li><a href="#rickshaw">Rickshaw</a></li>
-        <li><a href="#authentic-chinese-food">Authentic Chinese Food</a></li>
-      </ul>
-    </li>
-    <li><a href="#forensics">Forensics</a>
-      <ul>
-        <li><a href="#zipzipzip">ZipZipZip</a></li>
-        <li><a href="#the-triple-illusion">The Triple Illusion</a></li>
-      </ul>
-    </li>
-    <li><a href="#web">Web</a>
-      <ul>
-        <li><a href="#playing-on-the-backcourts">Playing on the Backcourts</a></li>
+        <li><a href="#solvespersonal">solves(personal)</a></li>
       </ul>
     </li>
     <li><a href="#crypto">Crypto</a>
       <ul>
-        <li><a href="#trapdoor">Trapdoor</a></li>
-        <li><a href="#diffusion-pop-quiz">Diffusion Pop Quiz</a></li>
-        <li><a href="#aes-diffusion">AES Diffusion</a></li>
+        <li><a href="#hard-to-implement">Hard to implement</a>
+          <ul>
+            <li><a href="#加密">加密</a></li>
+            <li><a href="#解法">解法</a></li>
+          </ul>
+        </li>
+        <li><a href="#high-roller">High Roller</a>
+          <ul>
+            <li><a href="#加密-1">加密</a></li>
+            <li><a href="#解法-1">解法</a></li>
+          </ul>
+        </li>
+        <li><a href="#bit-by-bit">bit by bit</a>
+          <ul>
+            <li><a href="#加密-2">加密</a></li>
+            <li><a href="#解法-2">解法</a></li>
+          </ul>
+        </li>
+        <li><a href="#protected-console">protected console</a>
+          <ul>
+            <li><a href="#加密-3">加密</a></li>
+            <li><a href="#解法-3">解法</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#reverse">Reverse</a>
       <ul>
-        <li><a href="#baby-rev">Baby Rev</a></li>
-        <li><a href="#magic-tricks">Magic Tricks</a></li>
-      </ul>
-    </li>
-    <li><a href="#pwn">Pwn</a>
-      <ul>
-        <li><a href="#diving-into-null">Diving Into Null</a></li>
-        <li><a href="#mini-golfing">Mini Golfing</a></li>
-        <li><a href="#nix-philosophies">Nix Philosophies</a></li>
+        <li><a href="#packed-full-of-surprises">Packed Full Of Surprises</a>
+          <ul>
+            <li><a href="#執行檔功能">執行檔功能</a></li>
+            <li><a href="#解法-4">解法</a></li>
+          </ul>
+        </li>
+        <li><a href="#ai-rnd">AI rnd</a>
+          <ul>
+            <li><a href="#執行檔功能-1">執行檔功能</a></li>
+            <li><a href="#解法-5">解法</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1018,53 +1019,54 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#intro">intro</a>
+    <li><a href="#intro">Intro</a>
       <ul>
         <li><a href="#ranking">ranking</a></li>
-        <li><a href="#solves">solves</a></li>
-      </ul>
-    </li>
-    <li><a href="#intro-1">INTRO</a>
-      <ul>
-        <li><a href="#flag">flag</a></li>
-        <li><a href="#osiris-trivia">OSIRIS Trivia</a></li>
-      </ul>
-    </li>
-    <li><a href="#osint">OSINT</a>
-      <ul>
-        <li><a href="#rickshaw">Rickshaw</a></li>
-        <li><a href="#authentic-chinese-food">Authentic Chinese Food</a></li>
-      </ul>
-    </li>
-    <li><a href="#forensics">Forensics</a>
-      <ul>
-        <li><a href="#zipzipzip">ZipZipZip</a></li>
-        <li><a href="#the-triple-illusion">The Triple Illusion</a></li>
-      </ul>
-    </li>
-    <li><a href="#web">Web</a>
-      <ul>
-        <li><a href="#playing-on-the-backcourts">Playing on the Backcourts</a></li>
+        <li><a href="#solvespersonal">solves(personal)</a></li>
       </ul>
     </li>
     <li><a href="#crypto">Crypto</a>
       <ul>
-        <li><a href="#trapdoor">Trapdoor</a></li>
-        <li><a href="#diffusion-pop-quiz">Diffusion Pop Quiz</a></li>
-        <li><a href="#aes-diffusion">AES Diffusion</a></li>
+        <li><a href="#hard-to-implement">Hard to implement</a>
+          <ul>
+            <li><a href="#加密">加密</a></li>
+            <li><a href="#解法">解法</a></li>
+          </ul>
+        </li>
+        <li><a href="#high-roller">High Roller</a>
+          <ul>
+            <li><a href="#加密-1">加密</a></li>
+            <li><a href="#解法-1">解法</a></li>
+          </ul>
+        </li>
+        <li><a href="#bit-by-bit">bit by bit</a>
+          <ul>
+            <li><a href="#加密-2">加密</a></li>
+            <li><a href="#解法-2">解法</a></li>
+          </ul>
+        </li>
+        <li><a href="#protected-console">protected console</a>
+          <ul>
+            <li><a href="#加密-3">加密</a></li>
+            <li><a href="#解法-3">解法</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#reverse">Reverse</a>
       <ul>
-        <li><a href="#baby-rev">Baby Rev</a></li>
-        <li><a href="#magic-tricks">Magic Tricks</a></li>
-      </ul>
-    </li>
-    <li><a href="#pwn">Pwn</a>
-      <ul>
-        <li><a href="#diving-into-null">Diving Into Null</a></li>
-        <li><a href="#mini-golfing">Mini Golfing</a></li>
-        <li><a href="#nix-philosophies">Nix Philosophies</a></li>
+        <li><a href="#packed-full-of-surprises">Packed Full Of Surprises</a>
+          <ul>
+            <li><a href="#執行檔功能">執行檔功能</a></li>
+            <li><a href="#解法-4">解法</a></li>
+          </ul>
+        </li>
+        <li><a href="#ai-rnd">AI rnd</a>
+          <ul>
+            <li><a href="#執行檔功能-1">執行檔功能</a></li>
+            <li><a href="#解法-5">解法</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1150,7 +1152,7 @@
         <div class="article-content max-w-prose mb-20">
           
 
-<h2 class="relative group">intro 
+<h2 class="relative group">Intro 
     <div id="intro" class="anchor"></div>
     
     <span
@@ -1174,20 +1176,20 @@
 </h3>
 <p>
   <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/S1Fd4ch3C.png" alt="image" />
+    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/Bk231h70A.png" alt="image" />
     
   </figure>
+</p>
+<p>團隊總排名<code>33/1360</code>|<code>TOP 2%</code></p>
 
-總排名<code>193/1184</code>|<code>TOP 16%</code></p>
 
-
-<h3 class="relative group">solves 
-    <div id="solves" class="anchor"></div>
+<h3 class="relative group">solves(personal) 
+    <div id="solvespersonal" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#solves" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#solvespersonal" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -1200,302 +1202,34 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">Intro</td>
-<td style="text-align:center">2/3(feedback沒寫)</td>
-</tr>
-<tr>
-<td style="text-align:center">OSINT</td>
-<td style="text-align:center">2/4</td>
-</tr>
-<tr>
-<td style="text-align:center">Forensics</td>
-<td style="text-align:center">2/5</td>
-</tr>
-<tr>
-<td style="text-align:center">Web</td>
-<td style="text-align:center">1/5</td>
-</tr>
-<tr>
 <td style="text-align:center">Crypto</td>
-<td style="text-align:center">3/5</td>
-</tr>
-<tr>
-<td style="text-align:center">Pwn</td>
-<td style="text-align:center">3/4</td>
+<td style="text-align:center">4/10</td>
 </tr>
 <tr>
 <td style="text-align:center">Reverse</td>
-<td style="text-align:center">2/4</td>
+<td style="text-align:center">2/10</td>
 </tr>
 </tbody>
 </table>
-<p>這次比賽只有我一個人，再次體會到團隊合作的重要性<br>
-題目沒有很難，也有可能是我解德剛好都不難
-BTW這次比賽有睡爽爽，肝一下有可能爬到前百</p>
-
-
-<h2 class="relative group">INTRO 
-    <div id="intro-1" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#intro-1" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-
-
-<h3 class="relative group">flag 
-    <div id="flag" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#flag" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
 <p>
   <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/HkrwOc2n0.png" alt="image" />
+    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/ByHEx3QCA.png" alt="image" />
     
   </figure>
 
-
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/Syvtu5nn0.png" alt="image" />
-    
-  </figure>
-
-<del>但有人不解，什麼諧咖</del></p>
-
-
-<h3 class="relative group">OSIRIS Trivia 
-    <div id="osiris-trivia" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#osiris-trivia" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
+我跟隊友說好我要打Crypto然後我就真得只去戳Crypto<br>
+結果居然沒讓我算到數學，幾乎打得都是對稱加密QwQ<br>
+最後看Reverse好像解題數有點少就去幫忙消化幾題<br>
+其中再解的過程中，隊伍一度衝到前30</p>
 <p>
   <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/S12Cdcn3A.png" alt="image" />
-    
-  </figure>
-</p>
-<p>用 <a href="https://web.archive.org/" target="_blank">wayback machine</a> 找之前的存檔</p>
-
-
-<h2 class="relative group">OSINT 
-    <div id="osint" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#osint" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-
-
-<h3 class="relative group">Rickshaw 
-    <div id="rickshaw" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#rickshaw" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/B1xmq523C.png" alt="image" />
-    
-  </figure>
-</p>
-<p>車牌<code>77 CD-xxx</code>，CD代表有外交任務，77代表美國<br>
-<a href="https://in.usembassy.gov/embassy-consulates/new-delhi/" target="_blank">U.S. Embassy &amp; Consulates in India</a>找電話號碼</p>
-
-
-<h3 class="relative group">Authentic Chinese Food 
-    <div id="authentic-chinese-food" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#authentic-chinese-food" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/rJ3-i9n2C.png" alt="image" />
-    
-  </figure>
-</p>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/H1N8j9nnC.png" alt="image" />
-    
-  </figure>
-</p>
-<p>從電話號碼<code>718-875</code>得知位置為<code>Brooklyn, New York</code></p>
-<ol>
-<li>找到當地的<code>Panda Express</code></li>
-<li>從<a href="https://a816-health.nyc.gov/ABCEatsRestaurants/#!/Search" target="_blank">NYC Department of Health and Mental Hygiene</a>找衛生評級</li>
-<li>從<a href="https://propertyinformationportal.nyc.gov/parcels/parcel/3001500011" target="_blank">NYC Property Information Portal</a>找<code>Year Built</code>、<code>llc</code></li>
-</ol>
-
-
-<h2 class="relative group">Forensics 
-    <div id="forensics" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#forensics" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-
-
-<h3 class="relative group">ZipZipZip 
-    <div id="zipzipzip" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#zipzipzip" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/r1Ge1j3nC.png" alt="image" />
-    
-  </figure>
-</p>
-<p>題目給的<code>chalenge.zip</code>，包了很多層zip+txt
-檔案結構大概長這樣</p>
-<pre tabindex="0"><code>challenge
-├── chunk_0
-│   ├── chunk_0.txt
-│   ├── chunk_1
-│   │   ├── chunk_1.txt
-│   │   ├── chunk_2
-│   │   │   ├── chunk_2.txt
-│   │   │   └── chunk_3.zip
-│   │   └── chunk_2.zip
-│   └── chunk_1.zip
-└── chunk_0.zip
-</code></pre><p>但每個<code>chuck_##.txt</code>都只有五個字元，可以利用這點讀出所有字元<br>
-
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/HJlvZs3hC.png" alt="image" />
-    
-  </figure>
-
-一個檔案在這個zip格式大概為<code>檔名|內容|504B</code><br>
-
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/SJWReinhA.png" alt="image" />
-    
-  </figure>
-
-取前十個字元base64 decode可以得知這是一張圖片的base64</p>
-<p>solve:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">base64</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;challenge.zip&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;.txt&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
-</span></span><span class="line"><span class="cl"><span class="n">flag</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">s</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl"><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;flag.png&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">flag</span><span class="p">))</span>
-</span></span></code></pre></div><p>flag.png:<br>
-
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/HyNbGs2h0.png" alt="image" />
-    
-  </figure>
-</p>
-
-
-<h3 class="relative group">The Triple Illusion 
-    <div id="the-triple-illusion" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#the-triple-illusion" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/By6dzohnC.png" alt="image" />
-    
-  </figure>
-
-plaintext:
-
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/rJ3Jrs320.png" alt="image" />
-    
-  </figure>
-</p>
-<p>key:
-
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/HJngBj3n0.png" alt="image" />
-    
-  </figure>
-</p>
-<p>solve:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">plaintext</span> <span class="o">=</span> <span class="s2">&#34;csawctf</span><span class="si">{heres_anew_key_decrypt_the_secretto_reveal_flag}</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="n">ch2</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">plaintext</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">((</span><span class="nb">ord</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span><span class="o">^</span><span class="n">ch2</span><span class="p">)),</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><p>解是用xor，可以從<code>plaintext</code>的字元分布和<code>key</code>得知這兩者的關係<br>
-另外這題其實有三張圖片，有一張藏了vigenere cipher<br>
-但沒有用到解出來的資訊</p>
-
-
-<h2 class="relative group">Web 
-    <div id="web" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#web" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-
-
-<h3 class="relative group">Playing on the Backcourts 
-    <div id="playing-on-the-backcourts" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#playing-on-the-backcourts" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/BkEgyn2hR.png" alt="image" />
+    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/BkgXZnmAC.png" alt="image" />
     
   </figure>
 <br>
-題目的app.py有eval()，利用他開啟<code>leaderboard.txt</code>(題目要求
-)<br>
-payload:<code>open(leaderboard_path, 'r').read()</code><br>
-==注:賽後題目連結掛了，沒實際截圖==</p>
+其實我原本應該是會去打pwn的，但時間已經很晚了<br>
+雖然看到pwn的解題數還是很低，不過為了我的肝我就不碰了<br>
+這次的題目我覺得出得很棒，學到了很多酷東西</p>
 
 
 <h2 class="relative group">Crypto 
@@ -1510,75 +1244,352 @@ payload:<code>open(leaderboard_path, 'r').read()</code><br>
 </h2>
 
 
-<h3 class="relative group">Trapdoor 
-    <div id="trapdoor" class="anchor"></div>
+<h3 class="relative group">Hard to implement 
+    <div id="hard-to-implement" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#trapdoor" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#hard-to-implement" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">long_to_bytes</span><span class="p">,</span> <span class="n">GCD</span>
-</span></span><span class="line"><span class="cl"><span class="n">c1</span> <span class="o">=</span> <span class="mi">303135796212555524279246573902478466434668217093546174680188235179057490491567473700120780102242009132103258508861486434415180823527955099967761217116349255542170598035252007386938049207815599595446898483965896318999163451327331078078222461159124295427725319096144123597554777586957979868444674275889889844032174888734978810757381148576980597387087054100968752977308860522457902588682074271109316333433256639990524116155937375917691984587952422148443784463343758327600719630349711698888298784945165573146249574661292447746934401167219320522948251442094538198108317569766073873733715196594572438686070303424017394902382093899765518500483375456912409097537955914052714322746314137960293312838915565869071605155935644478996344290292865819278674982079257062718982942611077051220570396851353684880714275636550356149610683653718033949374671376446552695669216994087720088804557425225900737145094882031616103378878538121913250609632802433851115524402329496182016641849196645450203369856549243934741848598773875346669657888813923243297096273166067843490617097664952249302907248385981657386549425150606813818575526156807496438444686156127519692376856599876276294335897476875870006918535394383682369081298573978241442661476323352300777091182989</span>
-</span></span><span class="line"><span class="cl"><span class="n">c2</span> <span class="o">=</span> <span class="mi">495857475060520388524171972560562329613974853400983822020845888925730491600062430518172516899260704264560273781934223594302859722530534832340660062529848264990086782051303987790503975423180262299331338615407534533214682113133599329293031129085100449577992934518434344656657494285931938564813850628647927736024583131744532009049044693917571326537857384102056783307220756946741412271768559975747252067027985539444943113529028970650318126952304374213699662922237891802823976468380268943050107475055909459355423686208238246597053465755603350070481628534681615531080212087446170332283155265359882706315659670116316266081501682694077818665850673103109986674113042710753378454481553052577850617521346621778611947759859049949511238712479205224753501152768840659660348125732219509602068105609818744217345793400652546782588924616710717604789311834310946503565014125112936386821830814255281895686800886900005134607852450727343155282371024191291186227931359848093297797055981177703223050327072826245731656444970746670962178893596866749248985055819064026711206591064102568684210270239031311552084894623247525907933925015980322475751964290174523048766068652767848785157128558417911661948655949158005943910504885480428658407000419115833416727420060</span>
-</span></span><span class="line"><span class="cl"><span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
-</span></span><span class="line"><span class="cl"><span class="n">n1</span> <span class="o">=</span> <span class="mi">849335341290886685305469218391857707731284340958190419070185843136010157709429053610422484475132681533748719098278969826215644874339472967353132551879455362882996907567507113593506825753079778590426114664641480816600384751471656645291232769230937136910355259284237110429149485567788006502323613635933685865306368710784061314928154920731534552117321317277211567493110152566489842583624729165341328622863262200606012259883201617700955694695922994087859464481658597983611169234466124699760530832690946886672455760158700223782288051380457731164725645861312489664513789670524826747778520365562211927266455463083486309711423210020471808741823123222068864708556581964581065834988620566447012299912244270348094665860535141932228229489208553114464044014430205989899364599981035118586030905442204839171480278940939019668106564678143657774136844418987220537475593181825555444917027626563850710659384061650161954669583365646428622075935490337721802367242209967740698482568921310122475447746639557770945332710012170102525879752975818050520509857439519049644785825032104077215376906019647567250546984958145151649505898444718072843209364124945650856086793772364425465519611908098951364026287867524069822425347155753599639554767185278129507433506309</span>
-</span></span><span class="line"><span class="cl"><span class="n">n2</span> <span class="o">=</span> <span class="mi">603523566530333849178340428498944902666363745873836128019046104968850160788559626859110536807737092301279190275717524103231817119850380847226716405338227641758799619075339058107790224618949070936355847696512320584610781171628029295879025358995297274114650904664397977445850692346888664395462514491694005594326981267020658004853078220869498716454480503670832534655687832674317698341533791287606520109612425394700304038251923496303824119858678564161604483027565550190673989872119144198248907235642586281776334255518772240197897432768870606595017185449736217266994920355907164372528751413042250719701199348091884608946014594175762002630845986429797454686315898064893067919327646448166242760968074216672400981626176888822037453360011497389835122764853203956625199041071100777042750119671525508293375356678113231545760621792785884810027728859682751883206526242837955866065528264740145465244712713969196077012700370049597156003550177262301319126400428989863912190142334126607178261626969803469625974325630891730058651069671841464378913213797770918193912221804892109419238634557345136168738280281615754564955678609409321720136879847520102473459064293144553235291623089686442091239836122526756636264103227262956791809160643363991596481281713</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">rsa_decrypt</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">d</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">long_to_bytes</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">p</span> <span class="o">*</span> <span class="n">q</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">p</span> <span class="o">=</span> <span class="n">GCD</span><span class="p">(</span><span class="n">n2</span><span class="p">,</span> <span class="n">n1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">q1</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">//</span> <span class="n">p</span>
-</span></span><span class="line"><span class="cl"><span class="n">q2</span> <span class="o">=</span> <span class="n">n2</span> <span class="o">//</span> <span class="n">p</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">rsa_decrypt</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q1</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">rsa_decrypt</span><span class="p">(</span><span class="n">c2</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q2</span><span class="p">))</span>
-</span></span></code></pre></div><p>n1和n2有公因數，直接分解</p>
 
 
-<h3 class="relative group">Diffusion Pop Quiz 
-    <div id="diffusion-pop-quiz" class="anchor"></div>
+<h4 class="relative group">加密 
+    <div id="%E5%8A%A0%E5%AF%86" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#diffusion-pop-quiz" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E5%8A%A0%E5%AF%86" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>重複多次</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">encryption</td>
+<td>AES(ECB_MODE, 128bits)</td>
+</tr>
+<tr>
+<td style="text-align:center">data</td>
+<td><code>user_input</code> + <code>flag</code></td>
+</tr>
+</tbody>
+</table>
+
+
+<h4 class="relative group">解法 
+    <div id="%E8%A7%A3%E6%B3%95" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E6%B3%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>AES prepend oracle:</p>
+<p>假設使用者輸入<code>000000000000000</code><br>
+密文的第一個block會是<code>000000000000000</code> + <code>flag的第一個字</code><br>
+輸入<code>00000000000000</code><br>
+密文的第一個block則會是<code>00000000000000</code> + <code>flag的前兩個字</code></p>
+<p>於是我們可以透過窮舉最後一個字元，並驗證密文是否相等<br>
+<code>000000000000000a</code><br>
+<code>000000000000000b</code><br>
+<code>000000000000000c</code><br>
+&hellip;<br>
+<code>000000000000000p</code><br>
+以此類推其他求出接下來的字元<br>
+<code>00000000000000pa</code><br>
+<code>00000000000000pb</code><br>
+&hellip;</p>
+<p>solve:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="n">r</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s1">&#39;chal.competitivecyber.club&#39;</span><span class="p">,</span> <span class="mi">6002</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">pretends</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">r</span><span class="o">.</span><span class="n">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;Send challenge &gt; &#39;</span> <span class="p">,</span><span class="sa">b</span><span class="s1">&#39;0&#39;</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">r</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;Response &gt; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pretend</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pretends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pretend</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">oracle</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pretend</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pretends</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">byte</span> <span class="ow">in</span> <span class="n">trange</span><span class="p">(</span><span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x7f</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">payload</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;0&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">15</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">oracle</span> <span class="o">+</span> <span class="nb">bytes</span><span class="p">([</span><span class="n">byte</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">r</span><span class="o">.</span><span class="n">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;Send challenge &gt; &#39;</span> <span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">r</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;Response &gt; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">response</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">response</span> <span class="o">==</span> <span class="n">pretend</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">oracle</span> <span class="o">+=</span> <span class="nb">bytes</span><span class="p">([</span><span class="n">byte</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">oracle</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span></code></pre></div>
+
+<h3 class="relative group">High Roller 
+    <div id="high-roller" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#high-roller" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>
+
+
+<h4 class="relative group">加密 
+    <div id="%E5%8A%A0%E5%AF%86-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%8A%A0%E5%AF%86-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>用時間當seed，生成公私鑰，並寫出到一個<code>.pem</code>檔
+
   <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/SksXnj2hR.png" alt="image" />
+    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/SyTEoBZR0.png" alt="image" />
     
   </figure>
 </p>
-<p>這題他給了一個script，主要是在描述透過sbox擴散(diffusion)<br>
-題目是問答題，只要達成他給的問題(實際執行一次)就可以拿到flag</p>
 
 
-<h3 class="relative group">AES Diffusion 
-    <div id="aes-diffusion" class="anchor"></div>
+<h4 class="relative group">解法 
+    <div id="%E8%A7%A3%E6%B3%95-1" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#aes-diffusion" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E6%B3%95-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>可以透過<code>檔案的最後修改時間</code>獲得seed<br>
+solve:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">filetime</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">(</span><span class="s2">&#34;public_key.pem&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;public_key.pem&#34;</span><span class="p">,</span> <span class="s2">&#34;rb&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">key_file</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">public_key</span> <span class="o">=</span> <span class="n">RSA</span><span class="o">.</span><span class="n">import_key</span><span class="p">(</span><span class="n">key_file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">origin_N</span> <span class="o">=</span> <span class="n">public_key</span><span class="o">.</span><span class="n">n</span>
+</span></span><span class="line"><span class="cl"><span class="n">e</span> <span class="o">=</span> <span class="n">public_key</span><span class="o">.</span><span class="n">e</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">filetime</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">getPrime</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">randbytes</span><span class="p">),</span> <span class="n">getPrime</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">randbytes</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="n">p</span><span class="o">*</span><span class="n">q</span>
+</span></span><span class="line"><span class="cl"><span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">assert</span> <span class="n">n</span> <span class="o">==</span> <span class="n">origin_N</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">assert</span> <span class="n">d</span> <span class="o">*</span> <span class="n">e</span> <span class="o">%</span> <span class="n">phi</span> <span class="o">==</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">C</span> <span class="o">=</span> <span class="n">bytes_to_long</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;flag.enc&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="n">flag</span> <span class="o">=</span> <span class="n">long_to_bytes</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+</span></span></code></pre></div>
+
+<h3 class="relative group">bit by bit 
+    <div id="bit-by-bit" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#bit-by-bit" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
+
+
+<h4 class="relative group">加密 
+    <div id="%E5%8A%A0%E5%AF%86-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%8A%A0%E5%AF%86-2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>把明文的每16個字元分成一個chunk<br>
+有一把key, 一個個iv<br>
+每次對一個chunk，用<code>key + iv</code>進行xor加密<br>
+每次結束後，<code>iv = (iv + 1) % 256</code></p>
+
+
+<h4 class="relative group">解法 
+    <div id="%E8%A7%A3%E6%B3%95-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E6%B3%95-2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
 <p>
   <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/SJLj3s2hC.png" alt="image" />
+    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/ByIXyj70R.png" alt="image" />
+    
+  </figure>
+
+用xortool可以先得到key的前15bytes</p>
+<p>solve:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">blocksize</span> <span class="o">=</span> <span class="mi">16</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">transmit</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">key</span> <span class="o">=</span> <span class="n">bytes_to_long</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00\x00\x00\x00\xae\xcd</span><span class="s1">K</span><span class="se">\x13\x90</span><span class="s1">E#</span><span class="se">\xea</span><span class="s1">i</span><span class="se">\xba\xfe\x00</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">iv</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">msg</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;cipher.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">chunks</span> <span class="o">=</span> <span class="p">[</span><span class="n">msg</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">16</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">msg</span><span class="p">),</span> <span class="mi">16</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">send</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">chunks</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">iv</span> <span class="o">=</span> <span class="p">(</span><span class="n">iv</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">255</span>
+</span></span><span class="line"><span class="cl">        <span class="n">curr_k</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">long_to_bytes</span><span class="p">(</span><span class="n">key</span><span class="o">+</span><span class="n">iv</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">plain</span> <span class="o">=</span> <span class="n">xor</span><span class="p">(</span><span class="n">curr_k</span><span class="p">,</span> <span class="n">chunk</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">send</span> <span class="o">+=</span> <span class="n">plain</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">send</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">transmit</span><span class="p">()</span>
+</span></span></code></pre></div>
+
+<h3 class="relative group">protected console 
+    <div id="protected-console" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#protected-console" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>btw這題因為這邊連線速度太慢，主辦方幫忙代跑腳本<br>
+
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/HJzAro7AR.png" alt="image" />
     
   </figure>
 </p>
-<p>跟上題一樣，是要學<code>AES diffusion</code><br>
-||弄一弄就有flag了&hellip;||</p>
+
+
+<h4 class="relative group">加密 
+    <div id="%E5%8A%A0%E5%AF%86-3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%8A%A0%E5%AF%86-3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>多次加密</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">encryption</td>
+<td>AES(CBC_MODE, 128bits)</td>
+</tr>
+<tr>
+<td style="text-align:center">data</td>
+<td><code>user_hex_input[16:]</code></td>
+</tr>
+<tr>
+<td style="text-align:center">iv</td>
+<td><code>user_hex_input[:16]</code></td>
+</tr>
+</tbody>
+</table>
+<p>題目會解析密文(json)，並讀出<code>username</code>和<code>role</code>的值<br>
+一旦<code>username</code> = <code>&quot;administrative_user&quot;</code>, <code>role</code> = <code>1</code><br>
+就可以進入admin console，可執行<code>print()</code>指令</p>
+
+
+<h4 class="relative group">解法 
+    <div id="%E8%A7%A3%E6%B3%95-3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E6%B3%95-3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<hr>
+<p>弱點<br>
+
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/ryv4Bo70R.png" alt="image" />
+    
+  </figure>
+<br>
+解密後會判斷padding是否正常<br>
+這讓我們可以用<code>padding oracle</code>來獲得block解密後的訊息<br>
+再加上可控制iv，所以我們可以有辦法改變整個密文</p>
+<hr>
+<p>padding檢查:<br>
+
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/BJf7Ijm0C.png" alt="image" />
+    
+  </figure>
+<br>
+但這個padding判斷的方式有點奇怪<br>
+如果只需一個bytes的padding，可以是<code>\x00</code>或<code>\x01</code><br>
+所以padding oracle要先找出最後一個byte是<code>\x00</code>和<code>\x01</code>
+並判斷哪個是<code>\x01</code> (<code>\x00</code>倒數第二個byte必定找不到因為<code>\x02\x03</code>不符合padding規則)</p>
+<p>我們知道</p>
+<p>\begin{aligned}
+P_1 &amp;= D(C_1) \oplus IV \
+P_2 &amp;= D(C_2) \oplus C_1 \
+P_3 &amp;= D(C_3) \oplus C_2 \
+\end{aligned}</p>
+<p>所以我們可以透過padding oracle構造這些資料</p>
+<p>\begin{aligned}
+C_3 &amp;= \text{aaaaaaaaaaaaaaaa} \
+C_2 &amp;= D(C_3) \oplus P_3 \
+C_1 &amp;= D(C_2) \oplus P_2\
+IV &amp;= D(C_1) \oplus P_1\
+\end{aligned}</p>
+<p>送出$IV+C_1+C_2+C_3$就可以進入admin console了
+最後利用bit flipping 執行<code>print(flag)</code></p>
 
 
 <h2 class="relative group">Reverse 
@@ -1593,198 +1604,149 @@ payload:<code>open(leaderboard_path, 'r').read()</code><br>
 </h2>
 
 
-<h3 class="relative group">Baby Rev 
-    <div id="baby-rev" class="anchor"></div>
+<h3 class="relative group">Packed Full Of Surprises 
+    <div id="packed-full-of-surprises" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#baby-rev" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#packed-full-of-surprises" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/BJBdx33nR.png" alt="image" />
-    
-  </figure>
-</p>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/B1yHen3hC.png" alt="螢幕擷取畫面 2024-09-10 012737" />
-    
-  </figure>
-
-點點點就找到了<br>
-拿去base64 decode</p>
+<p>先說我好像是非預期解</p>
 
 
-<h3 class="relative group">Magic Tricks 
-    <div id="magic-tricks" class="anchor"></div>
+<h4 class="relative group">執行檔功能 
+    <div id="%E5%9F%B7%E8%A1%8C%E6%AA%94%E5%8A%9F%E8%83%BD" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#magic-tricks" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E5%9F%B7%E8%A1%8C%E6%AA%94%E5%8A%9F%E8%83%BD" aria-label="Anchor">#</a>
     </span>        
     
-</h3>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/HJCpl323R.png" alt="image" />
+</h4>
+<p>可以讀入<code>flag.txt</code><br>
+加密後寫出<code>flag.txt.enc</code></p>
+
+
+<h4 class="relative group">解法 
+    <div id="%E8%A7%A3%E6%B3%95-4" class="anchor"></div>
     
-  </figure>
-</p>
-<p>逆向加密過程的題目<br>
-把一段文字丟進去會得到一段亂碼叫做<code>output.txt</code><br>
-所幸相同相同輸入字元-&gt;相同輸出字元<br>
-只是輸出的字元編碼不是ascii<br>
-但utf8可以用</p>
-<p>解題過程:</p>
-<ol>
-<li>程式中輸入所有可視字元，因為我們知道flag只可能用ascii可視字元組成</li>
-<li>用python read output作為對照表</li>
-</ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">alphabet</span> <span class="o">=</span> <span class="s2">&#34;!</span><span class="se">\&#34;</span><span class="s2">#$%&amp;&#39;()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">output</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="n">cipher</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;cipher.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1">#I renamed challenge&#39;s output.txt to cipher.txt</span>
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E6%B3%95-4" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>我發現密文沒有做好diffusion，也就前後字元關連不大<br>
+於是我把原本的<code>flag.txt.enc</code>存成<code>encrypted_flag.enc</code>
+把file read/write 當做 input/out
+solve:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">subprocess</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="o">*</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">flag</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">alphabet</span><span class="p">[</span><span class="n">output</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">ch</span><span class="p">)]</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">cipher</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">elf_path</span> <span class="o">=</span> <span class="s2">&#34;./encrypt&#34;</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">flag</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">correctflag</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;encrypted_flag.enc&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">correctflag</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">byte</span> <span class="ow">in</span> <span class="n">trange</span><span class="p">(</span><span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x7f</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;flag.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">flag</span> <span class="o">+</span> <span class="nb">bytes</span><span class="p">([</span><span class="n">byte</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">elf_path</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;flag.txt.enc&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">ch</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">flag</span> <span class="o">+=</span> <span class="nb">bytes</span><span class="p">([</span><span class="n">byte</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
 </span></span></code></pre></div>
 
-<h2 class="relative group">Pwn 
-    <div id="pwn" class="anchor"></div>
+<h3 class="relative group">AI rnd 
+    <div id="ai-rnd" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#pwn" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-
-
-<h3 class="relative group">Diving Into Null 
-    <div id="diving-into-null" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#diving-into-null" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#ai-rnd" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/HybjE2h3R.png" alt="image" />
-    
-  </figure>
 
 
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/rke3Q33n0.png" alt="image" />
-    
-  </figure>
-
-一個壞掉的bash，沒有<code>ls</code>和<code>cat</code>，所以要自己手刻一個:<br>
-<code>ls</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">for</span> f in *<span class="p">;</span> <span class="k">do</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;File -&gt; </span><span class="nv">$f</span><span class="s2">&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">done</span>
-</span></span></code></pre></div><p><code>ls -a</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">for</span> f in *<span class="p">;</span> <span class="k">do</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;File -&gt; </span><span class="nv">$f</span><span class="s2">&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">done</span>
-</span></span></code></pre></div><p><a href="https://blog.longwin.com.tw/2020/10/bash-shell-script-path-directory-file-name-2020/" target="_blank">reference</a></p>
-<p><code>cat filename</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="k">$(</span>&lt;filename<span class="k">)</span>
-</span></span></code></pre></div><p>然後在<code>~/</code><br>
-執行剛剛手刻的<code>ls -a</code>，可以看到<code>.flag</code><br>
-再執行</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="k">$(</span>&lt;.flag<span class="k">)</span>
-</span></span></code></pre></div><p>就可以得到flag了，||這什麼怪題||</p>
-
-
-<h3 class="relative group">Mini Golfing 
-    <div id="mini-golfing" class="anchor"></div>
+<h4 class="relative group">執行檔功能 
+    <div id="%E5%9F%B7%E8%A1%8C%E6%AA%94%E5%8A%9F%E8%83%BD-1" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#mini-golfing" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E5%9F%B7%E8%A1%8C%E6%AA%94%E5%8A%9F%E8%83%BD-1" aria-label="Anchor">#</a>
     </span>        
     
-</h3>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/HydTDhnhA.png" alt="image" />
-    
-  </figure>
+</h4>
+<p>會把輸入雜湊後(?，輸出</p>
 
 
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/Syc4L22h0.png" alt="image" />
-    
-  </figure>
-<br>
-這題有開ASLR，不能亂跳<br>
-可以利用<code>printf</code>找到<code>main</code>的位置，然後算offset</p>
-<p>solve:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span> 
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># context.arch = &#39;amd64&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># context.terminal = [&#39;tmux&#39;, &#39;splitw&#39;, &#39;-h&#39;]</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># </span>
-</span></span><span class="line"><span class="cl"><span class="c1"># r = process(&#39;golf&#39;)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># gdb.attach(r)</span>
-</span></span><span class="line"><span class="cl"><span class="n">r</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s1">&#39;golfing.ctf.csaw.io&#39;</span><span class="p">,</span> <span class="mi">9999</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">r</span><span class="o">.</span><span class="n">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;? &#39;</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;%171$p&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">r</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;hello: &#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">start_addr</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span><span class="mi">16</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">win_addr</span> <span class="o">=</span> <span class="n">start_addr</span> <span class="o">-</span> <span class="mh">0x223</span> <span class="o">+</span> <span class="mh">0x209</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">win_addr</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="n">r</span><span class="o">.</span><span class="n">sendlineafter</span><span class="p">(</span><span class="s1">&#39;aim at!:&#39;</span><span class="p">,</span> <span class="nb">hex</span><span class="p">(</span><span class="n">win_addr</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="n">r</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
-</span></span></code></pre></div>
-
-<h3 class="relative group">Nix Philosophies 
-    <div id="nix-philosophies" class="anchor"></div>
+<h4 class="relative group">解法 
+    <div id="%E8%A7%A3%E6%B3%95-5" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#nix-philosophies" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E6%B3%95-5" aria-label="Anchor">#</a>
     </span>        
     
-</h3>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/BJ5hw2nh0.png" alt="image" />
-    
-  </figure>
-
+</h4>
+<p>也是一樣diffusion沒有做好，但相同字元可能會出現分歧，但我們可以猜測flag的字元
 
   <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/rk3cDnh2C.png" alt="image" />
+    <img class="my-0 rounded-md" loading="lazy" src="https://hackmd.io/_uploads/HkWH0jQCA.png" alt="image" />
     
   </figure>
 </p>
-<p>看起來像是用C++的字串來混淆<br>
-但程式功能如下:</p>
-<ol>
-<li>輸入字串</li>
-<li>sum(自己取的) = 從第二個字元開始後的每個字元ascii相加</li>
-<li>read(sum - 1603, buf, 32)</li>
-</ol>
-<p>解法：<br>
-fd(0)是stdin，所以就可以控制<code>buf</code>了<br>
-aaaaaaaaaaaaaaaaa3的sum=1603 -&gt; fd是0<br>
-輸入<code>make every program a filter</code></p>
-<p>就可以得到flag了，這次比賽都沒正常的pwn:(</p>
-
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">subprocess</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">elf_path</span> <span class="o">=</span> <span class="s2">&#34;./ai_rnd&#34;</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cur</span> <span class="o">=</span> <span class="s1">&#39;a5 39 24 90 a8 a5 88 77 26 e4 3c 14 03 1e ba 3c 7d bb dc d6 aa 90 50 c9 0f aa dd 57 33 e1 a4 c7&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">64</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">byte</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x7f</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="p">[</span><span class="n">elf_path</span><span class="p">],</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">text</span><span class="o">=</span><span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">flag</span> <span class="o">+</span> <span class="nb">chr</span><span class="p">(</span><span class="n">byte</span><span class="p">))</span>                    
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">stdout</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">cur</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">byte</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">i</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;what: &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">flag</span> <span class="o">+=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">flag</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span></code></pre></div>
           
           
           
@@ -1803,11 +1765,11 @@ aaaaaaaaaaaaaaaaa3的sum=1603 -&gt; fd是0<br>
   
   
 
-  <a href="/writeups/patriotctf-2024/" class="min-w-full">
+  <a href="/notes/crypto/classical-cipher/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/writeups/patriotctf-2024/featured_hu6362058661436923772.png);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/notes/crypto/classical-cipher/featured_hu6182807750749967655.png);"></div>
         
       
 
@@ -1815,7 +1777,7 @@ aaaaaaaaaaaaaaaaa3的sum=1603 -&gt; fd是0<br>
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/writeups/patriotctf-2024/">PatriotCTF 2024</div>
+          href="/notes/crypto/classical-cipher/">Classical Cipher</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -1854,7 +1816,120 @@ aaaaaaaaaaaaaaaaa3的sum=1603 -&gt; fd是0<br>
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <span title="Reading time">3 mins</span>
+  <span title="Reading time">6 mins</span>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+        </div>
+
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+  
+  
+
+  <a href="/writeups/csaw-2024/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/writeups/csaw-2024/featured_hu2343029308044318489.png);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/writeups/csaw-2024/">CSAW'24 CTF Writeup</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <span title="Reading time">2 mins</span>
   
 
   
@@ -2027,119 +2102,6 @@ aaaaaaaaaaaaaaaaa3的sum=1603 -&gt; fd是0<br>
   </a>
 
   
-  
-
-  <a href="/notes/crypto/classical-cipher/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/notes/crypto/classical-cipher/featured_hu6182807750749967655.png);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/notes/crypto/classical-cipher/">Classical Cipher</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <span title="Reading time">6 mins</span>
-  
-
-  
-  
-</div>
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</div>
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</div>
-
-
-
-        </div>
-
-        
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-
-  
 </section>
 
   
@@ -2153,8 +2115,8 @@ aaaaaaaaaaaaaaaaa3的sum=1603 -&gt; fd是0<br>
           
         
       <script>
-        var oid = "views_writeups\\CSAW 2024\\index.md"
-        var oid_likes = "likes_writeups\\CSAW 2024\\index.md"
+        var oid = "views_writeups\\PatriotCTF 2024\\index.md"
+        var oid_likes = "likes_writeups\\PatriotCTF 2024\\index.md"
       </script>
       
       
@@ -2174,34 +2136,14 @@ aaaaaaaaaaaaaaaaa3的sum=1603 -&gt; fd是0<br>
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/writeups/patriotctf-2024/">
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >PatriotCTF 2024</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                </span>
-              </span>
-            </a>
-          
         </span>
         <span>
           
-            <a class="flex text-right group ml-3" href="/writeups/ais3-pre-exam/">
+            <a class="flex text-right group ml-3" href="/writeups/csaw-2024/">
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >AIS3 pre-exam 2024 writeup</span
+                  >CSAW'24 CTF Writeup</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   

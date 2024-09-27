@@ -58,6 +58,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:1313/writeups/patriotctf-2024/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/posts/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
