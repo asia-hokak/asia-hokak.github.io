@@ -18,10 +18,10 @@ title: PatriotCTF 2024
 |Reverse|2/10|
 
 ![image](https://hackmd.io/_uploads/ByHEx3QCA.png)
-我跟隊友說好我要打Crypto然後我就真得只去戳Crypto  
+我跟隊友說好我要打Crypto然後我就真的只去戳Crypto  
 結果居然沒讓我算到數學，幾乎打得都是對稱加密QwQ  
 最後看Reverse好像解題數有點少就去幫忙消化幾題  
-其中再解的過程中，隊伍一度衝到前30
+在解的過程中，隊伍一度衝到前30
 
 ![image](https://hackmd.io/_uploads/BkgXZnmAC.png)  
 其實我原本應該是會去打pwn的，但時間已經很晚了  
