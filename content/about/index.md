@@ -34,14 +34,27 @@ params.backgroundImageWidth: 1500
 ## Experiences
 
 - ### CTF experiences
+    - #### CTFtime (solo)
+    |||||
+    |:--|:--:|:--|:--|
+    |2024|ACSC CTF 2024|hokak|152|
+    |2024|CSAW'24 CTF|hokak|193/1184|
+    |2024|DEADFACE CTF 2024|hok4lc|118/1215
+    - #### CTFtime (with ICEDTEA)
+    我只列出我有貢獻分數的
+    |||||
+    |:--|:--:|:--|:--|
+    |2024|Imaginary CTF|ICEDTEA|61/1457|
+    |2024|PatriotCTF 2024|ICEDTEA|33/1360|
+    |2024|Iron CTF 2024|ICEDTEA|121/1033|
+    |2024|sunshine CTF|ICEDTEA|61/642|
+    - #### 國內(solo)
+    |||||
+    |:--|:--:|:--|:--|
+    |2024|THJCC CTF|THJCC_hokak|2nd|
+    |2024|AIS3 pre-exam|hokak|42nd|
+    |2024|Scist 4th final CTF|SCIST_18|1st|
 
-|||||
-|:--|:--:|:--|:--|
-|2024|ACSC CTF|hokak|152nd(Country place: 12nd)|
-|2024|THJCC CTF|THJCC_hokak|2nd|
-|2024|AIS3 pre-exam|hokak|42nd|
-|2024|Scist 4th final CTF|SCIST_18|1st|
-|2024|Imaginary CTF|ICEDTEA(team)|61st|
 
 - ### Competitve Programming
 
