@@ -19,6 +19,16 @@
     </item>
     
     <item>
+      <title>CGGC 2024 初賽</title>
+      <link>http://localhost:1313/writeups/cggc-2024/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/writeups/cggc-2024/</guid>
+      <description>Intro #Reverse #lazy7 #題目有一個壓縮資料的function</description>
+      
+    </item>
+    
+    <item>
       <title>CSAW&#39;24 CTF Writeup</title>
       <link>http://localhost:1313/writeups/csaw-2024/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -34,7 +44,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/writeups/patriotctf-2024/</guid>
-      <description>Intro #ranking #團隊總排名33/1360|TOP 2%</description>
+      <description>Intro #ranking #團隊總排名33/1360|2%</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/writeups/patriotctf-2024/featured.png" />
     </item>
     

@@ -8,7 +8,7 @@ title: PatriotCTF 2024
 
 ![image](https://hackmd.io/_uploads/Bk231h70A.png)
 
-團隊總排名`33/1360`|`TOP 2%`
+團隊總排名`33/1360`|`2%`
 
 ### solves(personal)
 
@@ -32,7 +32,7 @@ title: PatriotCTF 2024
 
 ### Hard to implement
 
-#### 加密
+#### 解法
 
 重複多次
 
@@ -89,7 +89,7 @@ for i, pretend in enumerate(pretends):
 
 ### High Roller
 
-#### 加密
+#### 解法
 
 用時間當seed，生成公私鑰，並寫出到一個`.pem`檔
 ![image](https://hackmd.io/_uploads/SyTEoBZR0.png)
@@ -131,7 +131,7 @@ print(flag)
 
 ### bit by bit
 
-#### 加密
+#### 解法
 
 把明文的每16個字元分成一個chunk  
 有一把key, 一個個iv  
@@ -180,7 +180,7 @@ btw這題因為這邊連線速度太慢，主辦方幫忙代跑腳本
 ![image](https://hackmd.io/_uploads/HJzAro7AR.png)
 
 
-#### 加密
+#### 解法
 
 多次加密  
 |||
@@ -213,51 +213,50 @@ padding檢查:
 
 
 我們知道  
-
-\begin{aligned}
-    P_1 &= D(C_1) \oplus IV \\
-    P_2 &= D(C_2) \oplus C_1 \\
-    P_3 &= D(C_3) \oplus C_2 \\
-\end{aligned}
-
+$$
+\begin{align*}
+    P_1 &= D(C_1) \oplus IV \cr
+    P_2 &= D(C_2) \oplus C_1 \cr
+    P_3 &= D(C_3) \oplus C_2 \cr
+\end{align*}
+$$
 所以我們可以透過padding oracle構造這些資料
 
-\begin{aligned}
-    C_3 &= \text{aaaaaaaaaaaaaaaa} \\
-    C_2 &= D(C_3) \oplus P_3 \\
-    C_1 &= D(C_2) \oplus P_2\\
-    IV &= D(C_1) \oplus P_1\\
-\end{aligned}
+$$
+\begin{align*}
+    C_3 &= \text{aaaaaaaaaaaaaaaa} \cr  
+    C_2 &= D(C_3) \oplus P_3 \cr  
+    C_1 &= D(C_2) \oplus P_2 \cr  
+    IV &= D(C_1) \oplus P_1 \cr  
+\end{align*}
+$$
 
 送出$IV+C_1+C_2+C_3$就可以進入admin console了
 最後利用bit flipping 執行`print(flag)`
-
 
 ## Reverse
 
 ### Packed Full Of Surprises
 
-先說我好像是非預期解
+我好像是非預期解
 
-#### 執行檔功能
+#### 題目
 
 可以讀入`flag.txt`  
 加密後寫出`flag.txt.enc`  
 
 #### 解法
 
-我發現密文沒有做好diffusion，也就前後字元關連不大  
 於是我把原本的`flag.txt.enc`存成`encrypted_flag.enc`
 把file read/write 當做 input/out
 solve:
+
 ```python
 import subprocess
 from tqdm import *
 
 
 elf_path = "./encrypt" 
-
-
 
 flag = b''
 
@@ -277,12 +276,13 @@ for i, ch in enumerate(correctflag):
 
 ### AI rnd
 
-#### 執行檔功能
+#### 題目
 
-會把輸入雜湊後(?，輸出
+感覺是串流加密
 
 #### 解法
-也是一樣diffusion沒有做好，但相同字元可能會出現分歧，但我們可以猜測flag的字元
+
+用上題的方式可以大致解出，但相同字元可能會出現分歧，但我們可以猜測flag的字元
 ![image](https://hackmd.io/_uploads/HkWH0jQCA.png)
 
 ```python
@@ -322,4 +322,3 @@ for i in range(64):
     else:
         flag += a[0]
 ```
-

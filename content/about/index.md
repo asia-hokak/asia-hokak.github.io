@@ -5,15 +5,10 @@ heroStyle: "background"
 params.backgroundImageWidth: 1500
 ---
 
-
 ## whoami
 
 我在社群上用的名字是 __Dr.dog__，目前高二  
-常打ctf，主要玩reverse和pwn，crypto也有練過一陣子  
-以前是打競程的，不過也沒有碰很深  
-本職是諧咖兼宅男，夢想是work from home  
-平常三點睡，麻煩各位體諒一下我的肝;3   
-~~睡死了就別叫了~~
+常打ctf，主要玩reverse和crypto，pwn也有練過一陣子  
 
 ## How to find me
 
@@ -34,27 +29,33 @@ params.backgroundImageWidth: 1500
 ## Experiences
 
 - ### CTF experiences
+
     - #### CTFtime (solo)
-    |||||
+    ||項目|隊名|名次|
     |:--|:--:|:--|:--|
     |2024|ACSC CTF 2024|hokak|152|
     |2024|CSAW'24 CTF|hokak|193/1184|
-    |2024|DEADFACE CTF 2024|hok4lc|118/1215
+    |2024|DEADFACE CTF 2024|hok4lc|118/1215|
+
     - #### CTFtime (with ICEDTEA)
+
     我只列出我有貢獻分數的
+
     |||||
     |:--|:--:|:--|:--|
     |2024|Imaginary CTF|ICEDTEA|61/1457|
     |2024|PatriotCTF 2024|ICEDTEA|33/1360|
     |2024|Iron CTF 2024|ICEDTEA|121/1033|
     |2024|sunshine CTF|ICEDTEA|61/642|
-    - #### 國內(solo)
+
+    - #### 國內
+
     |||||
     |:--|:--:|:--|:--|
-    |2024|THJCC CTF|THJCC_hokak|2nd|
-    |2024|AIS3 pre-exam|hokak|42nd|
-    |2024|Scist 4th final CTF|SCIST_18|1st|
-
+    |2024|THJCC 臺灣高中聯合資安競賽|THJCC_hokak|2|
+    |2024|AIS3 pre-exam|hokak|42|
+    |2024|Scist 4th final CTF|SCIST_18|1|
+    |2024|CGGC 網路守護者挑戰賽 初賽|金爐香盡漏聲殘，我只剩下半顆肝|7|
 
 - ### Competitve Programming
 
