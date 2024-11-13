@@ -3,97 +3,97 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://example.org/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/writeups/ais3-pre-exam/</loc>
+    <loc>http://localhost:1313/writeups/ais3-pre-exam/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/notes/algo/</loc>
+    <loc>http://localhost:1313/notes/algo/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/writeups/cggc-2024/</loc>
+    <loc>http://localhost:1313/writeups/cggc-2024/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/notes/crypto/classical-cipher/</loc>
+    <loc>http://localhost:1313/notes/crypto/classical-cipher/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/notes/crypto/</loc>
+    <loc>http://localhost:1313/notes/crypto/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/writeups/csaw-2024/</loc>
+    <loc>http://localhost:1313/writeups/csaw-2024/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/notes/web/file-upload-vulnerbility/</loc>
+    <loc>http://localhost:1313/notes/web/file-upload-vulnerbility/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/</loc>
+    <loc>http://localhost:1313/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/notes/misc/</loc>
+    <loc>http://localhost:1313/notes/misc/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/notes/</loc>
+    <loc>http://localhost:1313/notes/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/notes/others/</loc>
+    <loc>http://localhost:1313/notes/others/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/writeups/patriotctf-2024/</loc>
+    <loc>http://localhost:1313/writeups/patriotctf-2024/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/notes/pwn/</loc>
+    <loc>http://localhost:1313/notes/pwn/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/notes/reverse/</loc>
+    <loc>http://localhost:1313/notes/reverse/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/notes/tools/</loc>
+    <loc>http://localhost:1313/notes/tools/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/notes/web/</loc>
+    <loc>http://localhost:1313/notes/web/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.org/writeups/</loc>
+    <loc>http://localhost:1313/writeups/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
