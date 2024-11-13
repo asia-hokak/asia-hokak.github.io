@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Crypto on hokak&#39;s Notes</title>
-    <link>http://localhost:1313/notes/crypto/</link>
+    <link>https://example.org/notes/crypto/</link>
     <description>Recent content in Crypto on hokak&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 hokak</copyright>
-    <atom:link href="http://localhost:1313/notes/crypto/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/notes/crypto/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Classical Cipher</title>
-      <link>http://localhost:1313/notes/crypto/classical-cipher/</link>
+      <link>https://example.org/notes/crypto/classical-cipher/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/crypto/classical-cipher/</guid>
+      <guid>https://example.org/notes/crypto/classical-cipher/</guid>
       <description>Intro #因為不想一直通靈所以打算做一篇古典密碼的筆記</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/notes/crypto/classical-cipher/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://example.org/notes/crypto/classical-cipher/featured.png" />
     </item>
     
   </channel>
