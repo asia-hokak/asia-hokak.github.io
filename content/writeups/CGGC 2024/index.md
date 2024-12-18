@@ -1,5 +1,6 @@
 ---
 title: CGGC 2024 初賽
+date: 2024-11-10
 ---
 ## Intro
     

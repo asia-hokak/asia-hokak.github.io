@@ -1,13 +1,63 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Homepage on hokak&#39;s Notes</title>
+    <title>Homepage on hokak の sweet home</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content in Homepage on hokak&#39;s Notes</description>
+    <description>Recent content in Homepage on hokak の sweet home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 hokak</copyright>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>THJCC 2024 winter 出題心得</title>
+      <link>http://localhost:1313/posts/thjcc-2024-winter/</link>
+      <pubDate>Wed, 18 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/thjcc-2024-winter/</guid>
+      <description>解題狀況 #題目 類別 難度 解題人數 S-box Crypto easy 87 Double Secure Crypto medium 15 Shuffle Hell Crypto hard 6 Peek a char Pwn baby 30 Infinite Recursion Pwn easy 16 String Reverser Pwn medium 7 locked unlocker Reverse baby 26 You know I know the token Reverse medium 20 Crypto #S-box #照著題目加密(編碼)的方式反過來做就好了</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/thjcc-2024-winter/featured.png" />
+    </item>
+    
+    <item>
+      <title>CGGC 2024 初賽</title>
+      <link>http://localhost:1313/writeups/cggc-2024/</link>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/writeups/cggc-2024/</guid>
+      <description>Intro #Reverse #lazy7 #題目有一個壓縮資料的function</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/writeups/cggc-2024/featured.png" />
+    </item>
+    
+    <item>
+      <title>PatriotCTF 2024</title>
+      <link>http://localhost:1313/writeups/patriotctf-2024/</link>
+      <pubDate>Mon, 30 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/writeups/patriotctf-2024/</guid>
+      <description>Intro #ranking #團隊總排名33/1360|2%</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/writeups/patriotctf-2024/featured.png" />
+    </item>
+    
+    <item>
+      <title>CSAW&#39;24 CTF Writeup</title>
+      <link>http://localhost:1313/writeups/csaw-2024/</link>
+      <pubDate>Tue, 10 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/writeups/csaw-2024/</guid>
+      <description>intro #ranking #總排名193/1184|TOP 16%</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/writeups/csaw-2024/featured.png" />
+    </item>
+    
+    <item>
+      <title>AIS3 pre-exam 2024 writeup</title>
+      <link>http://localhost:1313/writeups/ais3-pre-exam/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/writeups/ais3-pre-exam/</guid>
+      <description>前言 #先不說是不是用運氣打的(那題pwn是我半夜夢到解法起床解的)</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/writeups/ais3-pre-exam/featured.png" />
+    </item>
+    
     <item>
       <title>About</title>
       <link>http://localhost:1313/about/</link>
@@ -16,26 +66,6 @@
       <guid>http://localhost:1313/about/</guid>
       <description>whoami #我在社群上用的名字是 Dr.</description>
       
-    </item>
-    
-    <item>
-      <title>AIS3 pre-exam 2024 writeup</title>
-      <link>http://localhost:1313/writeups/ais3-pre-exam/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/writeups/ais3-pre-exam/</guid>
-      <description>前言 #先不說是不是用運氣打的(那題pwn是我半夜夢到解法起床解的)</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/writeups/ais3-pre-exam/featured.png" />
-    </item>
-    
-    <item>
-      <title>CGGC 2024 初賽</title>
-      <link>http://localhost:1313/writeups/cggc-2024/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/writeups/cggc-2024/</guid>
-      <description>Intro #Reverse #lazy7 #題目有一個壓縮資料的function</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/writeups/cggc-2024/featured.png" />
     </item>
     
     <item>
@@ -49,16 +79,6 @@
     </item>
     
     <item>
-      <title>CSAW&#39;24 CTF Writeup</title>
-      <link>http://localhost:1313/writeups/csaw-2024/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/writeups/csaw-2024/</guid>
-      <description>intro #ranking #總排名193/1184|TOP 16%</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/writeups/csaw-2024/featured.png" />
-    </item>
-    
-    <item>
       <title>File Upload Vulnerability</title>
       <link>http://localhost:1313/notes/web/file-upload-vulnerbility/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -66,16 +86,6 @@
       <guid>http://localhost:1313/notes/web/file-upload-vulnerbility/</guid>
       <description>文件上傳漏洞是指用戶上傳可能會造成危害的檔案(廢話</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/notes/web/file-upload-vulnerbility/featured.png" />
-    </item>
-    
-    <item>
-      <title>PatriotCTF 2024</title>
-      <link>http://localhost:1313/writeups/patriotctf-2024/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/writeups/patriotctf-2024/</guid>
-      <description>Intro #ranking #團隊總排名33/1360|2%</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/writeups/patriotctf-2024/featured.png" />
     </item>
     
   </channel>

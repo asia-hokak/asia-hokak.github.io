@@ -1,5 +1,6 @@
 ---
 title: PatriotCTF 2024
+date: 2024-09-30
 ---
 
 ## Intro

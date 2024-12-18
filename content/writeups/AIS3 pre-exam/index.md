@@ -1,5 +1,6 @@
 ---
 title: "AIS3 pre-exam 2024 writeup"
+date: 2024-06-01
 ---
 
 ## 前言

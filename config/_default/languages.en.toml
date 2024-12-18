@@ -1,13 +1,13 @@
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "hokak's Notes"
+title = "hokak の sweet home"
 
 [params]
     displayName = "EN"
     isoCode = "en"
     rtl = false
-    dateFormat = "2 January 2006"
+    dateFormat = "2006-01-01"
     logo = "img/sitelogo.png"
     secondaryLogo = "img/sitelogo.png"
     # description = "My awesome website"

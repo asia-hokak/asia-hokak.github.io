@@ -1,5 +1,6 @@
 ---
 title: CSAW'24 CTF Writeup
+date: 2024-09-10
 ---
 
 ## intro
