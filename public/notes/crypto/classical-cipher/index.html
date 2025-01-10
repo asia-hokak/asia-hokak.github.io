@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="scroll-smooth" data-default-appearance="dark"
-  data-auto-appearance="false"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  data-auto-appearance="false"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=61742&amp;path=livereload" data-no-instant defer></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <script>
   MathJax = {
     tex: {
@@ -10,6 +10,7 @@
   };
 </script>
 <head>
+    
   <meta charset="utf-8" />
   
   <meta http-equiv="content-language" content="en" />
@@ -24,7 +25,7 @@
   
   
   
-  <link rel="canonical" href="http://localhost:1313/notes/crypto/classical-cipher/" />
+  <link rel="canonical" href="http://localhost:61742/notes/crypto/classical-cipher/" />
   
   
   
@@ -35,8 +36,10 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.e4b93a31283ad564aac1a3bf64d1d83895379941f7b5af39e9e19c687fb4bf2a9df55c84fac631b59903364ce3f0fcc50de0dd3cc994994be24d9f7ff87ef795.css"
-    integrity="sha512-5Lk6MSg61WSqwaO/ZNHYOJU3mUH3ta856eGcaH&#43;0vyqd9VyE&#43;sYxtZkDNkzj8PzFDeDdPMmUmUviTZ9/&#43;H73lQ==" />
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.7ccec632b3593bbbf9e18cc065b4845ad17ca01c1d7248084edc089d4f81ff5685ac220dab3792aaffbf29a8f9bc1dadae599b7041c10a2196a6f500ea5f90ea.css"
+    integrity="sha512-fM7GMrNZO7v54YzAZbSEWtF8oBwdckgITtwInU&#43;B/1aFrCINqzeSqv&#43;/Kaj5vB2trlmbcEHBCiGWpvUA6l&#43;Q6g==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.c9658ec94486565aff073b0f09a4111942679211c19430908a6707077da499e04b9bd040a9632aa673ce252f68e4470a661d46b19168671122846ad0a1e5c38c.js"
@@ -73,18 +76,18 @@
   
   
   
-  <meta property="og:url" content="http://localhost:1313/notes/crypto/classical-cipher/">
+  <meta property="og:url" content="http://localhost:61742/notes/crypto/classical-cipher/">
   <meta property="og:site_name" content="hokak の sweet home">
   <meta property="og:title" content="Classical Cipher">
   <meta property="og:description" content="Intro #因為不想一直通靈所以打算做一篇古典密碼的筆記">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="notes">
-    <meta property="og:image" content="http://localhost:1313/notes/crypto/classical-cipher/featured.png">
+    <meta property="og:image" content="http://localhost:61742/notes/crypto/classical-cipher/featured.png">
 
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:1313/notes/crypto/classical-cipher/featured.png">
+  <meta name="twitter:image" content="http://localhost:61742/notes/crypto/classical-cipher/featured.png">
   <meta name="twitter:title" content="Classical Cipher">
   <meta name="twitter:description" content="Intro #因為不想一直通靈所以打算做一篇古典密碼的筆記">
 
@@ -99,7 +102,7 @@
     
     "abstract": "Intro #\r因為不想一直通靈所以打算做一篇古典密碼的筆記",
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:1313\/notes\/crypto\/classical-cipher\/",
+    "url" : "http:\/\/localhost:61742\/notes\/crypto\/classical-cipher\/",
     "author" : {
       "@type": "Person",
       "name": "hokak"
@@ -180,6 +183,9 @@
 </head>
 <body
   class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+  
+  
+
   <div id="the-top" class="absolute flex self-center">
     <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
       href="#main-content"><span
@@ -650,7 +656,8 @@
 
     
     <div id = 'background-container' class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(' /img/background_hu14675085229801552950.png ');">
+    style="background-image:url(' /img/article.png ');">
+    
     
 
 
@@ -669,6 +676,285 @@
         background_blur.style.opacity = (scroll / 300)
     });
 </script>
+<style>
+    .chroma {
+  color: #c6d0f5;
+  background-color: #303446;
+}
+.chroma .cl {
+  color: #c6d0f5;
+}
+.chroma .err {
+  color: #e78284;
+}
+.chroma .x {
+  color: #c6d0f5;
+}
+.chroma .lntd {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+}
+.chroma .lntable {
+  width: auto;
+  border: 0;
+  margin: 0;
+  display: block;
+  padding: 0;
+  overflow: auto;
+  border-spacing: 0;
+}
+.chroma .hl {
+  width: 100%;
+  display: block;
+  background-color: #51576d;
+}
+.chroma .lnt {
+  color: #838ba7;
+  padding: 0 0.4em 0 0.4em;
+  font-size: 0.875rem;
+  margin-right: 0.4em;
+}
+.chroma .ln {
+  color: #838ba7;
+  padding: 0 0.4em 0 0.4em;
+  margin-right: 0.4em;
+}
+.chroma .k {
+  color: #ca9ee6;
+}
+.chroma .kr {
+  color: #ca9ee6;
+}
+.chroma .kp {
+  color: #ca9ee6;
+}
+.chroma .kc {
+  color: #ef9f76;
+}
+.chroma .kd {
+  color: #e78284;
+}
+.chroma .kn {
+  color: #81c8be;
+}
+.chroma .kt {
+  color: #e78284;
+}
+.chroma .n {
+  color: #c6d0f5;
+}
+.chroma .nc {
+  color: #e5c890;
+}
+.chroma .no {
+  color: #e5c890;
+}
+.chroma .nd {
+  color: #8caaee;
+  font-weight: bold;
+}
+.chroma .ni {
+  color: #81c8be;
+}
+.chroma .ne {
+  color: #ef9f76;
+}
+.chroma .nf {
+  color: #8caaee;
+}
+.chroma .fm {
+  color: #8caaee;
+}
+.chroma .nl {
+  color: #99d1db;
+}
+.chroma .nn {
+  color: #ef9f76;
+}
+.chroma .py {
+  color: #ef9f76;
+}
+.chroma .nt {
+  color: #ca9ee6;
+}
+.chroma .nv {
+  color: #f2d5cf;
+}
+.chroma .vc {
+  color: #f2d5cf;
+}
+.chroma .vg {
+  color: #f2d5cf;
+}
+.chroma .vi {
+  color: #f2d5cf;
+}
+.chroma .vm {
+  color: #f2d5cf;
+}
+.chroma .na {
+  color: #8caaee;
+}
+.chroma .nb {
+  color: #99d1db;
+}
+.chroma .bp {
+  color: #99d1db;
+}
+.chroma .nx {
+  color: #c6d0f5;
+}
+.chroma .l {
+  color: #c6d0f5;
+}
+.chroma .ld {
+  color: #c6d0f5;
+}
+.chroma .s {
+  color: #a6d189;
+}
+.chroma .sc {
+  color: #a6d189;
+}
+.chroma .s1 {
+  color: #a6d189;
+}
+.chroma .s2 {
+  color: #a6d189;
+}
+.chroma .sb {
+  color: #a6d189;
+}
+.chroma .sx {
+  color: #a6d189;
+}
+.chroma .ss {
+  color: #a6d189;
+}
+.chroma .si {
+  color: #a6d189;
+}
+.chroma .sa {
+  color: #e78284;
+}
+.chroma .dl {
+  color: #8caaee;
+}
+.chroma .se {
+  color: #8caaee;
+}
+.chroma .sr {
+  color: #81c8be;
+}
+.chroma .sd {
+  color: #737994;
+}
+.chroma .sh {
+  color: #737994;
+}
+.chroma .m {
+  color: #ef9f76;
+}
+.chroma .mb {
+  color: #ef9f76;
+}
+.chroma .mh {
+  color: #ef9f76;
+}
+.chroma .mi {
+  color: #ef9f76;
+}
+.chroma .mf {
+  color: #ef9f76;
+}
+.chroma .il {
+  color: #ef9f76;
+}
+.chroma .mo {
+  color: #ef9f76;
+}
+.chroma .o {
+  color: #99d1db;
+  font-weight: bold;
+}
+.chroma .ow {
+  color: #99d1db;
+  font-weight: bold;
+}
+.chroma .c {
+  color: #737994;
+  font-style: italic;
+}
+.chroma .c1 {
+  color: #737994;
+  font-style: italic;
+}
+.chroma .cm {
+  color: #737994;
+  font-style: italic;
+}
+.chroma .cs {
+  color: #737994;
+  font-style: italic;
+}
+.chroma .ch {
+  color: #626880;
+  font-style: italic;
+}
+.chroma .cp {
+  color: #737994;
+  font-style: italic;
+}
+.chroma .cpf {
+  color: #737994;
+  font-weight: bold;
+}
+.chroma .g {
+  color: #c6d0f5;
+}
+.chroma .gi {
+  color: #a6d189;
+  background-color: #414559;
+}
+.chroma .gd {
+  color: #e78284;
+  background-color: #414559;
+}
+.chroma .ge {
+  color: #c6d0f5;
+  font-style: italic;
+}
+.chroma .gs {
+  color: #c6d0f5;
+  font-weight: bold;
+}
+.chroma .gl {
+  color: #c6d0f5;
+  text-decoration: underline;
+}
+.chroma .gh {
+  color: #ef9f76;
+  font-weight: bold;
+}
+.chroma .gu {
+  color: #ef9f76;
+  font-weight: bold;
+}
+.chroma .go {
+  color: #c6d0f5;
+}
+.chroma .gp {
+  color: #c6d0f5;
+}
+.chroma .gr {
+  color: #e78284;
+}
+.chroma .gt {
+  color: #e78284;
+}
+</style>
 
   
   
@@ -2150,7 +2436,7 @@ $$ D(x)=x{\pmod {m}}$$</p>
     
     <p class="text-sm text-neutral-500 dark:text-neutral-400">
       &copy;
-      2024
+      2025
       hokak
     </p>
     
@@ -2185,7 +2471,7 @@ $$ D(x)=x{\pmod {m}}$$</p>
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
-  data-url="http://localhost:1313/"
+  data-url="http://localhost:61742/"
   style="z-index:500"
 >
   <div
@@ -2236,6 +2522,7 @@ $$ D(x)=x{\pmod {m}}$$</p>
 </div>
 
   </div>
+  
 </body>
 
 

@@ -1,0 +1,335 @@
+/* chroma css */
+.chroma {
+  color: #c6d0f5 !important;
+}
+.chroma .cl {
+  color: #c6d0f5 !important;
+}
+.chroma .err {
+  color: #e78284 !important;
+}
+.chroma .x {
+  color: #c6d0f5 !important;
+}
+.chroma .lntd {
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: top !important;
+}
+.chroma .lntable {
+  width: auto !important;
+  border: 0 !important;
+  margin: 0 !important;
+  display: block !important;
+  padding: 0 !important;
+  overflow: auto !important;
+  border-spacing: 0 !important;
+}
+.chroma .hl {
+  width: 100% !important;
+  display: block !important;
+  background-color: #51576d !important;
+}
+.chroma .lnt {
+  color: #838ba7 !important;
+  padding: 0 0.4em 0 0.4em !important;
+  font-size: 0.875rem !important;
+  margin-right: 0.4em !important;
+}
+.chroma .ln {
+  color: #838ba7 !important;
+  padding: 0 0.4em 0 0.4em !important;
+  margin-right: 0.4em !important;
+}
+.chroma .k {
+  color: #ca9ee6 !important;
+}
+.chroma .kr {
+  color: #ca9ee6 !important;
+}
+.chroma .kp {
+  color: #ca9ee6 !important;
+}
+.chroma .kc {
+  color: #ef9f76 !important;
+}
+.chroma .kd {
+  color: #e78284 !important;
+}
+.chroma .kn {
+  color: #81c8be !important;
+}
+.chroma .kt {
+  color: #e78284 !important;
+}
+.chroma .n {
+  color: #c6d0f5 !important;
+}
+.chroma .nc {
+  color: #e5c890 !important;
+}
+.chroma .no {
+  color: #e5c890 !important;
+}
+.chroma .nd {
+  color: #8caaee !important;
+  font-weight: bold !important;
+}
+.chroma .ni {
+  color: #81c8be !important;
+}
+.chroma .ne {
+  color: #ef9f76 !important;
+}
+.chroma .nf {
+  color: #8caaee !important;
+}
+.chroma .fm {
+  color: #8caaee !important;
+}
+.chroma .nl {
+  color: #99d1db !important;
+}
+.chroma .nn {
+  color: #ef9f76 !important;
+}
+.chroma .py {
+  color: #ef9f76 !important;
+}
+.chroma .nt {
+  color: #ca9ee6 !important;
+}
+.chroma .nv {
+  color: #f2d5cf !important;
+}
+.chroma .vc {
+  color: #f2d5cf !important;
+}
+.chroma .vg {
+  color: #f2d5cf !important;
+}
+.chroma .vi {
+  color: #f2d5cf !important;
+}
+.chroma .vm {
+  color: #f2d5cf !important;
+}
+.chroma .na {
+  color: #8caaee !important;
+}
+.chroma .nb {
+  color: #99d1db !important;
+}
+.chroma .bp {
+  color: #99d1db !important;
+}
+.chroma .nx {
+  color: #c6d0f5 !important;
+}
+.chroma .l {
+  color: #c6d0f5 !important;
+}
+.chroma .ld {
+  color: #c6d0f5 !important;
+}
+.chroma .s {
+  color: #a6d189 !important;
+}
+.chroma .sc {
+  color: #a6d189 !important;
+}
+.chroma .s1 {
+  color: #a6d189 !important;
+}
+.chroma .s2 {
+  color: #a6d189 !important;
+}
+.chroma .sb {
+  color: #a6d189 !important;
+}
+.chroma .sx {
+  color: #a6d189 !important;
+}
+.chroma .ss {
+  color: #a6d189 !important;
+}
+.chroma .si {
+  color: #a6d189 !important;
+}
+.chroma .sa {
+  color: #e78284 !important;
+}
+.chroma .dl {
+  color: #8caaee !important;
+}
+.chroma .se {
+  color: #8caaee !important;
+}
+.chroma .sr {
+  color: #81c8be !important;
+}
+.chroma .sd {
+  color: #737994 !important;
+}
+.chroma .sh {
+  color: #737994 !important;
+}
+.chroma .m {
+  color: #ef9f76 !important;
+}
+.chroma .mb {
+  color: #ef9f76 !important;
+}
+.chroma .mh {
+  color: #ef9f76 !important;
+}
+.chroma .mi {
+  color: #ef9f76 !important;
+}
+.chroma .mf {
+  color: #ef9f76 !important;
+}
+.chroma .il {
+  color: #ef9f76 !important;
+}
+.chroma .mo {
+  color: #ef9f76 !important;
+}
+.chroma .o {
+  color: #99d1db !important;
+  font-weight: bold !important;
+}
+.chroma .ow {
+  color: #99d1db !important;
+  font-weight: bold !important;
+}
+.chroma .c {
+  color: #737994 !important;
+  font-style: italic !important;
+}
+.chroma .c1 {
+  color: #737994 !important;
+  font-style: italic !important;
+}
+.chroma .cm {
+  color: #737994 !important;
+  font-style: italic !important;
+}
+.chroma .cs {
+  color: #737994 !important;
+  font-style: italic !important;
+}
+.chroma .ch {
+  color: #626880 !important;
+  font-style: italic !important;
+}
+.chroma .cp {
+  color: #81c8be !important;
+  font-style: normal !important;
+}
+.chroma .cpf {
+  color: #ef9f76 !important;
+  font-style: normal !important; 
+  font-weight: normal !important;
+}
+.chroma .g {
+  color: #c6d0f5 !important;
+}
+.chroma .gi {
+  color: #a6d189 !important;
+  background-color: #414559 !important;
+}
+.chroma .gd {
+  color: #e78284 !important;
+  background-color: #414559 !important;
+}
+.chroma .ge {
+  color: #c6d0f5 !important;
+  font-style: italic !important;
+}
+.chroma .gs {
+  color: #c6d0f5 !important;
+  font-weight: bold !important;
+}
+.chroma .gl {
+  color: #c6d0f5 !important;
+  text-decoration: underline !important;
+}
+.chroma .gh {
+  color: #ef9f76 !important;
+  font-weight: bold !important;
+}
+.chroma .gu {
+  color: #ef9f76 !important;
+  font-weight: bold !important;
+}
+.chroma .go {
+  color: #c6d0f5 !important;
+}
+.chroma .gp {
+  color: #c6d0f5 !important;
+}
+.chroma .gr {
+  color: #e78284 !important;
+}
+.chroma .gt {
+  color: #e78284 !important;
+}
+
+/* custom */
+
+@font-face {
+    font-family: Noto Sans TC;
+    src: url('/fonts/NotoSansTC-Regular.ttf');
+} 
+
+@font-face {
+    font-family: FiraCode;
+    src: url('/fonts/FiraCode-Regular.ttf');
+}
+
+@font-face {
+    font-family: Noto Sans JP;
+    src: url('/fonts/NotoSansJP-Regular.ttf');
+}
+
+
+
+html {
+    font-family: Noto Sans JP, Noto Sans TC;
+    font-size: 16px;
+}
+
+code {
+    font-family: FiraCode !important; 
+}
+
+
+.article-content h1 {
+    font-size: 2em;
+}
+
+.article-content h2 {
+    font-size: 1.5em; 
+}
+
+.article-content h3 {
+    font-size: 1.25em;
+}
+
+.article-content h4 {
+    font-size: 1em; 
+}
+
+.article-content h5 {
+    font-size: 0.875em; 
+}
+
+.article-content h6 {
+    font-size: 0.85em;
+}
+
+.article-content pre {
+    line-height: 1.4142857;
+}

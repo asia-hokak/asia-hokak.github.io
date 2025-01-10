@@ -29,7 +29,7 @@ params.backgroundImageWidth: 1500
 
   - #### CTFtime (solo)
 
-  |      |       項目        | 隊名   | 名次     |
+  |      |                   |        |          |
   | :--- | :---------------: | :----- | :------- |
   | 2024 |   ACSC CTF 2024   | hokak  | 152      |
   | 2024 |    CSAW'24 CTF    | hokak  | 193/1184 |

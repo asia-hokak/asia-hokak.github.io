@@ -6,8 +6,18 @@
     <description>Recent content in Writeups on hokak の sweet home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>© 2024 hokak</copyright>
-    <lastBuildDate>Sun, 10 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/writeups/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2025 hokak</copyright>
+    <lastBuildDate>Mon, 06 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/writeups/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IrisCTF 2025</title>
+      <link>http://localhost:1313/writeups/irisctf-2025/</link>
+      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/writeups/irisctf-2025/</guid>
+      <description>總排名40/1529|TOP 2%</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/writeups/irisctf-2025/featured.png" />
+    </item>
+    
     <item>
       <title>CGGC 2024 初賽</title>
       <link>http://localhost:1313/writeups/cggc-2024/</link>

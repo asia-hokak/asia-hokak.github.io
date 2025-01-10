@@ -22,7 +22,7 @@
                             {{ $authorImage = resources.Get . }}
                         {{ end }}
                         {{ if $authorImage }}
-                            {{ if not $disableImageOptimization }}
+                            {{ if $disableImageOptimization }}
                                 {{ $authorImage = $authorImage.Fill (print "288x288 q" ( $.Site.Author.imagequality | default "96" )) }}
                             {{ end }}
                             <img class="mb-2 rounded-xl h-36 w-36" width="144" height="144"
@@ -48,7 +48,7 @@
                         {{ end }}
                     </div>
                    
-                    <h2 class="mt-0 mb-0 text-xl text-neutral-800 dark:text-neutral-300">
+                    <h2 class="typing mt-0 mb-0 text-xl text-neutral-800 dark:text-neutral-300">
                         <span id="typed"></span>
                     </h2>
                     
