@@ -418,3 +418,6 @@ print(flag[::-1])
 ![alt text](image-12.png)
 ![alt text](image-13.png)
 順利解決
+
+另外有一題net-msg2用同樣一個binary，只是考點不同(有混Crypto)，然後我那時候第一題打完腦子有點亂就先跑了QwQ  
+sorry拉各位
