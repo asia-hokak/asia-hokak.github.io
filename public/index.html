@@ -165,6 +165,29 @@
   <meta name="theme-color"/>
   
   
+  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script>
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBr-x1__I9ogctfZ3jB9_Alf-SL8L6OPtA",
+      authDomain: "AIzaSyBr-x1__I9ogctfZ3jB9_Alf-SL8L6OPtA",
+      projectId: "blog-82312",
+      storageBucket: "blog-82312.firebasestorage.app",
+      messagingSenderId: "943998431646",
+      appId: "1:943998431646:web:2dea172b6ac87bd832e68f",
+      measurementId: "G-CDJ2QLLPWR"
+    };
+
+    var app = firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+    var auth = firebase.auth();
+
+  </script>
+  
+  
   <link rel="stylesheet" href="/css/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -186,18 +209,19 @@
              extensions: ["AMSmath.js", "AMSsymbols.js"] }
       }
     });
-      MathJax.Hub.Queue(function() {
-        
-        
-        
-        var all = MathJax.Hub.getAllJax(), i;
+      MathJax.Hub.Queue(function() {            var all = MathJax.Hub.getAllJax(), i;
         for(i = 0; i < all.length; i += 1) {
             all[i].SourceElement().parentNode.className += ' has-jax';
         }
     });
 </script>
-
-<body
+<style>
+    code.has-jax {font: inherit;
+              font-size: 100%;
+              background: inherit;
+              border: inherit;
+              color: #515151;}
+</style><body
   class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
   
   
@@ -657,7 +681,7 @@
         <div class="mx-auto max-w-7xl p-0">
             <div class="relative sm:overflow-hidden">
                 <div class="fixed inset-x-0 top-0" style="z-index:-10">
-                    <img class="w-full h-[1000px] object-cover m-0 nozoom" src="img/background.png" role="presentation">
+                    <img class="w-full h-[1000px] object-cover m-0 nozoom" src="img/homepage.png" role="presentation">
                     <div
                         class="absolute inset-0 h-[1000px] bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
                     </div>

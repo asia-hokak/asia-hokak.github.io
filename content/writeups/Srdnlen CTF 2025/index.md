@@ -9,7 +9,7 @@ date: 2025-01-27
 
 ![alt text](image.png)
 
-總排名`101/1544`|`TOP 2%`  
+總排名`101/1544`|`TOP 6%`  
 
 ### solves
 
@@ -100,7 +100,7 @@ $$
 $$
     ct_{2} = Eec(c_{2}) \oplus  Dec(Enc(P_{1}) \oplus P_{0})
 $$
-所以這題我選擇跳過$ct_0$~$ct_2$ 
+所以這題我選擇跳過$ct_0$~$ct_2$
 
 ```python
 from pwn import *
@@ -138,12 +138,12 @@ for byte in range(53):
 
 #### chal
 
-這題是要逆一個用unity engine寫的遊  
+這題是要逆一個用unity engine寫的系統(?  
 Assembly-CSharp.dll有被混淆過  
 要想辦法開啟這個奇怪的app  
 ![alt text](image-2.png)
 
-#### solver
+#### solve
 
 ![alt text](image-1.png)
 把這裡改成`false`
@@ -163,7 +163,7 @@ compile後可能會遇到這種error
 ![alt text](image-6.png)
 這個binary會去查hash過後是否在詞，如果是的話就不會是flag
 
-#### slover
+#### slove
 
 因為我第一次用一個字元查的時候發現有8個字母可以使用
 ，但這些字母有7個開頭的繼續查會怪怪的  
@@ -214,6 +214,9 @@ dfs(flag)
 反過來說，我們只要得到所有cl的值就可以回推出al的值
 而所有iteration的`cl ^ 40`組合在一起就會是flag  
 ![alt text](image-10.png)
+
+#### solve
+
 ```python
 from pwn import *
 a = b"32$.,%.;.s6s2\037\064\062\065u4\037\024(s\037-tq.\037&5.#4qp.="
