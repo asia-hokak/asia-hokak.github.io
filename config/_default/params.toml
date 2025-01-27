@@ -17,7 +17,6 @@ smartTOCHideUnfocusedChildren = false
 math = true
 
 
-
 [header]
     layout = "fixed"
 

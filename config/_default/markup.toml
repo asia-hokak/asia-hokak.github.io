@@ -2,19 +2,6 @@
 # These settings are required for the theme to function.
 
 
-[markup]
-  [markup.markdown]
-    parser = "goldmark" 
-    table = true
-    math = true
-  [markup.goldmark]
-    [markup.goldmark.extensions]
-      [markup.goldmark.extensions.passthrough]
-        enable = true
-        [markup.goldmark.extensions.passthrough.delimiters]
-          block = [['\[', '\]'], ['$$', '$$']]
-          inline = [['\(', '\)']]
-
 [highlight]
   noClasses = false
 

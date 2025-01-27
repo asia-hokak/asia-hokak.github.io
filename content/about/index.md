@@ -35,6 +35,7 @@ params.backgroundImageWidth: 1500
   | 2024 |    CSAW'24 CTF    | hokak  | 193/1184 |
   | 2024 | DEADFACE CTF 2024 | hok4lc | 118/1215 |
   | 2024 | niteCTF 2024      | hok4lc | 93/1174  |
+  | 2024 | Srdnlen CTF 2025  | hok4lc | 101/1154 |
 
   - #### CTFtime (with ICEDTEA)
 
@@ -44,6 +45,7 @@ params.backgroundImageWidth: 1500
   | 2024 | PatriotCTF 2024 | ICEDTEA | 33/1360  |
   | 2024 |  Iron CTF 2024  | ICEDTEA | 121/1033 |
   | 2024 |  sunshine CTF   | ICEDTEA | 61/642   |
+  | 2024 |  IrisCTF 2025   | ICEDTEA | 40/1064  |
 
   - #### 國內
 
