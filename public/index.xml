@@ -7,7 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 hokak</copyright>
-    <lastBuildDate>Mon, 27 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chunk</title>
+      <link>http://localhost:1313/notes/pwn/heap/2-chunk/</link>
+      <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/pwn/heap/2-chunk/</guid>
+      <description>defination #chunk的定義如下</description>
+      
+    </item>
+    
+    <item>
+      <title>Heap</title>
+      <link>http://localhost:1313/notes/pwn/heap/1-heap/</link>
+      <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/pwn/heap/1-heap/</guid>
+      <description>basic #heap 用來存動態記憶體(透過手動分配大小的記憶體) 會使用跟stack不同的區段 大小分配 #在請求大小&amp;gt;=0x20000byte的時候會呼叫mmap去跟glibc要一塊新的記憶體 在請求大小&amp;lt;0x20000的時候會呼叫brk去擴展當前記憶體 名詞解釋 #arena #arena用於紀錄heap的狀態</description>
+      
+    </item>
+    
     <item>
       <title>Srdnlen CTF 2025</title>
       <link>http://localhost:1313/writeups/srdnlen-ctf-2025/</link>
@@ -36,6 +56,26 @@
       <guid>http://localhost:1313/writeups/irisctf-2025/</guid>
       <description>總排名40/1529|TOP 2%</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/writeups/irisctf-2025/featured.png" />
+    </item>
+    
+    <item>
+      <title>Unsafe Unlink</title>
+      <link>http://localhost:1313/notes/pwn/heap/unsafe-unlink/</link>
+      <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/pwn/heap/unsafe-unlink/</guid>
+      <description>版本 latest 效果 使目標ptr從指向UAF chunk改為ptr-0x18 unlink的目的為把空閒的heap從雙向陣列中拿出來，這幾種狀況會觸發:</description>
+      
+    </item>
+    
+    <item>
+      <title>Unsorted Bin Attack</title>
+      <link>http://localhost:1313/notes/pwn/heap/unsorted-bin-attack/</link>
+      <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/pwn/heap/unsorted-bin-attack/</guid>
+      <description>版本 &amp;lt; glibc 2.</description>
+      
     </item>
     
     <item>

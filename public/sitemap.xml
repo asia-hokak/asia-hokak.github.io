@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>http://localhost:1313/notes/pwn/heap/1-heap/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/notes/pwn/heap/2-chunk/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/</loc>
     <lastmod>2025-01-27T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -41,6 +51,24 @@
   <url>
     <loc>http://localhost:1313/notes/pwn/</loc>
     <lastmod>2024-12-24T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/notes/pwn/heap/unsafe-unlink/</loc>
+    <lastmod>2024-12-24T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/notes/pwn/heap/</loc>
+    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/notes/pwn/heap/unsorted-bin-attack/</loc>
+    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

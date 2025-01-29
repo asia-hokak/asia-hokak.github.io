@@ -9,14 +9,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>About &middot; hokak の sweet home</title>
-  <meta name="title" content="About &middot; hokak の sweet home" />
-  
-  <meta name="description" content="about me" />
+  <title>Unsorted Bin Attack &middot; hokak の sweet home</title>
+  <meta name="title" content="Unsorted Bin Attack &middot; hokak の sweet home" />
   
   
   
-  <link rel="canonical" href="http://localhost:1313/about/" />
+  
+  
+  <link rel="canonical" href="http://localhost:1313/notes/pwn/heap/unsorted-bin-attack/" />
   
   
   
@@ -74,44 +74,50 @@
   
   
   
-  <meta property="og:url" content="http://localhost:1313/about/">
+  <meta property="og:url" content="http://localhost:1313/notes/pwn/heap/unsorted-bin-attack/">
   <meta property="og:site_name" content="hokak の sweet home">
-  <meta property="og:title" content="About">
-  <meta property="og:description" content="about me">
+  <meta property="og:title" content="Unsorted Bin Attack">
+  <meta property="og:description" content="版本 &lt; glibc 2.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2024-12-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-20T00:00:00+00:00">
+      <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/1-heap/">
+      <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/2-chunk/">
+      <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/unsafe-unlink/">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="About">
-  <meta name="twitter:description" content="about me">
+  <meta name="twitter:title" content="Unsorted Bin Attack">
+  <meta name="twitter:description" content="版本 &lt; glibc 2.">
 
   
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "Homepage",
-    "name": "About",
-    "headline": "About",
-    "description": "about me",
-    "abstract": "whoami #\r我在社群上用的名字是 Dr.",
+    "articleSection": "Notes",
+    "name": "Unsorted Bin Attack",
+    "headline": "Unsorted Bin Attack",
+    
+    "abstract": "版本 \u0026lt; glibc 2.",
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:1313\/about\/",
+    "url" : "http:\/\/localhost:1313\/notes\/pwn\/heap\/unsorted-bin-attack\/",
     "author" : {
       "@type": "Person",
       "name": "hokak"
     },
+    "copyrightYear": "2024",
+    "dateCreated": "2024-12-20T00:00:00\u002b00:00",
+    "datePublished": "2024-12-20T00:00:00\u002b00:00",
     
-    
-    
-    
-    
+    "dateModified": "2024-12-20T00:00:00\u002b00:00",
     
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "178"
+    "wordCount": "79"
   }]
   </script>
 
@@ -209,7 +215,7 @@
     MathJax.Hub.Config({
       tex2jax: {
         inlineMath: [['$','$'], ['\\(','\\)']],
-        displayMath: [['$$','$$'], ['\\[','\\]']],
+        displayMath: [['$$','$$'], ['\[','\]']],
         processEscapes: true,
         processEnvironments: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
@@ -691,13 +697,21 @@
   
 
 
+
+
+
+
+
+
 <div id="hero" class="h-[150px] md:h-[200px]"></div>
 
 
 
+
     
-    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/about/background.png);">
+    <div id = 'background-container' class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    style="background-image:url(' /img/article.png ');">
+    
     
 
 
@@ -716,6 +730,285 @@
         background_blur.style.opacity = (scroll / 300)
     });
 </script>
+<style>
+    .chroma {
+  color: #c6d0f5;
+  background-color: #303446;
+}
+.chroma .cl {
+  color: #c6d0f5;
+}
+.chroma .err {
+  color: #e78284;
+}
+.chroma .x {
+  color: #c6d0f5;
+}
+.chroma .lntd {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+}
+.chroma .lntable {
+  width: auto;
+  border: 0;
+  margin: 0;
+  display: block;
+  padding: 0;
+  overflow: auto;
+  border-spacing: 0;
+}
+.chroma .hl {
+  width: 100%;
+  display: block;
+  background-color: #51576d;
+}
+.chroma .lnt {
+  color: #838ba7;
+  padding: 0 0.4em 0 0.4em;
+  font-size: 0.875rem;
+  margin-right: 0.4em;
+}
+.chroma .ln {
+  color: #838ba7;
+  padding: 0 0.4em 0 0.4em;
+  margin-right: 0.4em;
+}
+.chroma .k {
+  color: #ca9ee6;
+}
+.chroma .kr {
+  color: #ca9ee6;
+}
+.chroma .kp {
+  color: #ca9ee6;
+}
+.chroma .kc {
+  color: #ef9f76;
+}
+.chroma .kd {
+  color: #e78284;
+}
+.chroma .kn {
+  color: #81c8be;
+}
+.chroma .kt {
+  color: #e78284;
+}
+.chroma .n {
+  color: #c6d0f5;
+}
+.chroma .nc {
+  color: #e5c890;
+}
+.chroma .no {
+  color: #e5c890;
+}
+.chroma .nd {
+  color: #8caaee;
+  font-weight: bold;
+}
+.chroma .ni {
+  color: #81c8be;
+}
+.chroma .ne {
+  color: #ef9f76;
+}
+.chroma .nf {
+  color: #8caaee;
+}
+.chroma .fm {
+  color: #8caaee;
+}
+.chroma .nl {
+  color: #99d1db;
+}
+.chroma .nn {
+  color: #ef9f76;
+}
+.chroma .py {
+  color: #ef9f76;
+}
+.chroma .nt {
+  color: #ca9ee6;
+}
+.chroma .nv {
+  color: #f2d5cf;
+}
+.chroma .vc {
+  color: #f2d5cf;
+}
+.chroma .vg {
+  color: #f2d5cf;
+}
+.chroma .vi {
+  color: #f2d5cf;
+}
+.chroma .vm {
+  color: #f2d5cf;
+}
+.chroma .na {
+  color: #8caaee;
+}
+.chroma .nb {
+  color: #99d1db;
+}
+.chroma .bp {
+  color: #99d1db;
+}
+.chroma .nx {
+  color: #c6d0f5;
+}
+.chroma .l {
+  color: #c6d0f5;
+}
+.chroma .ld {
+  color: #c6d0f5;
+}
+.chroma .s {
+  color: #a6d189;
+}
+.chroma .sc {
+  color: #a6d189;
+}
+.chroma .s1 {
+  color: #a6d189;
+}
+.chroma .s2 {
+  color: #a6d189;
+}
+.chroma .sb {
+  color: #a6d189;
+}
+.chroma .sx {
+  color: #a6d189;
+}
+.chroma .ss {
+  color: #a6d189;
+}
+.chroma .si {
+  color: #a6d189;
+}
+.chroma .sa {
+  color: #e78284;
+}
+.chroma .dl {
+  color: #8caaee;
+}
+.chroma .se {
+  color: #8caaee;
+}
+.chroma .sr {
+  color: #81c8be;
+}
+.chroma .sd {
+  color: #737994;
+}
+.chroma .sh {
+  color: #737994;
+}
+.chroma .m {
+  color: #ef9f76;
+}
+.chroma .mb {
+  color: #ef9f76;
+}
+.chroma .mh {
+  color: #ef9f76;
+}
+.chroma .mi {
+  color: #ef9f76;
+}
+.chroma .mf {
+  color: #ef9f76;
+}
+.chroma .il {
+  color: #ef9f76;
+}
+.chroma .mo {
+  color: #ef9f76;
+}
+.chroma .o {
+  color: #99d1db;
+  font-weight: bold;
+}
+.chroma .ow {
+  color: #99d1db;
+  font-weight: bold;
+}
+.chroma .c {
+  color: #737994;
+  font-style: italic;
+}
+.chroma .c1 {
+  color: #737994;
+  font-style: italic;
+}
+.chroma .cm {
+  color: #737994;
+  font-style: italic;
+}
+.chroma .cs {
+  color: #737994;
+  font-style: italic;
+}
+.chroma .ch {
+  color: #626880;
+  font-style: italic;
+}
+.chroma .cp {
+  color: #737994;
+  font-style: italic;
+}
+.chroma .cpf {
+  color: #737994;
+  font-weight: bold;
+}
+.chroma .g {
+  color: #c6d0f5;
+}
+.chroma .gi {
+  color: #a6d189;
+  background-color: #414559;
+}
+.chroma .gd {
+  color: #e78284;
+  background-color: #414559;
+}
+.chroma .ge {
+  color: #c6d0f5;
+  font-style: italic;
+}
+.chroma .gs {
+  color: #c6d0f5;
+  font-weight: bold;
+}
+.chroma .gl {
+  color: #c6d0f5;
+  text-decoration: underline;
+}
+.chroma .gh {
+  color: #ef9f76;
+  font-weight: bold;
+}
+.chroma .gu {
+  color: #ef9f76;
+  font-weight: bold;
+}
+.chroma .go {
+  color: #c6d0f5;
+}
+.chroma .gp {
+  color: #c6d0f5;
+}
+.chroma .gr {
+  color: #e78284;
+}
+.chroma .gt {
+  color: #e78284;
+}
+</style>
 
   
   
@@ -723,7 +1016,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      About
+      Unsorted Bin Attack
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -774,7 +1067,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="0001-01-01 00:00:00 &#43;0000 UTC">0001-01-01</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-12-20 00:00:00 &#43;0000 UTC">2024-12-20</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -787,7 +1080,7 @@
       
     
   
-  <span id="views_about\index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_notes\pwn\heap\unsorted-bin-attack\index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -809,7 +1102,7 @@
       
     
   
-  <span id="likes_about\index.md"
+  <span id="likes_notes\pwn\heap\unsorted-bin-attack\index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes">loading</span>
   <span class="inline-block align-text-bottom">
@@ -1080,16 +1373,12 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#whoami">whoami</a></li>
-    <li><a href="#how-to-find-me">How to find me</a></li>
-    <li><a href="#blog">Blog</a></li>
-    <li><a href="#experiences">Experiences</a>
-      <ul>
-        <li><a href="#ctf-experiences">CTF experiences</a></li>
-        <li><a href="#competitve-programming">Competitve Programming</a></li>
-        <li><a href="#activities">Activities</a></li>
-      </ul>
-    </li>
+    <li><a href="#__int_malloc">__int_malloc()</a></li>
+    <li><a href="#初始化">初始化</a></li>
+    <li><a href="#free">free</a></li>
+    <li><a href="#竄改ptr0-bk">竄改ptr0-&gt;bk</a></li>
+    <li><a href="#malloc">malloc</a></li>
+    <li><a href="#小發現">小發現</a></li>
   </ul>
 </nav>
   </div>
@@ -1103,16 +1392,12 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#whoami">whoami</a></li>
-    <li><a href="#how-to-find-me">How to find me</a></li>
-    <li><a href="#blog">Blog</a></li>
-    <li><a href="#experiences">Experiences</a>
-      <ul>
-        <li><a href="#ctf-experiences">CTF experiences</a></li>
-        <li><a href="#competitve-programming">Competitve Programming</a></li>
-        <li><a href="#activities">Activities</a></li>
-      </ul>
-    </li>
+    <li><a href="#__int_malloc">__int_malloc()</a></li>
+    <li><a href="#初始化">初始化</a></li>
+    <li><a href="#free">free</a></li>
+    <li><a href="#竄改ptr0-bk">竄改ptr0-&gt;bk</a></li>
+    <li><a href="#malloc">malloc</a></li>
+    <li><a href="#小發現">小發現</a></li>
   </ul>
 </nav>
   </div>
@@ -1191,363 +1476,242 @@
       <div class="min-w-0 min-h-0 max-w-fit">
         
         
+<details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5"  open >
+    
+    <summary
+        class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
+        Heap Exploitation - This article is part of a series.
+    </summary>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/1-heap/">
+            Part 1: Heap
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/2-chunk/">
+            Part 2: Chunk
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/unsafe-unlink/">
+            Part 10: Unsafe Unlink
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        Part 11: This Article
+    </div>
+    
+    
+
+
+</details>
+
 
 
         <div class="article-content max-w-prose mb-20">
-          
+          <table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>版本</td>
+<td>&lt; glibc 2.29</td>
+</tr>
+<tr>
+<td>效果</td>
+<td>可以把unsorted_chunk (av) 寫到任意位址</td>
+</tr>
+</tbody>
+</table>
 
-<h2 class="relative group">whoami 
-    <div id="whoami" class="anchor"></div>
+
+<h2 class="relative group">__int_malloc() 
+    <div id="__int_malloc" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#whoami" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#__int_malloc" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>我在社群上用的名字是 <strong>Dr.dog</strong>，目前高二<br>
-常打 ctf，主要玩 reverse 和 crypto，pwn 也有練過一陣子</p>
+<p>在<code>__int_malloc()</code>有這麼一段程式碼</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/* remove from unsorted list */</span>
+</span></span><span class="line"><span class="cl"><span class="nf">unsorted_chunks</span> <span class="p">(</span><span class="n">av</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">bk</span> <span class="o">=</span> <span class="n">bck</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">bck</span><span class="o">-&gt;</span><span class="n">fd</span> <span class="o">=</span> <span class="nf">unsorted_chunks</span> <span class="p">(</span><span class="n">av</span><span class="p">);</span>
+</span></span></code></pre></div><p><em>malloc.c: 3777</em></p>
+<p>其用途可以在unsorted_bin 遍歷過這個chunk的時候將他從double list移除
+但我們如果可以控制到bck的位址，那就可以將在隨意位址寫入<code>unsorted_chunks (av)</code>的位址</p>
 
 
-<h2 class="relative group">How to find me 
-    <div id="how-to-find-me" class="anchor"></div>
+<h2 class="relative group">初始化 
+    <div id="%E5%88%9D%E5%A7%8B%E5%8C%96" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#how-to-find-me" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E5%88%9D%E5%A7%8B%E5%8C%96" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>有事可以在 dc 找到我，id:<code>hokak_</code>，加好友之前稍微自我介紹一下就 ok 了<br>
-比較正式的事可以找我 email(頭像下方)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="n">ptr0</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x410</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="n">ptr1</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x420</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="n">ptr2</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mh">0x430</span><span class="p">);</span>
+</span></span></code></pre></div><p>在一開始我們可以看到unsorted_chunks(av)的fd和bk都指向自己
+
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        src="/notes/pwn/heap/unsorted-bin-attack/image-7.png"
+        alt="alt text"
+      />
+      
+    </figure>
+</p>
 
 
-<h2 class="relative group">Blog 
-    <div id="blog" class="anchor"></div>
+<h2 class="relative group">free 
+    <div id="free" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#blog" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#free" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p><del>建立 blog 的契機是因為懶得自我介紹</del><br>
-痾我需要一個 blog 來放筆記、Writeup<br>
-比賽的時候 copy 自己的起來比較快<br>
-網站架構是用 Hugo &amp; Blowfish<br>
-喔對，背景都是來自<a href="https://store.steampowered.com/app/1044620/_/" target="_blank">蒼之彼方四重奏</a>，蠻推這遊戲的</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">free</span><span class="p">(</span><span class="n">ptr0</span><span class="p">);</span>
+</span></span></code></pre></div><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        src="/notes/pwn/heap/unsorted-bin-attack/image-8.png"
+        alt="alt text"
+      />
+      
+    </figure>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">free</span><span class="p">(</span><span class="n">ptr2</span><span class="p">);</span>
+</span></span></code></pre></div>
+  
 
 
-<h2 class="relative group">Experiences 
-    <div id="experiences" class="anchor"></div>
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >free(ptr2)單純是方便觀察，如果只free(ptr0)也是可行的</span>
+</div>
+
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        src="/notes/pwn/heap/unsorted-bin-attack/image-9.png"
+        alt="alt text"
+      />
+      
+    </figure>
+</p>
+
+
+<h2 class="relative group">竄改ptr0-&gt;bk 
+    <div id="%E7%AB%84%E6%94%B9ptr0-bk" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#experiences" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E7%AB%84%E6%94%B9ptr0-bk" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<ul>
-<li>
+<p>將chunk_1-&gt;bk 竄改為target-0x10</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">ptr0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)(</span><span class="o">&amp;</span><span class="n">target</span> <span class="o">-</span> <span class="mh">0x2</span><span class="p">);</span>
+</span></span></code></pre></div><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        src="/notes/pwn/heap/unsorted-bin-attack/image-10.png"
+        alt="alt text"
+      />
+      
+    </figure>
+</p>
 
 
-<h3 class="relative group">CTF experiences 
-    <div id="ctf-experiences" class="anchor"></div>
+<h2 class="relative group">malloc 
+    <div id="malloc" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#ctf-experiences" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#malloc" aria-label="Anchor">#</a>
     </span>        
     
-</h3>
-<ul>
-<li>
+</h2>
+<p>malloc 跟竄改的chunksize一樣的大小</p>
 
 
-<h4 class="relative group">CTFtime (solo) 
-    <div id="ctftime-solo" class="anchor"></div>
+<h2 class="relative group">小發現 
+    <div id="%E5%B0%8F%E7%99%BC%E7%8F%BE" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#ctftime-solo" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E5%B0%8F%E7%99%BC%E7%8F%BE" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:center"></th>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">ACSC CTF 2024</td>
-<td style="text-align:left">hokak</td>
-<td style="text-align:left">152</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">CSAW'24 CTF</td>
-<td style="text-align:left">hokak</td>
-<td style="text-align:left">193/1184</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">DEADFACE CTF 2024</td>
-<td style="text-align:left">hok4lc</td>
-<td style="text-align:left">118/1215</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">niteCTF 2024</td>
-<td style="text-align:left">hok4lc</td>
-<td style="text-align:left">93/1174</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">Srdnlen CTF 2025</td>
-<td style="text-align:left">hok4lc</td>
-<td style="text-align:left">101/1154</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>
-
-
-<h4 class="relative group">CTFtime (with ICEDTEA) 
-    <div id="ctftime-with-icedtea" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#ctftime-with-icedtea" aria-label="Anchor">#</a>
-    </span>        
-    
-</h4>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:center"></th>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">Imaginary CTF</td>
-<td style="text-align:left">ICEDTEA</td>
-<td style="text-align:left">61/1457</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">PatriotCTF 2024</td>
-<td style="text-align:left">ICEDTEA</td>
-<td style="text-align:left">33/1360</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">Iron CTF 2024</td>
-<td style="text-align:left">ICEDTEA</td>
-<td style="text-align:left">121/1033</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">sunshine CTF</td>
-<td style="text-align:left">ICEDTEA</td>
-<td style="text-align:left">61/642</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">IrisCTF 2025</td>
-<td style="text-align:left">ICEDTEA</td>
-<td style="text-align:left">40/1064</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>
-
-
-<h4 class="relative group">國內 
-    <div id="%E5%9C%8B%E5%85%A7" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%9C%8B%E5%85%A7" aria-label="Anchor">#</a>
-    </span>        
-    
-</h4>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:center"></th>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">THJCC 臺灣高中聯合資安競賽</td>
-<td style="text-align:left">THJCC_hokak</td>
-<td style="text-align:left">2</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">AIS3 pre-exam</td>
-<td style="text-align:left">hokak</td>
-<td style="text-align:left">42</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">Scist 4th final CTF</td>
-<td style="text-align:left">SCIST_18</td>
-<td style="text-align:left">1</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">CGGC 網路守護者挑戰賽 初賽</td>
-<td style="text-align:left">金爐香盡漏聲殘，我只剩下半顆肝</td>
-<td style="text-align:left">7</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">CGGC 網路守護者挑戰賽 決賽</td>
-<td style="text-align:left">金爐香盡漏聲殘，我只剩下半顆肝</td>
-<td style="text-align:left">6</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-
-
-<h3 class="relative group">Competitve Programming 
-    <div id="competitve-programming" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#competitve-programming" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:center"></th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">2023</td>
-<td style="text-align:center">APCS</td>
-<td style="text-align:left">3/3</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">APCS</td>
-<td style="text-align:left">4/4</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">HSPC</td>
-<td style="text-align:left">決賽</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>
-
-
-<h3 class="relative group">Activities 
-    <div id="activities" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#activities" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:center"></th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">2023</td>
-<td style="text-align:center">SCIST 4th</td>
-<td style="text-align:left">學員</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">TFcis</td>
-<td style="text-align:left">網管組，資安教學(?</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">臺南一中國中生程式設計營</td>
-<td style="text-align:left">基礎班講師</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">ICEDTEA(實中資安)</td>
-<td style="text-align:left">戰隊成員</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">AIS3</td>
-<td style="text-align:left">學員</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">B33F 50μP(成大資安社)</td>
-<td style="text-align:left">戰隊成員</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">臺灣好厲駭 9th</td>
-<td style="text-align:left">學員</td>
-</tr>
-<tr>
-<td style="text-align:left">2024</td>
-<td style="text-align:center">THJCC 2024 winter</td>
-<td style="text-align:left">出題者</td>
-</tr>
-</tbody>
-</table>
+</h2>
+<p>值得一提的是，因為unsorted bin要從尾端拿值出來，所以他會先往bk方向遍歷<br>
+而我們chunk 1的bk已經被控制了(也就是說double linked list的結構崩壞)
+所以接下來只要在malloc一次就會崩潰</p>
+<blockquote>
+<p>要注意使用到函數有調用malloc的(例如第一次呼叫printf)</p>
+</blockquote>
 
           
           
@@ -1557,6 +1721,52 @@
         
 
         
+<details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5">
+    
+    <summary
+        class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
+        Heap Exploitation - This article is part of a series.
+    </summary>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/1-heap/">
+            Part 1: Heap
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/2-chunk/">
+            Part 2: Chunk
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/unsafe-unlink/">
+            Part 10: Unsafe Unlink
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        Part 11: This Article
+    </div>
+    
+    
+
+
+</details>
+
         
 
           
@@ -1570,8 +1780,8 @@
           
         
       <script>
-        var oid = "views_about\\index.md"
-        var oid_likes = "likes_about\\index.md"
+        var oid = "views_notes\\pwn\\heap\\unsorted-bin-attack\\index.md"
+        var oid_likes = "likes_notes\\pwn\\heap\\unsorted-bin-attack\\index.md"
       </script>
       
       
@@ -1582,6 +1792,43 @@
   <footer class="pt-8 max-w-prose print:hidden">
 
     
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/notes/pwn/heap/unsafe-unlink/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Unsafe Unlink</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2024-12-24 00:00:00 &#43;0000 UTC">2024-12-24</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
   
 
 
