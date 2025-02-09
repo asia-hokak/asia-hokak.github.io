@@ -38,9 +38,8 @@ free的時候會把chunk丟進bins
 目前有五個機制不同的bins
 
 - tcache
-- fast bin
-- unsorted bin
-- small bin
-- large bin
+- fastbin
+- unsortedbin
+- smallbin
+- largebin
 
-### 

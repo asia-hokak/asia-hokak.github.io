@@ -83,7 +83,10 @@
     <meta property="article:section" content="notes">
     <meta property="article:published_time" content="2025-01-28T00:00:00+00:00">
     <meta property="article:modified_time" content="2025-01-28T00:00:00+00:00">
+      <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/4-arena/">
+      <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/3-bin/">
       <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/2-chunk/">
+      <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/5-malloc/">
       <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/unsafe-unlink/">
       <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/unsorted-bin-attack/">
 
@@ -117,7 +120,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "36"
+    "wordCount": "31"
   }]
   </script>
 
@@ -1380,7 +1383,6 @@
         <li><a href="#arena">arena</a></li>
         <li><a href="#chunk">chunk</a></li>
         <li><a href="#bin">bin</a></li>
-        <li><a href="#heading"></a></li>
       </ul>
     </li>
   </ul>
@@ -1403,7 +1405,6 @@
         <li><a href="#arena">arena</a></li>
         <li><a href="#chunk">chunk</a></li>
         <li><a href="#bin">bin</a></li>
-        <li><a href="#heading"></a></li>
       </ul>
     </li>
   </ul>
@@ -1504,6 +1505,33 @@
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
         <a href="http://localhost:1313/notes/pwn/heap/2-chunk/">
             Part 2: Chunk
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/3-bin/">
+            Part 3: Bin
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/4-arena/">
+            Part 4: Arena
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/5-malloc/">
+            Part 5: Malloc &amp; free
         </a>
     </div>
     
@@ -1644,23 +1672,11 @@
 目前有五個機制不同的bins</p>
 <ul>
 <li>tcache</li>
-<li>fast bin</li>
-<li>unsorted bin</li>
-<li>small bin</li>
-<li>large bin</li>
+<li>fastbin</li>
+<li>unsortedbin</li>
+<li>smallbin</li>
+<li>largebin</li>
 </ul>
-
-
-<h3 class="relative group"> 
-    <div id="heading" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#heading" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
 
           
           
@@ -1690,6 +1706,33 @@
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
         <a href="http://localhost:1313/notes/pwn/heap/2-chunk/">
             Part 2: Chunk
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/3-bin/">
+            Part 3: Bin
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/4-arena/">
+            Part 4: Arena
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/5-malloc/">
+            Part 5: Malloc &amp; free
         </a>
     </div>
     
@@ -1750,7 +1793,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/notes/pwn/heap/unsafe-unlink/">
+            <a class="flex group mr-3" href="/notes/pwn/heap/5-malloc/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1762,11 +1805,11 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Unsafe Unlink</span
+                  >Malloc & free</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2024-12-24 00:00:00 &#43;0000 UTC">2024-12-24</time>
+                    <time datetime="2025-02-09 00:00:00 &#43;0000 UTC">2025-02-09</time>
                   
                 </span>
               </span>
