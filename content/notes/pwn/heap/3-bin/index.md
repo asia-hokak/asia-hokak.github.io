@@ -145,7 +145,7 @@ ex: 第一組由0x40做遞增，第1條bin鍊:0x400~0x430, 第2條bin鍊:0x440~0
 ### 運作
 
 - `fd_nextsize` & `bk_nextsize`
-  - 在同個bin鍊會出現不同的大小，彼此用`fd_nextsize/bk_nextsize`連接(size不會照順序排)
+  - 在同個bin鍊會出現不同的大小，彼此用`fd_nextsize/bk_nextsize`連接(size會依大小降序排列)
 - 進入方式
   - 由unsortedbin放入
 - free時
