@@ -260,10 +260,8 @@ C_2 &\equiv m^e \pmod{q}
 \end{aligned}
 \right.
 $$$$$$
-We can use the `**`Chinese Remainder Theorem`**` to obtain:
-$$
-x \equiv m^e \pmod{pq}
-$$
+We can use the `Chinese Remainder Theorem` to obtain:
+$x \equiv m^e \pmod{pq}$
 Since $m^e < N$, we can take the square root to find $m$.
 
 $N$ is a smooth number, and we can use `Pollard's p − 1 algorithm` to factor it.

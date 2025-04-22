@@ -114,7 +114,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "2870"
+    "wordCount": "2868"
   }]
   </script>
 
@@ -1846,10 +1846,8 @@ C_2 &amp;\equiv m^e \pmod{q}
 \end{aligned}
 \right.
 $$$$$$
-We can use the <code>**</code>Chinese Remainder Theorem<code>**</code> to obtain:
-$$
-x \equiv m^e \pmod{pq}
-$$
+We can use the <code>Chinese Remainder Theorem</code> to obtain:
+$x \equiv m^e \pmod{pq}$
 Since $m^e &lt; N$, we can take the square root to find $m$.</p>
 <p>$N$ is a smooth number, and we can use <code>Pollard's p − 1 algorithm</code> to factor it.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
