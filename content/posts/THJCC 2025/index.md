@@ -3,6 +3,29 @@ title: "THJCC 2025 題解"
 date: 2025-04-21
 ---
 
+## 解題狀況
+
+|category|diffculity|challenge|solves|
+|-|-|-|-|
+|Crypto|easy|Twins|85|
+|Crypto|easy|SNAKE|77|
+|Crypto|medium|Yoshino's Secret|30|
+|Crypto|medium|Speeded Block Cipher|25|
+|Crypto|hard|Proactive Planning|4|
+|Pwn|easy|Money Overflow|59|
+|Pwn|easy|Insecure Shell|37|
+|Pwn|medium|Once|19|
+|Pwn|hard|Bank Clerk|5|
+|Pwn|hard|Painter|3|
+|Reverse|baby|西|100|
+|Reverse|medium|Flag Checker|31|
+|Reverse|medium|Noo dle|22|
+|Reverse|hard|Empty|13|
+|Reverse|hard|Demon Summoning|12|
+
+沒跟預想的差很多:D  
+難度有控對
+
 ## Crypto
 
 ### SNAKE
