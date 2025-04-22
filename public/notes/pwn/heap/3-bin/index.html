@@ -86,9 +86,9 @@
       <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/4-arena/">
       <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/2-chunk/">
       <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/1-heap/">
-      <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/5-malloc/">
-      <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/unsafe-unlink/">
-      <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/unsorted-bin-attack/">
+      <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/10-tcache-poision/">
+      <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/9-fastbin-attack/">
+      <meta property="og:see_also" content="http://localhost:1313/notes/pwn/heap/6-free/">
 
   
   <meta name="twitter:card" content="summary">
@@ -120,7 +120,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "329"
+    "wordCount": "331"
   }]
   </script>
 
@@ -1385,24 +1385,25 @@
     <li><a href="#fastbin">fastbin</a>
       <ul>
         <li><a href="#保存-1">保存</a></li>
+        <li><a href="#運作-1">運作</a></li>
       </ul>
     </li>
     <li><a href="#smallbin">smallbin</a>
       <ul>
         <li><a href="#bins">保存</a></li>
-        <li><a href="#運作-1">運作</a></li>
+        <li><a href="#運作-2">運作</a></li>
       </ul>
     </li>
     <li><a href="#largebin">largebin</a>
       <ul>
         <li><a href="#保存-2">保存</a></li>
-        <li><a href="#運作-2">運作</a></li>
+        <li><a href="#運作-3">運作</a></li>
       </ul>
     </li>
     <li><a href="#unsortedbin">unsortedbin</a>
       <ul>
         <li><a href="#保存-3">保存</a></li>
-        <li><a href="#運作-3">運作</a></li>
+        <li><a href="#運作-4">運作</a></li>
       </ul>
     </li>
     <li><a href="#references">References</a></li>
@@ -1428,24 +1429,25 @@
     <li><a href="#fastbin">fastbin</a>
       <ul>
         <li><a href="#保存-1">保存</a></li>
+        <li><a href="#運作-1">運作</a></li>
       </ul>
     </li>
     <li><a href="#smallbin">smallbin</a>
       <ul>
         <li><a href="#bins">保存</a></li>
-        <li><a href="#運作-1">運作</a></li>
+        <li><a href="#運作-2">運作</a></li>
       </ul>
     </li>
     <li><a href="#largebin">largebin</a>
       <ul>
         <li><a href="#保存-2">保存</a></li>
-        <li><a href="#運作-2">運作</a></li>
+        <li><a href="#運作-3">運作</a></li>
       </ul>
     </li>
     <li><a href="#unsortedbin">unsortedbin</a>
       <ul>
         <li><a href="#保存-3">保存</a></li>
-        <li><a href="#運作-3">運作</a></li>
+        <li><a href="#運作-4">運作</a></li>
       </ul>
     </li>
     <li><a href="#references">References</a></li>
@@ -1581,8 +1583,8 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="http://localhost:1313/notes/pwn/heap/unsafe-unlink/">
-            Part 10: Unsafe Unlink
+        <a href="http://localhost:1313/notes/pwn/heap/6-free/">
+            Part 6: Free
         </a>
     </div>
     
@@ -1590,8 +1592,44 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="http://localhost:1313/notes/pwn/heap/unsorted-bin-attack/">
+        <a href="http://localhost:1313/notes/pwn/heap/9-fastbin-attack/">
+            Part 9: Bin
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/10-tcache-poision/">
+            Part 10: Bin
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/11-unsorted-bin-attack/">
             Part 11: Unsorted Bin Attack
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/12-largebin_attack/">
+            Part 12: Largebin Attack
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/13-unsafe-unlink/">
+            Part 13: Unsafe Unlink
         </a>
     </div>
     
@@ -1783,7 +1821,19 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="p">...</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div><ul>
+</span></span></code></pre></div>
+
+<h3 class="relative group">運作 
+    <div id="%E9%81%8B%E4%BD%9C-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E9%81%8B%E4%BD%9C-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
 <li>fastbin各個chunk大小的pointer起始點會在被存在<code>main_arena</code>的<code>fastbinsY</code>陣列(main thread)</li>
 <li>在64位元的系統中以chunk size以0x10遞增:由0x20到0x80</li>
 <li>當對應大小的tcache滿出來的時候會被存到fastbin</li>
@@ -1845,12 +1895,12 @@
 
 
 <h3 class="relative group">運作 
-    <div id="%E9%81%8B%E4%BD%9C-1" class="anchor"></div>
+    <div id="%E9%81%8B%E4%BD%9C-2" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E9%81%8B%E4%BD%9C-1" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E9%81%8B%E4%BD%9C-2" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -1942,12 +1992,12 @@ ex: 第一組由0x40做遞增，第1條bin鍊:0x400<del>0x430, 第2條bin鍊:0x4
 
 
 <h3 class="relative group">運作 
-    <div id="%E9%81%8B%E4%BD%9C-2" class="anchor"></div>
+    <div id="%E9%81%8B%E4%BD%9C-3" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E9%81%8B%E4%BD%9C-2" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E9%81%8B%E4%BD%9C-3" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -2009,12 +2059,12 @@ ex: 第一組由0x40做遞增，第1條bin鍊:0x400<del>0x430, 第2條bin鍊:0x4
 
 
 <h3 class="relative group">運作 
-    <div id="%E9%81%8B%E4%BD%9C-3" class="anchor"></div>
+    <div id="%E9%81%8B%E4%BD%9C-4" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E9%81%8B%E4%BD%9C-3" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E9%81%8B%E4%BD%9C-4" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -2131,8 +2181,8 @@ ex: 第一組由0x40做遞增，第1條bin鍊:0x400<del>0x430, 第2條bin鍊:0x4
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="http://localhost:1313/notes/pwn/heap/unsafe-unlink/">
-            Part 10: Unsafe Unlink
+        <a href="http://localhost:1313/notes/pwn/heap/6-free/">
+            Part 6: Free
         </a>
     </div>
     
@@ -2140,8 +2190,44 @@ ex: 第一組由0x40做遞增，第1條bin鍊:0x400<del>0x430, 第2條bin鍊:0x4
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="http://localhost:1313/notes/pwn/heap/unsorted-bin-attack/">
+        <a href="http://localhost:1313/notes/pwn/heap/9-fastbin-attack/">
+            Part 9: Bin
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/10-tcache-poision/">
+            Part 10: Bin
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/11-unsorted-bin-attack/">
             Part 11: Unsorted Bin Attack
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/12-largebin_attack/">
+            Part 12: Largebin Attack
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/notes/pwn/heap/13-unsafe-unlink/">
+            Part 13: Unsafe Unlink
         </a>
     </div>
     

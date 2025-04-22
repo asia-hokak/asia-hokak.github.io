@@ -3,6 +3,7 @@ title: "About"
 description: "about me"
 heroStyle: "background"
 params.backgroundImageWidth: 1500
+date: 2007-10-18
 ---
 
 ## whoami
@@ -27,7 +28,7 @@ params.backgroundImageWidth: 1500
 
 - ### CTF experiences
 
-  - #### CTFtime (solo)
+  - #### CTF (solo)
 
   |      |                   |        |          |
   | :--- | :---------------: | :----- | :------- |
@@ -36,8 +37,9 @@ params.backgroundImageWidth: 1500
   | 2024 | DEADFACE CTF 2024 | hok4lc | 118/1215 |
   | 2024 | niteCTF 2024      | hok4lc | 93/1174  |
   | 2025 | Srdnlen CTF 2025  | hok4lc | 101/1154 |
+  | 2025 | squ1rrel CTF      | hok4lc | 105/603  |
 
-  - #### CTFtime (with ICEDTEA)
+  - #### CTF (with ICEDTEA)
 
   |      |                 |         |          |
   | :--- | :-------------: | :------ | :------- |
@@ -48,6 +50,13 @@ params.backgroundImageWidth: 1500
   | 2025 |  IrisCTF 2025   | ICEDTEA | 40/1064  |
   | 2025 |  x3ctf 2025     | ICEDTEA | 27/528   |
   | 2025 | Nullcon Goa HackIM 2025 CTF| ICEDTEA | 53/1115 |
+  | 2025 | SwampCTF 2025 | ICEDTEA | 61/751 |
+
+  - #### CTF (other)
+
+ |      |                            |                                |     |
+  | :--- | :------------------------: | :----------------------------- | :-- |
+  | 2025 | picoCTF 2025 | Remote Computer Explosion | 51/10460 |
 
   - #### 國內
 

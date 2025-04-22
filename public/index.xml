@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 hokak</copyright>
-    <lastBuildDate>Sun, 09 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Arena</title>
       <link>http://localhost:1313/notes/pwn/heap/4-arena/</link>
@@ -45,6 +45,46 @@
       
       <guid>http://localhost:1313/notes/pwn/heap/1-heap/</guid>
       <description>basic #heap 用來存動態記憶體(透過手動分配大小的記憶體) 會使用跟stack不同的區段 大小分配 #在請求大小&amp;gt;=0x20000byte的時候會呼叫mmap去跟glibc要一塊新的記憶體 在請求大小&amp;lt;0x20000的時候會呼叫brk去擴展當前記憶體 名詞解釋 #arena #arena用於紀錄heap的狀態</description>
+      
+    </item>
+    
+    <item>
+      <title>THJCC 2025 題解</title>
+      <link>http://localhost:1313/posts/thjcc-2025/</link>
+      <pubDate>Mon, 21 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/thjcc-2025/</guid>
+      <description>Crypto #SNAKE #把拆開來看大概經過了下面的步驟</description>
+      
+    </item>
+    
+    <item>
+      <title>Bin</title>
+      <link>http://localhost:1313/notes/pwn/heap/10-tcache-poision/</link>
+      <pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/pwn/heap/10-tcache-poision/</guid>
+      <description>版本 latest 效果 可以構造一個allocated chunk在任意writable address上 先malloc兩個以上的tcache #unsigned long int *ptr0, *ptr1; int target; ptr0 = malloc(0x10); ptr1 = malloc(0x10); target = 0xdead; printf(&amp;#34;chunk 1: %p\n&amp;#34;, ptr0); printf(&amp;#34;chunk 2: %p\n&amp;#34;, ptr1); printf(&amp;#34;int: %p\n\n&amp;#34;, &amp;amp;target); output</description>
+      
+    </item>
+    
+    <item>
+      <title>Bin</title>
+      <link>http://localhost:1313/notes/pwn/heap/9-fastbin-attack/</link>
+      <pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/pwn/heap/9-fastbin-attack/</guid>
+      <description>版本 latest 效果 可以構造一個allocated chunk在任意writable address上 glibc 2.</description>
+      
+    </item>
+    
+    <item>
+      <title>Free</title>
+      <link>http://localhost:1313/notes/pwn/heap/6-free/</link>
+      <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/pwn/heap/6-free/</guid>
+      <description>__libc_free() #其實就是free() __libc_free(void *mem) { mstate ar_ptr; mchunkptr p; /* chunk corresponding to mem */ if (mem == 0) /* free(0) has no effect */ return; /* Quickly check that the freed pointer matches the tag for the memory.</description>
       
     </item>
     
@@ -90,20 +130,20 @@
     
     <item>
       <title>Unsafe Unlink</title>
-      <link>http://localhost:1313/notes/pwn/heap/unsafe-unlink/</link>
+      <link>http://localhost:1313/notes/pwn/heap/13-unsafe-unlink/</link>
       <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/pwn/heap/unsafe-unlink/</guid>
+      <guid>http://localhost:1313/notes/pwn/heap/13-unsafe-unlink/</guid>
       <description>版本 latest 效果 使目標ptr從指向UAF chunk改為ptr-0x18 unlink的目的為把空閒的heap從雙向陣列中拿出來，這幾種狀況會觸發:</description>
       
     </item>
     
     <item>
       <title>Unsorted Bin Attack</title>
-      <link>http://localhost:1313/notes/pwn/heap/unsorted-bin-attack/</link>
+      <link>http://localhost:1313/notes/pwn/heap/11-unsorted-bin-attack/</link>
       <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/pwn/heap/unsorted-bin-attack/</guid>
+      <guid>http://localhost:1313/notes/pwn/heap/11-unsorted-bin-attack/</guid>
       <description>版本 &amp;lt; glibc 2.</description>
       
     </item>
@@ -171,7 +211,7 @@
     <item>
       <title>About</title>
       <link>http://localhost:1313/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 18 Oct 2007 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/about/</guid>
       <description>whoami #我在社群上用的名字是 Dr.</description>
@@ -196,6 +236,26 @@
       <guid>http://localhost:1313/notes/web/file-upload-vulnerbility/</guid>
       <description>文件上傳漏洞是指用戶上傳可能會造成危害的檔案(廢話</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/notes/web/file-upload-vulnerbility/featured.png" />
+    </item>
+    
+    <item>
+      <title>Largebin Attack</title>
+      <link>http://localhost:1313/notes/pwn/heap/12-largebin_attack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/pwn/heap/12-largebin_attack/</guid>
+      <description>版本 latest 效果 使目標被修改為某個chunk unsortedbin放chunk回largebin的情況 #如果size為比bin鍊最後一塊(同時也是最小塊)還小，就直接插入尾端 #if ((unsigned long)(size) &amp;lt; (unsigned long)chunksize_nomask(bck-&amp;gt;bk)) { fwd = bck; bck = bck-&amp;gt;bk; victim-&amp;gt;fd_nextsize = fwd-&amp;gt;fd; victim-&amp;gt;bk_nextsize = fwd-&amp;gt;fd-&amp;gt;bk_nextsize; fwd-&amp;gt;fd-&amp;gt;bk_nextsize = victim-&amp;gt;bk_nextsize-&amp;gt;fd_nextsize = victim; } 主要攻擊點 #fwd-&amp;gt;fd-&amp;gt;bk_nextsize = victim-&amp;gt;bk_nextsize-&amp;gt;fd_nextsize = victim; 達成以下條件，就能使target被寫入victim:</description>
+      
+    </item>
+    
+    <item>
+      <title>PatriotCTF 2024 rustLock upsolve</title>
+      <link>http://localhost:1313/notes/reverse/scist-reverse-course-advance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/reverse/scist-reverse-course-advance/</guid>
+      <description>HelloWindows.</description>
+      
     </item>
     
   </channel>

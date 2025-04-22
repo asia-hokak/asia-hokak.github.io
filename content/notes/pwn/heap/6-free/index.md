@@ -1,5 +1,5 @@
 ---
-title: "free"
+title: "Free"
 date: 2025-02-23
 series: ["Heap Exploitation"]
 series_order: 6
@@ -138,6 +138,7 @@ _int_free(mstate av, mchunkptr p, int have_lock)
     }
 #endif
 ```
+
 ```c
     if ((unsigned long)(size) <= (unsigned long)(get_max_fast())
 

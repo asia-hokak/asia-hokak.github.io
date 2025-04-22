@@ -18,5 +18,15 @@
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/notes/reverse/patriotctf-2024-rustlock-upsolve/featured.png" />
     </item>
     
+    <item>
+      <title>PatriotCTF 2024 rustLock upsolve</title>
+      <link>http://localhost:1313/notes/reverse/scist-reverse-course-advance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/reverse/scist-reverse-course-advance/</guid>
+      <description>HelloWindows.</description>
+      
+    </item>
+    
   </channel>
 </rss>

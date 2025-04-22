@@ -52,7 +52,7 @@ __libc_realloc(void *oldmem, size_t bytes)
         return NULL;
     }
 
-    if (chunk_is_mmapped(oldp))
+    if (chunk_is_mmapped(oldp)) // chunk是否是mmap出來的
     {
         void *newmem;
 

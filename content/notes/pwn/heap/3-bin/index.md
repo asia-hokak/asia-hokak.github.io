@@ -85,6 +85,8 @@ struct malloc_state
 };
 ```
 
+### 運作
+
 - fastbin各個chunk大小的pointer起始點會在被存在`main_arena`的`fastbinsY`陣列(main thread)  
 - 在64位元的系統中以chunk size以0x10遞增:由0x20到0x80
 - 當對應大小的tcache滿出來的時候會被存到fastbin  

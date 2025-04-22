@@ -2,7 +2,7 @@
 title: "Unsafe Unlink"
 date: 2024-12-24
 series: ["Heap Exploitation"]
-series_order: 10
+series_order: 13
 ---
 
 
