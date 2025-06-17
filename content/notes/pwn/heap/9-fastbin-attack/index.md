@@ -1,5 +1,5 @@
 ---
-title: "Bin"
+title: "Fastbin Attack"
 date: 2025-04-09
 series: ["Heap Exploitation"]
 series_order: 9

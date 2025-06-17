@@ -1,6 +1,6 @@
 ---
 title: "Largebin Attack"
-date: 2025-3-27
+date: 2025-03-27
 series: ["Heap Exploitation"]
 series_order: 12
 ---

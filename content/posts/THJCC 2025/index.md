@@ -277,10 +277,10 @@ $N$是平滑數，可以用`Pollard's p − 1 algorithm`分解
 Problem:
 $$$$$$
 \left\{
-\begin{aligned}
+\begin{gather*}
 C_1 &\equiv m^e \pmod{p} \\
 C_2 &\equiv m^e \pmod{q}
-\end{aligned}
+\end{gather*}
 \right.
 $$$$$$
 We can use the `Chinese Remainder Theorem` to obtain:
