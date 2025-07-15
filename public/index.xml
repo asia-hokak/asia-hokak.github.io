@@ -239,6 +239,16 @@
     </item>
     
     <item>
+      <title>Crypto CTF 2025</title>
+      <link>http://localhost:1313/writeups/crypto-ctf-2025/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/writeups/crypto-ctf-2025/</guid>
+      <description>team:https://github.com/killua4564/2025-Crypto-CTF latex 好像有點壞掉，可以看: https://hackmd.</description>
+      
+    </item>
+    
+    <item>
       <title>File Upload Vulnerability</title>
       <link>http://localhost:1313/notes/web/file-upload-vulnerbility/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

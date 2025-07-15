@@ -59,6 +59,7 @@ date: 2007-10-18
   |      |              |                           |          |
   | :--- | :----------: | :------------------------ | :------- |
   | 2025 | picoCTF 2025 | Remote Computer Explosion | 51/10460 |
+  | 2025 | Crypto CTF 2025 | NullCipher | 23 & TW 2nd |
 
   - #### 國內
 
