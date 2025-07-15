@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 hokak</copyright>
-    <lastBuildDate>Mon, 21 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Arena</title>
       <link>http://localhost:1313/notes/pwn/heap/4-arena/</link>
@@ -45,6 +45,16 @@
       
       <guid>http://localhost:1313/notes/pwn/heap/1-heap/</guid>
       <description>basic #heap 用來存動態記憶體(透過手動分配大小的記憶體) 會使用跟stack不同的區段 大小分配 #在請求大小&amp;gt;=0x20000byte的時候會呼叫mmap去跟glibc要一塊新的記憶體 在請求大小&amp;lt;0x20000的時候會呼叫brk去擴展當前記憶體 名詞解釋 #arena #arena用於紀錄heap的狀態</description>
+      
+    </item>
+    
+    <item>
+      <title>Crypto CTF 2025</title>
+      <link>http://localhost:1313/writeups/crypto-ctf-2025/</link>
+      <pubDate>Mon, 14 Jul 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/writeups/crypto-ctf-2025/</guid>
+      <description>team:https://github.com/killua4564/2025-Crypto-CTF latex 好像有點壞掉，可以看: https://hackmd.</description>
       
     </item>
     
@@ -236,16 +246,6 @@
       <guid>http://localhost:1313/notes/crypto/classical-cipher/</guid>
       <description>Intro #因為不想一直通靈所以打算做一篇古典密碼的筆記</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/notes/crypto/classical-cipher/featured.png" />
-    </item>
-    
-    <item>
-      <title>Crypto CTF 2025</title>
-      <link>http://localhost:1313/writeups/crypto-ctf-2025/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/writeups/crypto-ctf-2025/</guid>
-      <description>team:https://github.com/killua4564/2025-Crypto-CTF latex 好像有點壞掉，可以看: https://hackmd.</description>
-      
     </item>
     
     <item>

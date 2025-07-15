@@ -1,6 +1,6 @@
 ---
 title: Crypto CTF 2025
-date: 2025-7-14
+date: 2025-07-14
 ---
 
 team:https://github.com/killua4564/2025-Crypto-CTF
