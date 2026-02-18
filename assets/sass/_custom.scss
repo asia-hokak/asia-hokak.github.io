@@ -1,0 +1,36 @@
+/* Change font to Noto Sans for better CJK support */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
+  font-family: 'Noto Sans', 'Noto Sans JP', 'Noto Sans SC', sans-serif;
+}
+
+#typed {
+  white-space: pre-wrap;
+}
+
+.typed-cursor {
+  display: inline-block;
+}
+// Override avatar shape from circular to square
+.author .author-avatar {
+  border-radius: 0;
+}
+
+// Adjust author bio width to prevent text wrapping
+.author .author-bio {
+  max-width: 100%;
+}
