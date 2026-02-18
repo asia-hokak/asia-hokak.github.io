@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on hokak&#39;s sweet home</title>
+    <link>http://localhost:1313/about/</link>
+    <description>Recent content in Abouts on hokak&#39;s sweet home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Thu, 19 Feb 2026 04:07:01 +0800</lastBuildDate><atom:link href="http://localhost:1313/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/about/</link>
+      <pubDate>Thu, 19 Feb 2026 04:07:01 +0800</pubDate>
+      
+      <guid>http://localhost:1313/about/about/</guid>
+      
+      <description>&lt;h3 id=&#34;ctftime&#34;&gt;CTFtime&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這邊只記錄我有打的比賽&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;team: ICEDTEA
+rank: 2025 TW 1st / Overall 204th&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;CTF Name&lt;/th&gt;
+          &lt;th&gt;Rank&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;N0PSctf 2025&lt;/td&gt;
+          &lt;td&gt;7/1234&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;SunshineCTF 2025&lt;/td&gt;
+          &lt;td&gt;14/1376&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;WHY2025 CTF&lt;/td&gt;
+          &lt;td&gt;19/1134&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;PatriotCTF 2024&lt;/td&gt;
+          &lt;td&gt;33/1360&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;smileyCTF 2025&lt;/td&gt;
+          &lt;td&gt;37/1090&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;IrisCTF 2025&lt;/td&gt;
+          &lt;td&gt;40/1064&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ImaginaryCTF 2024&lt;/td&gt;
+          &lt;td&gt;61/1457&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Nullcon Goa HackIM 2025 CTF&lt;/td&gt;
+          &lt;td&gt;53/1115&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;SunshineCTF 2024&lt;/td&gt;
+          &lt;td&gt;31/642&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;x3CTF 2025&lt;/td&gt;
+          &lt;td&gt;27/528&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;SwampCTF 2025&lt;/td&gt;
+          &lt;td&gt;61/751&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
