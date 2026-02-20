@@ -23,8 +23,8 @@ hi, 我是 Dr.dog (hokak)
 | 2024 CGGC 網路守護者挑戰賽決賽 | 金爐香盡漏聲殘，我只剩下半顆肝 | 6th |
 | 2025 AIS3 pre-exam | hokak | 4th |
 | 2024 AIS3 pre-exam | hokak | 42nd |
-| 2025 AIS3 EOF 初賽 | 揪麥當勞買一送一，要訂的下面接龍 | 6th |
-| 2025 AIS3 EOF 決賽 | 揪麥當勞買一送一，要訂的下面接龍 | 有去簽到 |
+| 2026 AIS3 EOF 初賽 | 揪麥當勞買一送一，要訂的下面接龍 | 6th |
+| 2026 AIS3 EOF 決賽 | 揪麥當勞買一送一，要訂的下面接龍 | 有去簽到 |
 | 2025 picoCTF | Remote Computer Explosion | 51st / 10460 |
 | 2024 SCIST 第四屆季末賽 | SCIST_18 | 1st |
 | 2024 THJCC 臺灣高中職資安聯合競賽 | THJCC_hokak | 2nd |
