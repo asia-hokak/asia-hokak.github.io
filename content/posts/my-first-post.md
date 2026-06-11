@@ -1,11 +1,8 @@
 +++
 date = '2026-02-17T21:47:03+08:00'
 draft = false
-title = 'First blood - 兄弟們又又又又是我'
+title = 'First blood - 兄弟們又是我'
 +++
-
-好我知道你一定不想知道，也不知道我是誰  
-但我偏要講
 
 ## 為什麼要開一個 blog
 

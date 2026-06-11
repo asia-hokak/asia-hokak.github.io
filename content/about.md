@@ -6,9 +6,6 @@ title = 'About'
 
 hi, 我是 Dr.dog (hokak)  
 之前有在打 CTF  
-現在興趣是耍廢和打 game，等我有一天清醒了有可能會在這個網站發廢文  
-
-下面有放一些沒料的經歷  
 
 ## Experience
 
